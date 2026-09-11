@@ -1,0 +1,1805 @@
+// 100 Essential JLPT N3 Grammar Patterns with Indonesian explanations & practical examples
+const grammarList = [
+  {
+    id: "g-1",
+    pattern: "〜わけにはいかない",
+    meaning: "Tidak mungkin / tidak bisa melakukan (karena pertimbangan moral, sosial, atau situasi)",
+    connection: "V-kamus / V-nai + わけにはいかない",
+    examples: [
+      {
+        japanese: "明日は大事な試験があるので、夜更かしするわけにはいかない。",
+        reading: "あしたはだいじなしけんがあるので、よふかしするわけにはいかない。",
+        indonesian: "Karena besok ada ujian penting, saya tidak mungkin begadang."
+      },
+      {
+        japanese: "親友の頼みだから、断るわけにはいかない。",
+        reading: "しんゆうのたのみだから、ことわるわけにはいかない。",
+        indonesian: "Karena ini permintaan sahabat karib, saya tidak bisa menolaknya."
+      }
+    ]
+  },
+  {
+    id: "g-2",
+    pattern: "〜わけがない",
+    meaning: "Pasti tidak mungkin / mustahil",
+    connection: "Bentuk biasa (V/A-i/A-na+な/N+の) + わけがない",
+    examples: [
+      {
+        japanese: "あんなに真面目な田中さんが嘘をつくわけがない。",
+        reading: "あんなにまじめなたなかさんがうそをつくわけがない。",
+        indonesian: "Orang serajin Tanaka-san mustahil berbohong."
+      },
+      {
+        japanese: "こんなに難しい問題、小学生に解けるわけがない。",
+        reading: "こんなにむずかしいもんだい、しょうがくせいにとけるわけがない。",
+        indonesian: "Soal sesulit ini mustahil bisa dipecahkan oleh anak SD."
+      }
+    ]
+  },
+  {
+    id: "g-3",
+    pattern: "〜わけではない",
+    meaning: "Bukan berarti / tidak selalu begitu (penolakan parsial)",
+    connection: "Bentuk biasa (V/A-i/A-na+な/N+な) + わけではない",
+    examples: [
+      {
+        japanese: "日本料理が嫌いなわけではないが、納豆だけは食べられない。",
+        reading: "にほんりょうりがきらいなわけではないが、なっとうだけはたべられない。",
+        indonesian: "Bukan berarti saya benci masakan Jepang, hanya saja saya tidak bisa makan natto."
+      },
+      {
+        japanese: "お金がたくさんあれば幸せになれるというわけではない。",
+        reading: "おかねがたくさんあればしあわせになれるというわけではない。",
+        indonesian: "Punya banyak uang tidak selalu berarti bisa menjadi bahagia."
+      }
+    ]
+  },
+  {
+    id: "g-4",
+    pattern: "〜というわけだ",
+    meaning: "Pantas saja / dengan kata lain / kesimpulannya begitu",
+    connection: "Bentuk biasa + というわけだ",
+    examples: [
+      {
+        japanese: "夜遅くまで勉強していたから、今朝眠いというわけだ。",
+        reading: "よるおそくまでべんきょうしていたから、けさねむいというわけだ。",
+        indonesian: "Pantas saja tadi pagi mengantuk, ternyata belajar sampai larut malam."
+      },
+      {
+        japanese: "消費税が上がったので、実質的な値上げというわけだ。",
+        reading: "しょうひぜいがあがったので、じっしつてきなねあげというわけだ。",
+        indonesian: "Karena pajak konsumsi naik, dengan kata lain secara riil harganya naik."
+      }
+    ]
+  },
+  {
+    id: "g-5",
+    pattern: "〜に違いない",
+    meaning: "Pasti / tidak salah lagi (keyakinan pembicara)",
+    connection: "Bentuk biasa (A-na / N tanpa だ) + に違いない",
+    examples: [
+      {
+        japanese: "鍵がない。どこかに落としたに違いない。",
+        reading: "かぎがない。どこかにおとしたにちがいない。",
+        indonesian: "Kuncinya tidak ada. Pasti terjatuh di suatu tempat."
+      },
+      {
+        japanese: "あんなに努力したのだから、合格するに違いない。",
+        reading: "あんなにどりょくしたのだから、ごうかくするにちがいない。",
+        indonesian: "Karena dia sudah berjuang sekeras itu, pasti dia lulus."
+      }
+    ]
+  },
+  {
+    id: "g-6",
+    pattern: "〜はずだ / はずがない",
+    meaning: "Seharusnya / pasti (berdasarkan logika atau fakta)",
+    connection: "Bentuk biasa (A-na+な / N+の) + はずだ",
+    examples: [
+      {
+        japanese: "彼は昨日飛行機に乗ったから、もう日本に着いているはずだ。",
+        reading: "かれはきのうひこうきにのったから、もうにほんについているはずだ。",
+        indonesian: "Karena kemarin dia naik pesawat, seharusnya sekarang dia sudah tiba di Jepang."
+      },
+      {
+        japanese: "今日が締め切りのはずがない。来週の金曜日だよ。",
+        reading: "きょうがしめきりのはずがない。らいしゅうのきんようびだよ。",
+        indonesian: "Pasti bukan hari ini batas waktunya. Jumat minggu depan lho."
+      }
+    ]
+  },
+  {
+    id: "g-7",
+    pattern: "〜に決まっている",
+    meaning: "Pasti / sudah pasti (pendapat kuat pembicara)",
+    connection: "Bentuk biasa (A-na / N tanpa だ) + に決まっている",
+    examples: [
+      {
+        japanese: "そんな危険なことをしたら、怪我をするに決まっている。",
+        reading: "そんなきけんなことをしたら、けがをするにきまっている。",
+        indonesian: "Kalau melakukan hal berbahaya seperti itu, sudah pasti akan terluka."
+      },
+      {
+        japanese: "彼が犯人に決まっている。",
+        reading: "かれがはんにんにきまっている。",
+        indonesian: "Sudah pasti dialah pelakunya."
+      }
+    ]
+  },
+  {
+    id: "g-8",
+    pattern: "〜にすぎない",
+    meaning: "Hanya / sekadar / tidak lebih dari",
+    connection: "Bentuk biasa (A-na / N tanpa だ) + にすぎない",
+    examples: [
+      {
+        japanese: "私は自分の意見を述べたにすぎません。",
+        reading: "わたしはじぶんのいけんをのべたにすぎません。",
+        indonesian: "Saya hanya sekadar mengutarakan pendapat pribadi saya."
+      },
+      {
+        japanese: "まだ計画の第一段階にすぎない。",
+        reading: "まだけいかくのだいいちだんかいにすぎない。",
+        indonesian: "Ini baru sekadar tahap pertama dari rencana."
+      }
+    ]
+  },
+  {
+    id: "g-9",
+    pattern: "〜ことになっている",
+    meaning: "Telah ditetapkan / sudah menjadi aturan bahwa",
+    connection: "V-kamus / V-nai + ことになっている",
+    examples: [
+      {
+        japanese: "この部屋では靴を脱ぐことになっています。",
+        reading: "このへやではくつをぬぐことになっています。",
+        indonesian: "Di ruangan ini sudah menjadi aturan untuk melepas sepatu."
+      },
+      {
+        japanese: "来週の月曜日に社長と面談することになっている。",
+        reading: "らいしゅうのげつようびにしゃちょうとめんだんすることになっている。",
+        indonesian: "Sudah dijadwalkan wawancara dengan direktur pada hari Senin depan."
+      }
+    ]
+  },
+  {
+    id: "g-10",
+    pattern: "〜ことにする",
+    meaning: "Memutuskan untuk (keputusan pribadi)",
+    connection: "V-kamus / V-nai + ことにする",
+    examples: [
+      {
+        japanese: "健康のために、毎朝ジョギングをすることにした。",
+        reading: "けんこうのために、まいあさジョギングをすることにした。",
+        indonesian: "Demi kesehatan, saya memutuskan untuk jogging setiap pagi."
+      },
+      {
+        japanese: "甘いものはこれ以上食べないことにする。",
+        reading: "あまいものはこれいじょうたべないことにする。",
+        indonesian: "Saya memutuskan untuk tidak makan yang manis-manis lagi."
+      }
+    ]
+  },
+  {
+    id: "g-11",
+    pattern: "〜ようにする",
+    meaning: "Berusaha untuk / mengusahakan agar",
+    connection: "V-kamus / V-nai + ようにする",
+    examples: [
+      {
+        japanese: "夜11時前には寝るようにしています。",
+        reading: "よるじゅういちじまえにはねるようにしています。",
+        indonesian: "Saya berusaha untuk tidur sebelum jam 11 malam."
+      },
+      {
+        japanese: "忘れ物をしないようにしてください。",
+        reading: "わすれものをしないようにしてください。",
+        indonesian: "Tolong usahakan agar tidak meninggalkan barang."
+      }
+    ]
+  },
+  {
+    id: "g-12",
+    pattern: "〜ようになる",
+    meaning: "Menjadi bisa / mulai terbiasa (perubahan kondisi/kemampuan)",
+    connection: "V-kamus (potensial/kondisi) / V-nai + ようになる",
+    examples: [
+      {
+        japanese: "日本に住んでから、日本語が少し話せるようになりました。",
+        reading: "にほんにすんでから、にほんごがすこしはなせるようになりました。",
+        indonesian: "Sejak tinggal di Jepang, saya mulai bisa berbicara bahasa Jepang sedikit."
+      },
+      {
+        japanese: "眼鏡をかけないと、新聞の文字が見えないようになった。",
+        reading: "めがねをかけないと、しんぶんのもじがみえないようになった。",
+        indonesian: "Kalau tidak pakai kacamata, saya jadi tidak bisa melihat tulisan di koran."
+      }
+    ]
+  },
+  {
+    id: "g-13",
+    pattern: "〜ように言う / 頼む",
+    meaning: "Menyampaikan pesan agar / meminta supaya",
+    connection: "V-kamus / V-nai + ように言う/伝える/頼む",
+    examples: [
+      {
+        japanese: "先生から、明日9時までに集合するように言われました。",
+        reading: "せんせいから、あしたくじまでにしゅうごうするようにいわれました。",
+        indonesian: "Guru menyuruh kami agar berkumpul sebelum jam 9 besok."
+      },
+      {
+        japanese: "田中さんに資料を送るように頼んでおきます。",
+        reading: "たなかさんにしりょうをおくるようにたのんでおきます。",
+        indonesian: "Saya akan minta Tanaka-san untuk mengirimkan dokumennya."
+      }
+    ]
+  },
+  {
+    id: "g-14",
+    pattern: "〜おかげで",
+    meaning: "Berkat / berkat bantuan (hasil positif)",
+    connection: "Bentuk biasa (A-na+な / N+の) + おかげで",
+    examples: [
+      {
+        japanese: "先生のおかげで、無事に合格することができました。",
+        reading: "せんせいのおかげで、ぶじにごうかくすることができました。",
+        indonesian: "Berkat bimbingan guru, saya berhasil lulus dengan selamat."
+      },
+      {
+        japanese: "天気が良かったおかげで、富士山が綺麗に見えた。",
+        reading: "てんきがよかったおかげで、ふじさんがきれいにみえた。",
+        indonesian: "Berkat cuaca yang cerah, Gunung Fuji terlihat dengan sangat indah."
+      }
+    ]
+  },
+  {
+    id: "g-15",
+    pattern: "〜せいで",
+    meaning: "Gara-gara / akibat dari (hasil negatif / menyalahkan)",
+    connection: "Bentuk biasa (A-na+な / N+の) + せいで",
+    examples: [
+      {
+        japanese: "大雨のせいで、電車が大幅に遅れてしまった。",
+        reading: "おおあめのせいで、でんしゃがおおはばにおくれてしまった。",
+        indonesian: "Gara-gara hujan lebat, kereta mengalami keterlambatan yang parah."
+      },
+      {
+        japanese: "睡眠不足のせいで、頭がぼんやりしている。",
+        reading: "すいみんぶそくのせいで、あたまがぼんやりしている。",
+        indonesian: "Akibat kurang tidur, kepalaku terasa pusing dan linglung."
+      }
+    ]
+  },
+  {
+    id: "g-16",
+    pattern: "〜によって / による",
+    meaning: "Oleh / melalui / tergantung pada / karena",
+    connection: "N + によって / による + N",
+    examples: [
+      {
+        japanese: "この小説は世界的に有名な作家によって書かれた。",
+        reading: "このしょうせつはせかいてきにゆうめいなさっかによってかかれた。",
+        indonesian: "Novel ini ditulis oleh penulis yang terkenal di seluruh dunia."
+      },
+      {
+        japanese: "人によって考え方はさまざまだ。",
+        reading: "ひとによってかんがえかたはさまざまだ。",
+        indonesian: "Cara berpikir berbeda-beda tergantung pada orangnya."
+      }
+    ]
+  },
+  {
+    id: "g-17",
+    pattern: "〜に応じて / に応じた",
+    meaning: "Sesuai dengan / menyesuaikan dengan",
+    connection: "N + に応じて / に応じた + N",
+    examples: [
+      {
+        japanese: "予算に応じて、最適な旅行プランを提案します。",
+        reading: "よさんにおうじて、さいてきなりょこうプランをていあんします。",
+        indonesian: "Kami menyarankan rencana liburan terbaik sesuai dengan anggaran Anda."
+      },
+      {
+        japanese: "年齢に応じた適切な運動を心がけましょう。",
+        reading: "ねんれいにおうじたてきせつなうんどうをこころがけましょう。",
+        indonesian: "Mari berusaha melakukan olahraga yang sesuai dengan usia."
+      }
+    ]
+  },
+  {
+    id: "g-18",
+    pattern: "〜に比べて / に比べると",
+    meaning: "Dibandingkan dengan",
+    connection: "N + に比べて / に比べると",
+    examples: [
+      {
+        japanese: "今年は去年に比べて、気温が高い日が多い。",
+        reading: "ことしはきょねんにくらべて、きおんがたかいひがおおい。",
+        indonesian: "Tahun ini dibandingkan tahun lalu, hari dengan suhu panas jauh lebih banyak."
+      },
+      {
+        japanese: "都会の生活は田舎に比べて物価が高い。",
+        reading: "とかいのせいかつはいなかにくらべてぶっかがたかい。",
+        indonesian: "Kehidupan di kota besar biaya hidupnya lebih mahal dibandingkan di desa."
+      }
+    ]
+  },
+  {
+    id: "g-19",
+    pattern: "〜に対して / に対する",
+    meaning: "Terhadap / kepada / sedangkan (perbandingan kontras)",
+    connection: "N + に対して / に対する + N",
+    examples: [
+      {
+        japanese: "お客様に対して、常に丁寧な言葉遣いを心がけてください。",
+        reading: "おきゃくさまにたいして、つねにていねいなことばづかいをこころがけてください。",
+        indonesian: "Terhadap pelanggan, selalu utamakan penggunaan tutur kata yang sopan."
+      },
+      {
+        japanese: "兄が活発なのに対して、弟は物静かな性格だ。",
+        reading: "あにがかっぱつなのに対して、おとうとはものしずかなせいかくだ。",
+        indonesian: "Berbeda dengan sang kakak yang aktif, sang adik memiliki sifat yang pendiam."
+      }
+    ]
+  },
+  {
+    id: "g-20",
+    pattern: "〜について / に関して",
+    meaning: "Mengenai / tentang",
+    connection: "N + について / に関して",
+    examples: [
+      {
+        japanese: "日本の伝統文化についてレポートを書きました。",
+        reading: "にほんのでんとうぶんかについてレポートをかきました。",
+        indonesian: "Saya menulis laporan mengenai kebudayaan tradisional Jepang."
+      },
+      {
+        japanese: "環境問題に関する国際会議が開かれた。",
+        reading: "かんきょうもんだいにかんするこくさいかいぎがひらかれた。",
+        indonesian: "Konferensi internasional mengenai isu lingkungan telah diselenggarakan."
+      }
+    ]
+  },
+  {
+    id: "g-21",
+    pattern: "〜にとって",
+    meaning: "Bagi / untuk (dari sudut pandang seseorang)",
+    connection: "N (orang/pihak) + にとって / にとっても / にとっては",
+    examples: [
+      {
+        japanese: "外国人にとって、漢字を覚えるのはとても難しい。",
+        reading: "がいこくじんにとって、かんじをおぼえるのはとてもむずかしい。",
+        indonesian: "Bagi orang asing, menghafal kanji itu sangat sulit."
+      },
+      {
+        japanese: "家族は私にとって何よりも大切な存在です。",
+        reading: "かぞくはわたしにとってなによりもたいせつなそんざいです。",
+        indonesian: "Bagi saya, keluarga adalah keberadaan yang paling berharga dibanding apa pun."
+      }
+    ]
+  },
+  {
+    id: "g-22",
+    pattern: "〜として / としては",
+    meaning: "Sebagai / selaku",
+    connection: "N + として / としての + N",
+    examples: [
+      {
+        japanese: "彼は留学生として日本へ勉強しに来た。",
+        reading: "かれはりゅうがくせいとしてにほんへべんきょうしにきた。",
+        indonesian: "Dia datang ke Jepang untuk belajar sebagai mahasiswa asing."
+      },
+      {
+        japanese: "富士山は日本の象徴として世界中に知られている。",
+        reading: "ふじさんはにほんのしょうちょうとしてせかいじゅうにしられている。",
+        indonesian: "Gunung Fuji dikenal di seluruh dunia sebagai lambang Jepang."
+      }
+    ]
+  },
+  {
+    id: "g-23",
+    pattern: "〜を通じて / を通して",
+    meaning: "Melalui / perantara / sepanjang (selama periode waktu)",
+    connection: "N + を通じて / を通して",
+    examples: [
+      {
+        japanese: "友人の紹介を通じて、新しい仕事を見つけた。",
+        reading: "ゆうじんのしょうかいをつうじて、あたらしいしごとをみつけた。",
+        indonesian: "Melalui perkenalan dari teman, saya menemukan pekerjaan baru."
+      },
+      {
+        japanese: "この地域は一年を通して穏やかな気候です。",
+        reading: "このちいきはいちねんをとおしておだやかなきこうです。",
+        indonesian: "Wilayah ini beriklim sejuk dan nyaman sepanjang tahun."
+      }
+    ]
+  },
+  {
+    id: "g-24",
+    pattern: "〜をこめて（を込めて）",
+    meaning: "Dengan sepenuh (cinta, rasa syukur, doa, dsb)",
+    connection: "N (perasaan/hati) + をこめて",
+    examples: [
+      {
+        japanese: "感謝の気持ちをこめて、母に花束を贈った。",
+        reading: "かんしゃのきもちをこめて、はなにはなたばをおくった。",
+        indonesian: "Dengan sepenuh rasa terima kasih, saya memberikan buket bunga kepada ibu."
+      },
+      {
+        japanese: "心をこめて作った手料理です。どうぞ召し上がってください。",
+        reading: "こころをこめてつくったてりょうりです。どうぞめしあがってください。",
+        indonesian: "Ini masakan rumahan yang dibuat dengan sepenuh hati. Silakan dinikmati."
+      }
+    ]
+  },
+  {
+    id: "g-25",
+    pattern: "〜を中心に / を中心として",
+    meaning: "Berpusat pada / berfokus pada",
+    connection: "N + を中心に / を中心として",
+    examples: [
+      {
+        japanese: "文法問題を中心に、JLPT N3の復習を進めています。",
+        reading: "ぶんぽうもんだいをちゅうしんに、JLPT N3のふくしゅうをすすめています。",
+        indonesian: "Saya mengulang materi JLPT N3 dengan berfokus pada soal tata bahasa."
+      },
+      {
+        japanese: "東京を中心とした関東地方で地震が発生しました。",
+        reading: "とうきょうをちゅうしんとしたかんとうちほうでじしんがはっせいしました。",
+        indonesian: "Gempa terjadi di wilayah Kanto yang berpusat di Tokyo."
+      }
+    ]
+  },
+  {
+    id: "g-26",
+    pattern: "〜をもとに / をもとにして",
+    meaning: "Berdasarkan / bersumber dari (sebagai bahan dasar ide/karya)",
+    connection: "N + をもとに / をもとにして",
+    examples: [
+      {
+        japanese: "この映画は実際の事件をもとにして作られました。",
+        reading: "このえいがはじっさいのじけんをもとにしてつくられました。",
+        indonesian: "Film ini dibuat berdasarkan kejadian nyata."
+      },
+      {
+        japanese: "アンケートの結果をもとに、新製品を開発する予定だ。",
+        reading: "アンケートのけっかをもとに、しんせいひんをかいはつするよていだ。",
+        indonesian: "Berdasarkan hasil kuesioner, kami berencana mengembangkan produk baru."
+      }
+    ]
+  },
+  {
+    id: "g-27",
+    pattern: "〜をきっかけに / を契機に",
+    meaning: "Bermula dari / termotivasi oleh / dipicu oleh",
+    connection: "N / V-ta + ことをきっかけに",
+    examples: [
+      {
+        japanese: "アニメを見たことをきっかけに、日本語の勉強を始めました。",
+        reading: "アニメをみたことをきっかけに、にほんごのべんきょうをはじめました。",
+        indonesian: "Bermula dari menonton anime, saya mulai belajar bahasa Jepang."
+      },
+      {
+        japanese: "病気をきっかけに、健康的な食生活に変えた。",
+        reading: "びょうきをきっかけに、けんこうてきなしょくせいかつにかえた。",
+        indonesian: "Dipicu oleh sakit, saya mengubah pola makan menjadi lebih sehat."
+      }
+    ]
+  },
+  {
+    id: "g-28",
+    pattern: "〜をはじめ / をはじめとする",
+    meaning: "Mulai dari... (sebagai contoh utama)",
+    connection: "N + をはじめ / をはじめとする + N",
+    examples: [
+      {
+        japanese: "会長をはじめ、社員全員がボランティア活動に参加した。",
+        reading: "かいちょうをはじめ、しゃいんぜんいんがボランティアかつどうにさんかした。",
+        indonesian: "Mulai dari ketua hingga seluruh karyawan berpartisipasi dalam kegiatan sukarela."
+      },
+      {
+        japanese: "京都には金閣寺をはじめとする有名な寺院が多い。",
+        reading: "きょうとにはきんかくじをはじめとするゆうめいなじいんがおおい。",
+        indonesian: "Di Kyoto ada banyak kuil terkenal mulai dari Kinkaku-ji."
+      }
+    ]
+  },
+  {
+    id: "g-29",
+    pattern: "〜にわたって / にわたる",
+    meaning: "Sepanjang / mencakup seluruh (rentang waktu, tempat, atau bidang luas)",
+    connection: "N (jangka waktu/wilayah) + にわたって / にわたる + N",
+    examples: [
+      {
+        japanese: "会議は3日間にわたって熱心に行われた。",
+        reading: "かいぎはみっかかんにわたってねっしんにおこなわれた。",
+        indonesian: "Rapat diadakan dengan penuh antusiasme selama 3 hari berturut-turut."
+      },
+      {
+        japanese: "台風の影響で、広範囲にわたる停電が発生した。",
+        reading: "たいふうのえいきょうで、こうはんいにわたるていでんがはっせいした。",
+        indonesian: "Akibat angin topan, pemadaman listrik terjadi di cakupan wilayah yang luas."
+      }
+    ]
+  },
+  {
+    id: "g-30",
+    pattern: "〜にかけて / にかけては",
+    meaning: "Dari... sampai... (perkiraan rentang waktu atau area)",
+    connection: "N1 + から + N2 + にかけて",
+    examples: [
+      {
+        japanese: "昨夜から今朝にかけて強い雨が降り続いた。",
+        reading: "さくやからけさにかけてつよいあめがふりつづいた。",
+        indonesian: "Hujan deras terus turun dari tadi malam hingga tadi pagi."
+      },
+      {
+        japanese: "関東から東北にかけて桜が見頃を迎えています。",
+        reading: "かんとうからとうほくにかけてさくらがみごろをむかえています。",
+        indonesian: "Bunga sakura sedang mekar indah dari Kanto hingga Tohoku."
+      }
+    ]
+  },
+  {
+    id: "g-31",
+    pattern: "〜につれて / にしたがって",
+    meaning: "Seiring dengan / sejalan dengan (perubahan bertahap)",
+    connection: "V-kamus / N + につれて / にしたがって",
+    examples: [
+      {
+        japanese: "年を取るにつれて、物忘れが多くなってきた。",
+        reading: "としをとるにつれて、ものわすれがおおくなってきた。",
+        indonesian: "Seiring bertambahnya usia, saya menjadi semakin sering lupa."
+      },
+      {
+        japanese: "日本語が上手になるにしたがって、会話が楽しくなった。",
+        reading: "にほんごがじょうずになるにしたがって、かいわがたのしくなった。",
+        indonesian: "Sejalan dengan bahasa Jepang yang makin lancar, mengobrol jadi makin menyenangkan."
+      }
+    ]
+  },
+  {
+    id: "g-32",
+    pattern: "〜にともなって / に伴い",
+    meaning: "Seiring dengan / berbarengan dengan terjadinya",
+    connection: "V-kamus / N + にともなって / に伴い",
+    examples: [
+      {
+        japanese: "人口の減少に伴って、空き家が増加している。",
+        reading: "じんこうのげんしょうにともなって、あきやがぞうかしている。",
+        indonesian: "Seiring dengan penurunan populasi, rumah kosong makin bertambah."
+      },
+      {
+        japanese: "経済の発展に伴い、生活様式も変化してきた。",
+        reading: "けいざいのはってんにともない、せいかつようしきもへんかしてきた。",
+        indonesian: "Berbarengan dengan perkembangan ekonomi, gaya hidup pun ikut berubah."
+      }
+    ]
+  },
+  {
+    id: "g-33",
+    pattern: "〜ばかりか / ばかりでなく",
+    meaning: "Bukan hanya... tapi juga... (bahkan hal lain yang lebih)",
+    connection: "Bentuk biasa (A-na+な / N) + ばかりか",
+    examples: [
+      {
+        japanese: "彼は英語ばかりか、フランス語も流暢に話せる。",
+        reading: "かれはえいごばかりか、フランスごもりゅうちょうにはなせる。",
+        indonesian: "Bukan hanya bahasa Inggris, dia bahkan fasih berbicara bahasa Prancis."
+      },
+      {
+        japanese: "この部屋は狭いばかりでなく、日当たりも悪い。",
+        reading: "このへやはせまいばかりでなく、ひあたりもわるい。",
+        indonesian: "Kamar ini bukan hanya sempit, tapi pencahayaan mataharinya juga buruk."
+      }
+    ]
+  },
+  {
+    id: "g-34",
+    pattern: "〜だけでなく / のみならず",
+    meaning: "Tidak hanya... melainkan juga",
+    connection: "Bentuk biasa (A-na+な / N) + だけでなく",
+    examples: [
+      {
+        japanese: "野菜はビタミンだけでなく、食物繊維も豊富に含まれている。",
+        reading: "やさいはビタミンだけでなく、しょくもつせんいもほうふにふくまれている。",
+        indonesian: "Sayuran tidak hanya mengandung vitamin, melainkan juga kaya akan serat pangan."
+      },
+      {
+        japanese: "日本国内のみならず、海外でも高い評価を受けている。",
+        reading: "にほんこくないのみならず、かいがいでもたかいひょうかをうけている。",
+        indonesian: "Tidak hanya di dalam negeri Jepang, tetapi juga mendapat penilaian tinggi di luar negeri."
+      }
+    ]
+  },
+  {
+    id: "g-35",
+    pattern: "〜はもちろん / はもとより",
+    meaning: "Sudah tentu... apalagi / jangankan...",
+    connection: "N + はもちろん",
+    examples: [
+      {
+        japanese: "平日はもちろん、週末も休まずに働いている。",
+        reading: "へいじつはもちろん、しゅうまつもやすまずにはたらいている。",
+        indonesian: "Hari kerja sudah tentu, akhir pekan pun dia bekerja tanpa libur."
+      },
+      {
+        japanese: "この車はデザインはもちろん、燃費の良さも魅力だ。",
+        reading: "このくるまはデザインはもちろん、ねんぴのよさもりょくだ。",
+        indonesian: "Mobil ini desainnya tentu saja bagus, efisiensi bahan bakarnya juga memikat."
+      }
+    ]
+  },
+  {
+    id: "g-36",
+    pattern: "〜うえに（上に）",
+    meaning: "Ditambah lagi / sudah... malah...",
+    connection: "Bentuk biasa (A-na+な / N+の) + うえに",
+    examples: [
+      {
+        japanese: "この店の料理は美味しい上に、値段もとても安い。",
+        reading: "このみせのりょうりはおいしいうえに、ねだんもとてもやすい。",
+        indonesian: "Masakan di restoran ini enak, ditambah lagi harganya sangat murah."
+      },
+      {
+        japanese: "道に迷った上に、雨まで降ってきた。",
+        reading: "みちにまよったうえに、あめまでふってきた。",
+        indonesian: "Sudah tersesat di jalan, ditambah lagi hujan pun mulai turun."
+      }
+    ]
+  },
+  {
+    id: "g-37",
+    pattern: "〜反面（はんめん）/ その一方で",
+    meaning: "Di sisi lain / sebaliknya (dua sisi yang bertolak belakang)",
+    connection: "Bentuk biasa (A-na+な / N+である) + 反面",
+    examples: [
+      {
+        japanese: "都会の生活は便利な反面、人付き合いが希薄になりがちだ。",
+        reading: "とかいのせいかつはべんりなはんめん、ひとづきあいがきはくになりがちだ。",
+        indonesian: "Hidup di kota itu praktis, namun di sisi lain interaksi sosial cenderung renggang."
+      },
+      {
+        japanese: "薬には病気を治す効果がある反面、副作用の危険もある。",
+        reading: "くすりにはびょうきをなおすこうかがあるはんめん、ふくさようのきけんもある。",
+        indonesian: "Obat manjur menyembuhkan penyakit, namun di sisi lain memiliki risiko efek samping."
+      }
+    ]
+  },
+  {
+    id: "g-38",
+    pattern: "〜に反して / に反する",
+    meaning: "Bertentangan dengan / berlawanan dengan (harapan/aturan)",
+    connection: "N + に反して / に反する + N",
+    examples: [
+      {
+        japanese: "事前の予想に反して、株価は急激に下落した。",
+        reading: "じぜんのよそうにはんして、かぶかはきゅうげきにげらくした。",
+        indonesian: "Bertentangan dengan perkiraan sebelumnya, harga saham merosot tajam."
+      },
+      {
+        japanese: "校則に反する行為をしてはいけません。",
+        reading: "こうそくにはんするこういをしてはいけません。",
+        indonesian: "Tidak boleh melakukan tindakan yang bertentangan dengan peraturan sekolah."
+      }
+    ]
+  },
+  {
+    id: "g-39",
+    pattern: "〜にもかかわらず",
+    meaning: "Meskipun / terlepas dari / walau kenyataannya",
+    connection: "Bentuk biasa (A-na/N tanpa だ, atau である) + にもかかわらず",
+    examples: [
+      {
+        japanese: "悪天候にもかかわらず、多くの観客が集まった。",
+        reading: "あくてんこうにもかかわらず、おおくのかんきゃくがあつまった。",
+        indonesian: "Meskipun cuaca buruk, banyak penonton yang tetap hadir berkumpul."
+      },
+      {
+        japanese: "一生懸命勉強したにもかかわらず、不合格だった。",
+        reading: "いっしょうけんめいべんきょうしたにもかかわらず、ふごうかくだった。",
+        indonesian: "Meskipun sudah belajar sungguh-sungguh, saya tetap tidak lulus."
+      }
+    ]
+  },
+  {
+    id: "g-40",
+    pattern: "〜くせに",
+    meaning: "Padahal / mentang-mentang (nada kesal / mencela)",
+    connection: "Bentuk biasa (A-na+な / N+の) + くせに",
+    examples: [
+      {
+        japanese: "自分は何もしないくせに、文句ばかり言う。",
+        reading: "じぶんはなにもしないくせに、もんくばかりいう。",
+        indonesian: "Padahal dirinya sendiri tidak melakukan apa-apa, tapi mengeluh melulu."
+      },
+      {
+        japanese: "知っているくせに、知らないふりをしている。",
+        reading: "しっているくせに、しらないふりをしている。",
+        indonesian: "Padahal tahu, tapi pura-pura tidak tahu."
+      }
+    ]
+  },
+  {
+    id: "g-41",
+    pattern: "〜わりに（は）",
+    meaning: "Untuk ukuran... lumayan / dibandingkan dengan standarnya",
+    connection: "Bentuk biasa (A-na+な / N+の) + わりに（は）",
+    examples: [
+      {
+        japanese: "このレストランは値段のわりには、料理がとても美味しい。",
+        reading: "このレストランはねだんのわりには、りょうりがとてもおいしい。",
+        indonesian: "Untuk ukuran harganya, makanan di restoran ini lumayan sangat lezat."
+      },
+      {
+        japanese: "彼はあまり勉強しなかったわりには、いい点数を取った。",
+        reading: "かれはあまりべんきょうしなかったわりには、いいてんすうをとった。",
+        indonesian: "Untuk ukuran anak yang jarang belajar, dia mendapat nilai yang cukup bagus."
+      }
+    ]
+  },
+  {
+    id: "g-42",
+    pattern: "〜にしては",
+    meaning: "Untuk ukuran... (fakta nyata tidak seperti anggapan umum)",
+    connection: "Bentuk biasa (A-na / N tanpa だ) + にしては",
+    examples: [
+      {
+        japanese: "彼は日本に住んでまだ1か月にしては、日本語がとても上手だ。",
+        reading: "かれはにほんにすんでまだいっかげつにしては、にほんごがとてもじょうずだ。",
+        indonesian: "Untuk ukuran orang yang baru tinggal sebulan di Jepang, bahasa Jepangnya sangat mahir."
+      },
+      {
+        japanese: "冬にしては、今日は暖かくて過ごしやすい。",
+        reading: "ふゆにしては、きょうはあたたかくてすごしやすい。",
+        indonesian: "Untuk ukuran musim dingin, hari ini hangat dan nyaman."
+      }
+    ]
+  },
+  {
+    id: "g-43",
+    pattern: "たとえ〜ても",
+    meaning: "Meskipun / seandainya... pun",
+    connection: "たとえ + V-te / A-kute / A-na+でも / N+でも",
+    examples: [
+      {
+        japanese: "たとえ失敗しても、諦めずに挑戦し続ける。",
+        reading: "たとえしっぱいしても、あきらめずにちょうせんしつづける。",
+        indonesian: "Meskipun gagal, saya akan terus mencoba tanpa menyerah."
+      },
+      {
+        japanese: "たとえ両親に反対されても、留学する意志は変わらない。",
+        reading: "たとえりょうしんにはんたいされても、りゅうがくするいしはかわらない。",
+        indonesian: "Seandainya ditentang oleh orang tua pun, tekad saya untuk kuliah di luar negeri tidak akan goyah."
+      }
+    ]
+  },
+  {
+    id: "g-44",
+    pattern: "〜さえ〜ば",
+    meaning: "Asalkan... saja (syarat tunggal yang cukup)",
+    connection: "N + さえ + V-ba / A-kereba / A-na+なら",
+    examples: [
+      {
+        japanese: "体さえ健康なら、どんな困難も乗り越えられる。",
+        reading: "からださえけんこうなら、どんなこんなんものりこえられる。",
+        indonesian: "Asalkan tubuh sehat, kesulitan apa pun bisa dihadapi."
+      },
+      {
+        japanese: "薬を飲みさえすれば、熱はすぐに下がりますよ。",
+        reading: "くすりをのみさえすれば、ねつはすぐにさがりますよ。",
+        indonesian: "Asalkan minum obat, demam Anda akan segera turun kok."
+      }
+    ]
+  },
+  {
+    id: "g-45",
+    pattern: "〜さえ",
+    meaning: "Bahkan... pun (menunjukkan contoh ekstrem)",
+    connection: "N (+ partikel) + さえ",
+    examples: [
+      {
+        japanese: "忙しすぎて、昼ご飯を食べる時間さえなかった。",
+        reading: "いそがしすぎて、ひるごはんをたべるじかんさえなかった。",
+        indonesian: "Saking sibuknya, waktu untuk makan siang pun bahkan tidak ada."
+      },
+      {
+        japanese: "簡単な漢字さえ読めないなんて恥ずかしい。",
+        reading: "かんたんなかんじさえよめないなんてはずかしい。",
+        indonesian: "Bahkan kanji sederhana pun tidak bisa baca, sungguh memalukan."
+      }
+    ]
+  },
+  {
+    id: "g-46",
+    pattern: "〜こそ",
+    meaning: "Justru / benarlah (penekanan tegas)",
+    connection: "N / Bentuk biasa + からこそ",
+    examples: [
+      {
+        japanese: "今年こそ、JLPT N3に絶対に合格してみせる。",
+        reading: "ことしこそ、JLPT N3にぜったいにごうかくしてみせる。",
+        indonesian: "Tahun inilah saatnya, saya pasti akan buktikan bisa lulus JLPT N3."
+      },
+      {
+        japanese: "大変な時期だからこそ、助け合うことが大切だ。",
+        reading: "たいへんなじきだからこそ、たすけあうことがたいせつだ。",
+        indonesian: "Justru karena masa-masa sulit, saling tolong-menolong itu sangat krusial."
+      }
+    ]
+  },
+  {
+    id: "g-47",
+    pattern: "〜なんか / なんて / など",
+    meaning: "Hal seperti... / yang namanya... (meremehkan atau merendah)",
+    connection: "N / V-kamus + なんて / なんか",
+    examples: [
+      {
+        japanese: "私なんかに、そんな大役は務まりません。",
+        reading: "わたしなんかに、そんなたいやくはつとまりません。",
+        indonesian: "Orang seperti saya mana mungkin sanggup memikul tugas sebesar itu."
+      },
+      {
+        japanese: "お化けなんて本当にいるわけがない。",
+        reading: "おばけなんてほんとうにいるわけがない。",
+        indonesian: "Yang namanya hantu itu mustahil benar-benar ada."
+      }
+    ]
+  },
+  {
+    id: "g-48",
+    pattern: "〜くらい / ぐらい / ほど",
+    meaning: "Sampai-sampai / kira-kira / sedemikian rupa",
+    connection: "Bentuk biasa + くらい / ほど",
+    examples: [
+      {
+        japanese: "涙が出るくらい、映画を見て感動した。",
+        reading: "なみだがでるくらい、えいがをみてかんどうした。",
+        indonesian: "Saya begitu terharu menonton film itu sampai-sampai meneteskan air mata."
+      },
+      {
+        japanese: "息ができないほど苦しかった。",
+        reading: "いきができないほどくるしかった。",
+        indonesian: "Rasanya begitu menyiksa hingga sampai tidak bisa bernapas."
+      }
+    ]
+  },
+  {
+    id: "g-49",
+    pattern: "〜ほど〜ない",
+    meaning: "Tidak ada yang se-... (menyatakan yang paling/ekstrem)",
+    connection: "N + ほど〜ない",
+    examples: [
+      {
+        japanese: "健康ほど大切なものはない。",
+        reading: "けんこうほどたいせつなものはない。",
+        indonesian: "Tidak ada hal yang lebih berharga daripada kesehatan."
+      },
+      {
+        japanese: "彼ほど熱心に練習する選手は他にいない。",
+        reading: "かれほどねっしんにれんしゅうするせんしゅはほかにいない。",
+        indonesian: "Tidak ada atlet lain yang berlatih segiat dirinya."
+      }
+    ]
+  },
+  {
+    id: "g-50",
+    pattern: "〜ば〜ほど",
+    meaning: "Semakin... maka semakin...",
+    connection: "V-ba + V-kamus + ほど / A-kereba + A-i + ほど",
+    examples: [
+      {
+        japanese: "日本語は勉強すればするほど、面白くなってくる。",
+        reading: "にほんごはべんきょうすればするほど、おもしろくなってくる。",
+        indonesian: "Bahasa Jepang itu semakin dipelajari, semakin terasa menarik."
+      },
+      {
+        japanese: "荷物は少なければ少ないほど移動が楽だ。",
+        reading: "にもつはすくなければすくないほどいどうがらくだ。",
+        indonesian: "Semakin sedikit barang bawaan, semakin mudah bepergian."
+      }
+    ]
+  },
+  {
+    id: "g-51",
+    pattern: "〜くらいなら",
+    meaning: "Daripada harus... (lebih baik...)",
+    connection: "V-kamus + くらいなら",
+    examples: [
+      {
+        japanese: "あんな人に頭を下げるくらいなら、会社を辞めたほうがましだ。",
+        reading: "あんなひとにあたまをさげるくらいなら、かいしゃをやめたほうがましだ。",
+        indonesian: "Daripada harus menunduk meminta maaf pada orang seperti itu, lebih baik saya berhenti kerja."
+      },
+      {
+        japanese: "冷たいご飯を食べるくらいなら、何も食べない方がいい。",
+        reading: "つめたいごはんをたべるくらいなら、なにもたべないほうがいい。",
+        indonesian: "Daripada makan nasi dingin, mending tidak usah makan apa-apa."
+      }
+    ]
+  },
+  {
+    id: "g-52",
+    pattern: "〜に限る",
+    meaning: "Paling baik... / tidak ada yang menandingi...",
+    connection: "V-kamus / V-nai / N + に限る",
+    examples: [
+      {
+        japanese: "暑い夏の日には、冷たい麦茶を飲むに限る。",
+        reading: "あついなつのひには、つめたいむぎちゃをのむにかぎる。",
+        indonesian: "Di hari musim panas yang terik, minum teh gandum dingin adalah yang paling nikmat."
+      },
+      {
+        japanese: "風邪をひいたときは、暖かくして寝るに限る。",
+        reading: "かぜをひいたときは、あたたかくしてねるにかぎる。",
+        indonesian: "Saat masuk angin, beristirahat dalam selimut hangat adalah yang terbaik."
+      }
+    ]
+  },
+  {
+    id: "g-53",
+    pattern: "〜に限って / 〜に限らず",
+    meaning: "Khusus saat... justru... / Tidak hanya terbatas pada...",
+    connection: "N + に限って / に限らず",
+    examples: [
+      {
+        japanese: "傘を持っていない日に限って、雨が降る。",
+        reading: "かさをもっていないひにかぎって、あめがふる。",
+        indonesian: "Khusus saat tidak bawa payung, justru hari itu malah hujan."
+      },
+      {
+        japanese: "最近は若者に限らず、高齢者もスマートフォンを使いこなしている。",
+        reading: "さいきんはわかものにかぎらず、こうれいしゃもスマートフォンをつかいこなしている。",
+        indonesian: "Akhir-akhir ini tak hanya anak muda, lansia pun mahir memakai smartphone."
+      }
+    ]
+  },
+  {
+    id: "g-54",
+    pattern: "〜きり / きりだ",
+    meaning: "Hanya... saja / sejak... tidak pernah lagi",
+    connection: "N / V-ta + きり",
+    examples: [
+      {
+        japanese: "二人きりで静かに話がしたい。",
+        reading: "ふたりきりでしずかにはなしがしたい。",
+        indonesian: "Saya ingin bicara tenang berdua saja."
+      },
+      {
+        japanese: "彼とは去年会ったきり、一度も連絡を取っていない。",
+        reading: "かれとはきょねんあったきり、いちどもれんらくをとっていない。",
+        indonesian: "Sejak bertemu dengannya tahun lalu, saya tidak pernah berkontak lagi sekalipun."
+      }
+    ]
+  },
+  {
+    id: "g-55",
+    pattern: "〜っぱなし",
+    meaning: "Dibiarkan begitu saja terus-menerus (konotasi kelalaian)",
+    connection: "V-masu (batang) + っぱなし",
+    examples: [
+      {
+        japanese: "テレビをつけっぱなしで寝てしまった。",
+        reading: "テレビをつけっぱなしでねてしまった。",
+        indonesian: "Saya tertidur dengan TV dibiarkan menyala begitu saja."
+      },
+      {
+        japanese: "満員電車で2時間も立ちっぱなしで疲れた。",
+        reading: "まんいんでんしゃでにじかんもたちっぱなしでつかれた。",
+        indonesian: "Saya lelah karena berdiri terus-menerus selama 2 jam di kereta yang padat."
+      }
+    ]
+  },
+  {
+    id: "g-56",
+    pattern: "〜だらけ",
+    meaning: "Penuh dengan... (bertaburan hal buruk/kotor)",
+    connection: "N + だらけ",
+    examples: [
+      {
+        japanese: "泥だらけになってサッカーボールを追いかけた。",
+        reading: "どろだらけになってサッカーボールをおいかけた。",
+        indonesian: "Tubuh menjadi penuh lumpur saat mengejar bola sepak."
+      },
+      {
+        japanese: "彼の作文は間違いだらけで、直すのが大変だった。",
+        reading: "かれのさくぶんはまちがいだらけで、なおすのがたいへんだった。",
+        indonesian: "Karangannya penuh dengan kesalahan, sulit sekali memperbaikinya."
+      }
+    ]
+  },
+  {
+    id: "g-57",
+    pattern: "〜気味（ぎみ）",
+    meaning: "Sedikit merasa / agak ada tanda-tanda...",
+    connection: "V-masu (batang) / N + 気味",
+    examples: [
+      {
+        japanese: "風邪気味なので、今夜は早めに寝ます。",
+        reading: "かぜぎみなので、こんやははやめにねます。",
+        indonesian: "Karena agak merasa meriang/gejala flu, malam ini saya akan tidur lebih awal."
+      },
+      {
+        japanese: "最近寝不足気味で、集中力が落ちている。",
+        reading: "さいきんねぶそくぎみで、しゅうちゅうりょくがおちている。",
+        indonesian: "Belakangan agak kurang tidur, konsentrasi jadi menurun."
+      }
+    ]
+  },
+  {
+    id: "g-58",
+    pattern: "〜っぽい",
+    meaning: "Cenderung bersikap / terkesan seperti...",
+    connection: "V-masu (batang) / N / A-i tanpa い + っぽい",
+    examples: [
+      {
+        japanese: "彼は大人なのに、言動が子供っぽい。",
+        reading: "かれはおとななのに、げんどうがこどもっぽい。",
+        indonesian: "Padahal dia sudah dewasa, tapi tingkah lakunya kekanak-kanakan."
+      },
+      {
+        japanese: "最近、歳のせいですぐ怒りっぽくなった。",
+        reading: "さいきん、としのせいですぐおこりっぽくなった。",
+        indonesian: "Belakangan ini karena faktor usia, saya jadi gampang marah."
+      }
+    ]
+  },
+  {
+    id: "g-59",
+    pattern: "〜がち",
+    meaning: "Sering kali / cenderung (kebiasaan yang kurang baik)",
+    connection: "V-masu (batang) / N + がち",
+    examples: [
+      {
+        japanese: "一人暮らしを始めると、野菜が不足しがちになる。",
+        reading: "ひとりぐらしをはじめると、やさいがふそくしがちになる。",
+        indonesian: "Saat mulai tinggal sendiri, asupan sayur cenderung sering kurang."
+      },
+      {
+        japanese: "冬は寒さで家に閉じこもりがちだ。",
+        reading: "ふゆはさむさでいえにとじこもりがちだ。",
+        indonesian: "Saat musim dingin, orang cenderung sering berdiam diri di dalam rumah."
+      }
+    ]
+  },
+  {
+    id: "g-60",
+    pattern: "〜向き / 〜向け",
+    meaning: "Cocok untuk (muki) / Ditujukan khusus untuk (muke)",
+    connection: "N + 向き / 向け",
+    examples: [
+      {
+        japanese: "この料理は辛くないので、子供向きです。",
+        reading: "このりょうりはからくないので、こどもむきです。",
+        indonesian: "Masakan ini tidak pedas, jadi cocok untuk anak-anak."
+      },
+      {
+        japanese: "これは外国人留学生向けに書かれた案内書です。",
+        reading: "これはがいこくじんりゅうがくせいむけにかかれたあんないしょです。",
+        indonesian: "Ini adalah buku panduan yang khusus ditujukan bagi mahasiswa asing."
+      }
+    ]
+  },
+  {
+    id: "g-61",
+    pattern: "〜かける / 〜かけの",
+    meaning: "Baru setengah jalan / sedang dalam proses belum selesai",
+    connection: "V-masu (batang) + かける / かけの + N",
+    examples: [
+      {
+        japanese: "机の上に読みかけの本が置いてある。",
+        reading: "つくえのうえによみかけのほんがおいてある。",
+        indonesian: "Di atas meja tergeletak buku yang baru dibaca setengah jalan."
+      },
+      {
+        japanese: "何か言いかけて、口をつぐんだ。",
+        reading: "なにかいいかけて、くちをつぐんだ。",
+        indonesian: "Dia hendak mengatakan sesuatu, tapi kemudian menutup mulutnya."
+      }
+    ]
+  },
+  {
+    id: "g-62",
+    pattern: "〜きる / 〜きれる / 〜きれない",
+    meaning: "Selesai tuntas / sanggup menghabiskan / tak kuasa menghabiskan",
+    connection: "V-masu (batang) + きる",
+    examples: [
+      {
+        japanese: "長いマラソンコースを最後まで走りきった。",
+        reading: "ながいマラソンコースをさいごまではしりきった。",
+        indonesian: "Saya berhasil berlari menuntaskan rute maraton yang panjang hingga garis akhir."
+      },
+      {
+        japanese: "料理の量が多すぎて、とても食べきれません。",
+        reading: "りょうりのりょうがおおすぎて、とてもたべきれません。",
+        indonesian: "Porsi makanannya terlalu banyak, sungguh saya tidak sanggup menghabiskannya."
+      }
+    ]
+  },
+  {
+    id: "g-63",
+    pattern: "〜抜く（ぬく）",
+    meaning: "Melakukan sampai tuntas dengan gigih melalui rintangan",
+    connection: "V-masu (batang) + 抜く",
+    examples: [
+      {
+        japanese: "どんなに苦しくても、最後までやり抜く決意だ。",
+        reading: "どんなにくるしくても、さいごまでやりぬくけついだ。",
+        indonesian: "Sebesar apa pun penderitaannya, saya bertekad menyelesaikannya sampai tuntas."
+      },
+      {
+        japanese: "一晩中悩み抜いた末に、転職を決めた。",
+        reading: "ひとばんじゅうなやみぬいたすえに、てんしょくをきめた。",
+        indonesian: "Setelah semalaman memikirkannya dalam-dalam, saya memutuskan pindah kerja."
+      }
+    ]
+  },
+  {
+    id: "g-64",
+    pattern: "〜かねる",
+    meaning: "Sulit / tidak bisa (penolakan halus formal)",
+    connection: "V-masu (batang) + かねる",
+    examples: [
+      {
+        japanese: "お客様のご要望には応じかねます。",
+        reading: "おきゃくさまのごようぼうにはおうじかねます。",
+        indonesian: "Mohon maaf, kami tidak dapat memenuhi permintaan Anda."
+      },
+      {
+        japanese: "プライベートな質問にはお答えしかねます。",
+        reading: "プライベートなしつもんにはおこたえしかねます。",
+        indonesian: "Kami tidak dapat menjawab pertanyaan yang bersifat pribadi."
+      }
+    ]
+  },
+  {
+    id: "g-65",
+    pattern: "〜かねない",
+    meaning: "Bisa saja terjadi (potensi bahaya/hasil buruk)",
+    connection: "V-masu (batang) + かねない",
+    examples: [
+      {
+        japanese: "そんな乱暴な運転をすると、大事故を起こしかねない。",
+        reading: "そんならんぼうなうんてんをすると、だいじこをおこしかねない。",
+        indonesian: "Jika menyetir ugal-ugalan seperti itu, bisa saja menyebabkan kecelakaan fatal."
+      },
+      {
+        japanese: "秘密を漏らすと、信頼を失いかねない。",
+        reading: "ひみつをもらすと、しんらいをうしないかねない。",
+        indonesian: "Jika membocorkan rahasia, Anda bisa saja kehilangan kepercayaan."
+      }
+    ]
+  },
+  {
+    id: "g-66",
+    pattern: "〜恐れがある（おそれがある）",
+    meaning: "Dikhawatirkan / ada risiko terjadinya bahaya",
+    connection: "V-kamus / N+の + 恐れがある",
+    examples: [
+      {
+        japanese: "大雨により、土砂崩れが発生する恐れがあります。",
+        reading: "おおあめにより、どしゃくずれがはっせいするおそれがあります。",
+        indonesian: "Akibat hujan lebat, dikhawatirkan dapat terjadi tanah longsor."
+      },
+      {
+        japanese: "この病気は感染が急速に広がる恐れがある。",
+        reading: "このびょうきはかんせんがきゅうそくにひろがるおそれがある。",
+        indonesian: "Penyakit ini dikhawatirkan dapat menular dan menyebar dengan cepat."
+      }
+    ]
+  },
+  {
+    id: "g-67",
+    pattern: "〜っこない",
+    meaning: "Mustahil / mana mungkin bisa (percakapan kasual)",
+    connection: "V-masu (batang) + っこない",
+    examples: [
+      {
+        japanese: "一日でこの厚い本を全部読めっこないよ。",
+        reading: "いちにちでこのあついほんをぜんぶよめっこないよ。",
+        indonesian: "Mana mungkin bisa membaca tuntas buku setebal ini dalam satu hari."
+      },
+      {
+        japanese: "彼にそんな秘密を話したら、黙っていられっこない。",
+        reading: "かれにそんなひみつをはなしたら、だまっていられっこない。",
+        indonesian: "Kalau cerita rahasia begitu padanya, mustahil dia bisa tutup mulut."
+      }
+    ]
+  },
+  {
+    id: "g-68",
+    pattern: "〜ざるを得ない",
+    meaning: "Terpaksa harus melakukan (tak ada pilihan lain)",
+    connection: "V-nai (tanpa ない) + ざるを得ない (する -> せざるを得ない)",
+    examples: [
+      {
+        japanese: "証拠が揃っているので、罪を認めざるを得ない。",
+        reading: "しょうこがそろっているので、つみをみとめざるをえない。",
+        indonesian: "Karena semua bukti sudah terkumpul, terpaksa harus mengakui kesalahan."
+      },
+      {
+        japanese: "台風が近づいているため、旅行を中止せざるを得なかった。",
+        reading: "たいふうがちかづいているため、りょこうをちゅうしせざるをえなかった。",
+        indonesian: "Karena topan mendekat, perjalanan terpaksa harus dibatalkan."
+      }
+    ]
+  },
+  {
+    id: "g-69",
+    pattern: "〜ずにはいられない / ないではいられない",
+    meaning: "Tidak tahan untuk tidak... / spontan melakukan",
+    connection: "V-nai (tanpa ない) + ずにはいられない (する -> せずにはいられない)",
+    examples: [
+      {
+        japanese: "彼の面白い冗談を聞いて、笑わずにはいられなかった。",
+        reading: "かれのおもしろいじょうだんをきいて、わらわずにはいられなかった。",
+        indonesian: "Mendengar leluconnya yang lucu, saya tak tahan untuk tidak tertawa."
+      },
+      {
+        japanese: "困っている人を見ると、助けずにはいられない性格だ。",
+        reading: "こまっているひとをみると、たすけずにはいられないせいかくだ。",
+        indonesian: "Begitu melihat orang kesusahan, sifatnya membuatnya tak tahan untuk membantu."
+      }
+    ]
+  },
+  {
+    id: "g-70",
+    pattern: "〜てたまらない / てしょうがない",
+    meaning: "Sangat / tak tertahankan (perasaan/keinginan kuat)",
+    connection: "V-te / A-kute / A-na+で + たまらない",
+    examples: [
+      {
+        japanese: "家族に会いたくてたまらない。",
+        reading: "かぞくにあいたくてたまらない。",
+        indonesian: "Saya sangat rindu keluarga sampai rasanya tak tertahankan."
+      },
+      {
+        japanese: "試験の結果が心配でたまらない。",
+        reading: "しけんのけっかがしんぱいでたまらない。",
+        indonesian: "Saya sangat cemas tak terkira memikirkan hasil ujian."
+      }
+    ]
+  },
+  {
+    id: "g-71",
+    pattern: "〜てならない",
+    meaning: "Terasa sangat... / tak bisa dihindari perasaannya",
+    connection: "V-te / A-kute / A-na+で + ならない (kata perasaan/emosi)",
+    examples: [
+      {
+        japanese: "友人の手術が無事に成功するか、気になってならない。",
+        reading: "ゆうじんのしゅじゅつがぶじにせいこうするか、きになってならない。",
+        indonesian: "Saya sungguh sangat kepikiran apakah operasi teman saya akan sukses."
+      },
+      {
+        japanese: "昔の思い出が懐かしくてならない。",
+        reading: "むかしのおもいでがなつかしくてならない。",
+        indonesian: "Kenangan masa lalu terasa begitu sangat dirindukan."
+      }
+    ]
+  },
+  {
+    id: "g-72",
+    pattern: "〜べきだ / べきではない",
+    meaning: "Seharusnya / sewajarnya tidak boleh",
+    connection: "V-kamus + べきだ (する -> すべき / するべき)",
+    examples: [
+      {
+        japanese: "約束した時間は厳守するべきだ。",
+        reading: "やくそくしたじかんはげんしゅするべきだ。",
+        indonesian: "Waktu yang telah dijanjikan seharusnya dipatuhi dengan ketat."
+      },
+      {
+        japanese: "他人の悪口を言うべきではない。",
+        reading: "たにんのわるくちをいうべきではない。",
+        indonesian: "Sewajarnya Anda tidak boleh membicarakan keburukan orang lain."
+      }
+    ]
+  },
+  {
+    id: "g-73",
+    pattern: "〜ことだ",
+    meaning: "Sebaiknya / hendaknya (saran langsung)",
+    connection: "V-kamus / V-nai + ことだ",
+    examples: [
+      {
+        japanese: "日本語を上達させたいなら、毎日少しでも話すことだ。",
+        reading: "にほんごをじょうたつさせたいなら、まいにちすこしでもはなすことだ。",
+        indonesian: "Jika ingin memperlancar bahasa Jepang, hendaknya berbicara setiap hari meski sedikit."
+      },
+      {
+        japanese: "無理をしないで、今日はゆっくり休むことだ。",
+        reading: "むりをしないで、きょうはゆっくりやすむことだ。",
+        indonesian: "Jangan memaksakan diri, sebaiknya hari ini Anda istirahat total."
+      }
+    ]
+  },
+  {
+    id: "g-74",
+    pattern: "〜ものだ / ものではない",
+    meaning: "Sudah semestinya / wajarnya / betapa... (ungkapan hakikat alamiah)",
+    connection: "V-kamus / A-i / A-na+な + ものだ",
+    examples: [
+      {
+        japanese: "人の悪口を言うものではありません。",
+        reading: "ひとのわるくちをいうものではありません。",
+        indonesian: "Sudah semestinya kita tidak menjelek-jelekkan orang lain."
+      },
+      {
+        japanese: "月日が経つのは本当に早いものだ。",
+        reading: "つきひがたつのはほんとうにはやいものだ。",
+        indonesian: "Betapa cepatnya waktu berlalu."
+      }
+    ]
+  },
+  {
+    id: "g-75",
+    pattern: "〜たものだ",
+    meaning: "Dulu sering kali (mengenang kebiasaan masa lampau)",
+    connection: "V-ta + ものだ",
+    examples: [
+      {
+        japanese: "子供のころ、よくこの川で泳いだものだ。",
+        reading: "こどものころ、よくこのかわでおよいだものだ。",
+        indonesian: "Waktu kecil dulu, saya sering sekali berenang di sungai ini."
+      },
+      {
+        japanese: "学生時代は毎晩のように友達と朝まで語り合ったものだ。",
+        reading: "がくせいじだいはまいばんのようにともだちとあさまでかたりあったものだ。",
+        indonesian: "Zaman kuliah dulu, saya sering mengobrol bersama teman sampai subuh hampir tiap malam."
+      }
+    ]
+  },
+  {
+    id: "g-76",
+    pattern: "〜ものだから / もので",
+    meaning: "Karena alasan... (alasan personal / membela diri)",
+    connection: "Bentuk biasa (A-na+な / N+な) + ものだから",
+    examples: [
+      {
+        japanese: "事故で電車が遅れたものですから、遅刻してしまいました。",
+        reading: "じこででんしゃがおくれたものですから、ちこくしてしまいました。",
+        indonesian: "Karena kereta terlambat akibat kecelakaan, saya jadi terlambat datang."
+      },
+      {
+        japanese: "あまりに美味しそうだったものだから、つい買ってしまった。",
+        reading: "あまりにおいしそうだったものだから、ついかってしまった。",
+        indonesian: "Karena kelihatannya sangat lezat, saya tak sengaja langsung membelinya."
+      }
+    ]
+  },
+  {
+    id: "g-77",
+    pattern: "〜うちに / ないうちに",
+    meaning: "Selagi / mumpung / sebelum keburu berubah",
+    connection: "V-kamus / V-teiru / V-nai / A-i / A-na+な / N+の + うちに",
+    examples: [
+      {
+        japanese: "スープが温かいうちに召し上がってください。",
+        reading: "スープがあたたかいうちにめしあがってください。",
+        indonesian: "Silakan dinikmati selagi supnya masih hangat."
+      },
+      {
+        japanese: "暗くならないうちに、山を下りましょう。",
+        reading: "くらくならないうちに、やまをおりましょう。",
+        indonesian: "Mari kita turun gunung sebelum keburu gelap."
+      }
+    ]
+  },
+  {
+    id: "g-78",
+    pattern: "〜あいだ / あいだに（間 / 間に）",
+    meaning: "Selama (berkelanjutan) / Selagi sempat (terjadi suatu aksi di tengah waktu)",
+    connection: "V-kamus / V-teiru / N+の + 間（に）",
+    examples: [
+      {
+        japanese: "夏休みの間、ずっと祖父母の家に滞在していた。",
+        reading: "なつやすみのあいだ、ずっとそふぼのいえにたいざいしていた。",
+        indonesian: "Selama liburan musim panas, saya tinggal terus di rumah kakek nenek."
+      },
+      {
+        japanese: "留守の間に、荷物が届いていた。",
+        reading: "るすのあいだに、にもつがとどいていた。",
+        indonesian: "Saat saya sedang tidak di rumah, ada paket yang tiba."
+      }
+    ]
+  },
+  {
+    id: "g-79",
+    pattern: "〜最中に（さいちゅうに）",
+    meaning: "Tepat di tengah-tengah sedang melakukan...",
+    connection: "V-teiru / N+の + 最中に",
+    examples: [
+      {
+        japanese: "食事の最中に電話が鳴った。",
+        reading: "しょくじのさいちゅうにでんわがなった。",
+        indonesian: "Tepat di tengah-tengah makan, telepon berdering."
+      },
+      {
+        japanese: "会議を行っている最中に地震が発生した。",
+        reading: "かいぎをおこなっているさいちゅうにじしんがはっせいした。",
+        indonesian: "Tepat saat sedang mengadakan rapat penting, gempa bumi terjadi."
+      }
+    ]
+  },
+  {
+    id: "g-80",
+    pattern: "〜たとたん（に）",
+    meaning: "Begitu... seketika itu juga...",
+    connection: "V-ta + とたん（に）",
+    examples: [
+      {
+        japanese: "窓を開けたとたん、冷たい風が吹き込んできた。",
+        reading: "まどをあけたとたん、つめたいかぜがふきこんできた。",
+        indonesian: "Begitu membuka jendela, seketika hembusan angin dingin masuk bertiup."
+      },
+      {
+        japanese: "疲れていたので、ベッドに横になったとたんに眠ってしまった。",
+        reading: "つかれていたので、ベッドによこになったとたんにねむってしまった。",
+        indonesian: "Karena lelah, begitu berbaring di tempat tidur seketika saya langsung terlelap."
+      }
+    ]
+  },
+  {
+    id: "g-81",
+    pattern: "〜たびに",
+    meaning: "Setiap kali... (selalu terjadi hal yang sama)",
+    connection: "V-kamus / N+の + たびに",
+    examples: [
+      {
+        japanese: "この曲を聴くたびに、学生時代の青春を思い出す。",
+        reading: "このきょくをきくたびに、がくせいじだいのせいしゅんをおもいだす。",
+        indonesian: "Setiap kali mendengarkan lagu ini, saya selalu teringat masa muda zaman sekolah."
+      },
+      {
+        japanese: "出張のたびに、家族にその土地のお土産を買って帰る。",
+        reading: "しゅっちょうのたびに、かぞくにそのとちのおみやげをかってかえる。",
+        indonesian: "Setiap kali dinas luar kota, saya selalu membelikan oleh-oleh khas daerah itu untuk keluarga."
+      }
+    ]
+  },
+  {
+    id: "g-82",
+    pattern: "〜ついでに",
+    meaning: "Sekalian / mumpung sedang...",
+    connection: "V-kamus / V-ta / N+の + ついでに",
+    examples: [
+      {
+        japanese: "コンビニへ行くついでに、ゴミを出してきてくれる？",
+        reading: "コンビニへいくついでに、ゴミをだしてきてくれる？",
+        indonesian: "Sekalian mau ke minimarket, bisakah tolong buang sampah sekalian?"
+      },
+      {
+        japanese: "図書館へ本を返しに行ったついでに、新しい雑誌を借りた。",
+        reading: "としょかんへほんをかえしにいったついでに、あたらしいざっしをかりた。",
+        indonesian: "Mumpung pergi mengembalikan buku ke perpustakaan, sekalian saya meminjam majalah baru."
+      }
+    ]
+  },
+  {
+    id: "g-83",
+    pattern: "〜に際して / にあたって",
+    meaning: "Menjelang / saat hendak mengawali momen penting",
+    connection: "V-kamus / N + に際して",
+    examples: [
+      {
+        japanese: "新事業の開始に際して、スタッフ一同で目標を確認した。",
+        reading: "しんじぎょうのかいしにさいして、スタッフいちどうでもくひょうをかくにんした。",
+        indonesian: "Menjelang dimulainya proyek baru, seluruh staf bersama-sama menegaskan kembali target."
+      },
+      {
+        japanese: "海外赴任にあたって、健康診断を受けた。",
+        reading: "かいがいふにんにあたって、けんこうしんだんをうけた。",
+        indonesian: "Menjelang penugasan ke luar negeri, saya menjalani pemeriksaan kesehatan."
+      }
+    ]
+  },
+  {
+    id: "g-84",
+    pattern: "〜おそれがある",
+    meaning: "Ada kemungkinan buruk / dikhawatirkan terjadi",
+    connection: "V-kamus / N+の + おそれがある",
+    examples: [
+      {
+        japanese: "火山の噴火による被害が広がるおそれがある。",
+        reading: "かざんのふんかによるひがいがひろがるおそれがある。",
+        indonesian: "Dikhawatirkan dampak kerusakan akibat letusan gunung berapi akan meluas."
+      },
+      {
+        japanese: "このまま放置すると、事態が悪化するおそれがある。",
+        reading: "このままほうちすると、じたいがあっかするおそれがある。",
+        indonesian: "Bila dibiarkan begini terus, dikhawatirkan situasinya akan semakin memburuk."
+      }
+    ]
+  },
+  {
+    id: "g-85",
+    pattern: "〜に相違ない（にそういない）",
+    meaning: "Pasti tidak salah lagi (formal/tertulis)",
+    connection: "Bentuk biasa (A-na / N tanpa だ) + に相違ない",
+    examples: [
+      {
+        japanese: "目撃者の証言から、この男が犯人に相違ない。",
+        reading: "もくげきしゃのしょうげんから、このおとこがはんにんにそういない。",
+        indonesian: "Dari kesaksian para saksi mata, pria ini pasti pelakunya tak salah lagi."
+      },
+      {
+        japanese: "今回の成功は全員の努力の結果に相違ない。",
+        reading: "こんかいのせいこうはぜんいんのどりょくのけっかにそういない。",
+        indonesian: "Kesuksesan kali ini tidak diragukan lagi adalah buah perjuangan bersama."
+      }
+    ]
+  },
+  {
+    id: "g-86",
+    pattern: "〜にほかならない",
+    meaning: "Tidak lain dan tidak bukan adalah...",
+    connection: "N + にほかならない",
+    examples: [
+      {
+        japanese: "今回の合格は、日頃の努力の結晶にほかならない。",
+        reading: "こんかいのごうかくは、ひごろのどりょくのけっしょうにほかならない。",
+        indonesian: "Kelulusan kali ini tak lain dan tak bukan adalah kristalisasi dari kerja keras sehari-hari."
+      },
+      {
+        japanese: "私が注意したのは、あなたの将来を心配したからにほかならない。",
+        reading: "わたしがちゅういしたのは、あなたのしょうらいをしんぱいしたからにほかならない。",
+        indonesian: "Saya menegur Anda tak lain hanyalah karena saya mencemaskan masa depan Anda."
+      }
+    ]
+  },
+  {
+    id: "g-87",
+    pattern: "〜ばかりだ",
+    meaning: "Terus-menerus memburuk / tinggal menunggu... saja",
+    connection: "V-kamus + ばかりだ",
+    examples: [
+      {
+        japanese: "景気は悪化するばかりで、回復の兆しが見えない。",
+        reading: "けいきはあっかするばかりで、かいふくのきざしがみえない。",
+        indonesian: "Kondisi ekonomi kian hari terus memburuk, belum tampak tanda-tanda pemulihan."
+      },
+      {
+        japanese: "料理の準備はすべて整ったので、あとは客を待つばかりだ。",
+        reading: "りょうりのじゅんびはすべてととのったので、あとはきゃくをまつばかりだ。",
+        indonesian: "Semua hidangan sudah siap, tinggal menunggu para tamu datang saja."
+      }
+    ]
+  },
+  {
+    id: "g-88",
+    pattern: "〜一方だ（いっぽうだ）",
+    meaning: "Cenderung terus menuju satu arah (semakin bertambah/berkurang)",
+    connection: "V-kamus (kata kerja perubahan) + 一方だ",
+    examples: [
+      {
+        japanese: "スマートフォン利用者の数は年々増える一方だ。",
+        reading: "スマートフォンりようしゃのかずはねんねんふえるいっぽうだ。",
+        indonesian: "Jumlah pengguna smartphone terus melonjak dari tahun ke tahun."
+      },
+      {
+        japanese: "仕事のストレスが溜まり、体調は悪化する一方だ。",
+        reading: "しごとのストレスがたまり、たいちょうはあっかするいっぽうだ。",
+        indonesian: "Beban stres kerja menumpuk, kondisi fisik pun terus menurun."
+      }
+    ]
+  },
+  {
+    id: "g-89",
+    pattern: "〜つつある",
+    meaning: "Sedang berangsur-angsur dalam proses perubahan",
+    connection: "V-masu (batang) + つつある",
+    examples: [
+      {
+        japanese: "景気は少しずつ回復しつつある。",
+        reading: "けいきはすこしずつかいふくしつつある。",
+        indonesian: "Perekonomian sedang berangsur-angsur pulih sedikit demi sedikit."
+      },
+      {
+        japanese: "日本の伝統的な文化が失われつつあることが懸念されている。",
+        reading: "にほんのでんとうてきなぶんかがうしなわれつつあることがけねんされている。",
+        indonesian: "Kian memudarnya budaya tradisional Jepang kian memicu kekhawatiran."
+      }
+    ]
+  },
+  {
+    id: "g-90",
+    pattern: "〜つつ（も）",
+    meaning: "Sambil / meskipun menyadari (kontras batin)",
+    connection: "V-masu (batang) + つつ（も）",
+    examples: [
+      {
+        japanese: "体に悪いと知りつつも、夜食のラーメンを食べてしまう。",
+        reading: "からだにわるいとしりつつも、やしょくのラーメンをたべてしまう。",
+        indonesian: "Meski sadar tidak baik untuk tubuh, saya tetap saja memakan ramen tengah malam."
+      },
+      {
+        japanese: "将来のことを考えつつ、今の仕事に全力を注ぐ。",
+        reading: "しょうらいのことをかんがえつつ、いまのしごとにぜんりょくをそそぐ。",
+        indonesian: "Sembari memikirkan masa depan, saya mencurahkan segenap tenaga pada pekerjaan saat ini."
+      }
+    ]
+  },
+  {
+    id: "g-91",
+    pattern: "〜に沿って / に沿った",
+    meaning: "Sesuai dengan / mengikuti acuan garis pedoman",
+    connection: "N + に沿って / に沿った + N",
+    examples: [
+      {
+        japanese: "マニュアルに沿って、機械を正しく操作してください。",
+        reading: "マニュアルにそって、きかいをただしくそうさしてください。",
+        indonesian: "Harap operasikan mesin dengan benar sesuai dengan buku panduan manual."
+      },
+      {
+        japanese: "基本方針に沿って計画を進める必要があります。",
+        reading: "きほんほうしんにそってけいかくをすすめるひつようがあります。",
+        indonesian: "Kita perlu melanjutkan rencana sesuai dengan kebijakan dasar."
+      }
+    ]
+  },
+  {
+    id: "g-92",
+    pattern: "〜に基づいて / に基づく",
+    meaning: "Berdasarkan / berlandaskan fakta atau data sah",
+    connection: "N + に基づいて / に基づく + N",
+    examples: [
+      {
+        japanese: "最新の調査データに基づいて、今後の戦略を立てる。",
+        reading: "さいしんのちょうさデータにもとづいて、こんごのせんりゃくをたてる。",
+        indonesian: "Berdasarkan data riset terbaru, kita akan menyusun strategi ke depan."
+      },
+      {
+        japanese: "法律に基づく正当な手続きを行ってください。",
+        reading: "ほうりつにもとづくせいとうなてつづきをおこなってください。",
+        indonesian: "Harap lakukan prosedur yang sah berlandaskan payung hukum."
+      }
+    ]
+  },
+  {
+    id: "g-93",
+    pattern: "〜のもとで / のもとに",
+    meaning: "Di bawah bimbingan / di bawah lindungan / di bawah kondisi",
+    connection: "N + のもとで / のもとに",
+    examples: [
+      {
+        japanese: "有名な教授の指導のもとで研究を深めることができた。",
+        reading: "ゆうめいなきょうじゅのしどうのもとでけんきゅうをふかめることができた。",
+        indonesian: "Saya dapat memperdalam riset di bawah bimbingan profesor terkemuka."
+      },
+      {
+        japanese: "自由と平等の名のもとに、新しい条約が結ばれた。",
+        reading: "じゆうとびょうどうのなのもとに、あたらしいじょうやくがむすばれた。",
+        indonesian: "Atas nama kebebasan dan kesetaraan, perjanjian baru telah disepakati."
+      }
+    ]
+  },
+  {
+    id: "g-94",
+    pattern: "〜をめぐって / をめぐる",
+    meaning: "Seputar / memperebutkan / memperdebatkan tentang",
+    connection: "N + をめぐって / をめぐる + N",
+    examples: [
+      {
+        japanese: "遺産の相続をめぐって、親族間で激しい争いが起きた。",
+        reading: "いさんのそうぞくをめぐって、しんぞくかんではげしいあらそいがおきた。",
+        indonesian: "Terjadi perselisihan sengit antar kerabat seputar perebutan warisan."
+      },
+      {
+        japanese: "新空港の建設地をめぐる議論が続いている。",
+        reading: "しんくうこうのけんせつちをめぐるぎろんがつづいている。",
+        indonesian: "Perdebatan seputar lokasi pembangunan bandara baru terus bergulir."
+      }
+    ]
+  },
+  {
+    id: "g-95",
+    pattern: "〜を通して / を通じて",
+    meaning: "Melalui (sarana koneksi / media perantara)",
+    connection: "N + を通して / を通じて",
+    examples: [
+      {
+        japanese: "SNSを通して、世界中の人々と気軽に繋がることができる。",
+        reading: "SNSをとおして、せかいじゅうのひとびとときがるにつながることができる。",
+        indonesian: "Melalui media sosial, kita bisa terhubung dengan leluasa dengan orang-orang di seluruh dunia."
+      },
+      {
+        japanese: "ボランティア活動を通じて、社会貢献の大切さを学んだ。",
+        reading: "ボランティアかつどうをつうじて、しゃかいこうけんのたいせつさをまなんだ。",
+        indonesian: "Melalui kegiatan sukarelawan, saya mempelajari pentingnya kontribusi sosial."
+      }
+    ]
+  },
+  {
+    id: "g-96",
+    pattern: "〜かねない",
+    meaning: "Bisa berisiko menyebabkan (kekhawatiran hal buruk)",
+    connection: "V-masu (batang) + かねない",
+    examples: [
+      {
+        japanese: "不確かな情報を拡散すると、混乱を招きかねない。",
+        reading: "ふたしかなじょうほうをかくさんすると、こんらんをまねきかねない。",
+        indonesian: "Menyebarkan informasi yang belum pasti bisa berisiko memicu kepanikan massal."
+      },
+      {
+        japanese: "睡眠を削りすぎると、健康を害しかねない。",
+        reading: "すいみんをけずりすぎると、けんこうをがいしかねない。",
+        indonesian: "Terlalu banyak memangkas waktu tidur bisa berisiko merusak kesehatan."
+      }
+    ]
+  },
+  {
+    id: "g-97",
+    pattern: "〜といった",
+    meaning: "Seperti misalnya... (menyebut contoh-contoh)",
+    connection: "N1, N2 + といった + N",
+    examples: [
+      {
+        japanese: "京都や奈良といった古い街には、歴史的な建物がたくさんある。",
+        reading: "きょうとやならといったふるいまちには、れきしてきなたてものがたくさんある。",
+        indonesian: "Di kota-kota kuno seperti Kyoto dan Nara, ada banyak bangunan bersejarah."
+      },
+      {
+        japanese: "水泳やジョギングといった有酸素運動が健康に良い。",
+        reading: "すいえいやジョギングといったゆうさんそうんどうがけんこうによい。",
+        indonesian: "Olahraga aerobik seperti berenang dan jogging sangat baik untuk kesehatan."
+      }
+    ]
+  },
+  {
+    id: "g-98",
+    pattern: "〜に答えて / にこたえる",
+    meaning: "Menanggapi / memenuhi (harapan, aspirasi, atau panggilan)",
+    connection: "N + にこたえて / にこたえる + N",
+    examples: [
+      {
+        japanese: "ファンの熱烈なアンコールに応えて、もう一曲演奏した。",
+        reading: "ファンのねつれつなアンコールにこたえて、もういっきょくえんそうした。",
+        indonesian: "Menanggapi encore antusias para penggemar, ia membawakan satu lagu tambahan."
+      },
+      {
+        japanese: "国民の期待に応える政策を実行しなければならない。",
+        reading: "こくみんのきたいにこたえるせいさくをじっこうしなければならない。",
+        indonesian: "Harus menjalankan kebijakan yang memenuhi ekspektasi seluruh rakyat."
+      }
+    ]
+  },
+  {
+    id: "g-99",
+    pattern: "〜を問わず / は問わず",
+    meaning: "Tanpa memandang / tidak mempersoalkan (usia, gender, pengalaman)",
+    connection: "N + を問わず",
+    examples: [
+      {
+        japanese: "このマラソン大会は、年齢や性別を問わず誰でも参加できます。",
+        reading: "このマラソンたいかいは、ねんれいやせいべつをとわずだれでもさんかできます。",
+        indonesian: "Lomba maraton ini dapat diikuti oleh siapa pun tanpa memandang usia maupun jenis kelamin."
+      },
+      {
+        japanese: "経験の有無を問わず、やる気のある人材を募集しています。",
+        reading: "けいけんのうむをとわず、やるきのあるじんざいをぼしゅうしています。",
+        indonesian: "Kami membuka lowongan bagi talenta berdedikasi tanpa memandang ada tidaknya pengalaman."
+      }
+    ]
+  },
+  {
+    id: "g-100",
+    pattern: "〜に応じて / に応じた",
+    meaning: "Disesuaikan dengan kebutuhan / kondisi yang dinamis",
+    connection: "N + に応じて / に応じた + N",
+    examples: [
+      {
+        japanese: "状況の変化に応じて、柔軟にスケジュールを変更する。",
+        reading: "じょうきょうのへんかにおうじて、じゅうなんにスケジュールをへんこうする。",
+        indonesian: "Menyesuaikan dengan perubahan situasi, jadwal akan diganti secara fleksibel."
+      },
+      {
+        japanese: "個人の学習進度に応じた指導を行う。",
+        reading: "こじんのがくしゅうしんどにおうじたしどうをおこなう。",
+        indonesian: "Memberikan bimbingan yang disesuaikan dengan ritme kemajuan belajar tiap individu."
+      }
+    ]
+  }
+];
+
+module.exports = { grammarList };

@@ -1,0 +1,6722 @@
+[
+  {
+    "id": "k-1",
+    "kanji": "政",
+    "on": "セイ、ショウ",
+    "kun": "まつりごと",
+    "meaning": "Pemerintahan, politik",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "政治",
+        "reading": "せいじ",
+        "meaning": "Politik"
+      },
+      {
+        "word": "政府",
+        "reading": "せいふ",
+        "meaning": "Pemerintah"
+      }
+    ]
+  },
+  {
+    "id": "k-2",
+    "kanji": "治",
+    "on": "ジ、チ",
+    "kun": "おさ・める、なお・る",
+    "meaning": "Memerintah, sembuh, merawat",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "治る",
+        "reading": "なおる",
+        "meaning": "Sembuh"
+      },
+      {
+        "word": "治安",
+        "reading": "ちあん",
+        "meaning": "Ketertiban umum"
+      }
+    ]
+  },
+  {
+    "id": "k-3",
+    "kanji": "経",
+    "on": "ケイ、キョウ",
+    "kun": "へ・る",
+    "meaning": "Melewati, mengelola",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "経済",
+        "reading": "けいざい",
+        "meaning": "Ekonomi"
+      },
+      {
+        "word": "経験",
+        "reading": "けいけん",
+        "meaning": "Pengalaman"
+      }
+    ]
+  },
+  {
+    "id": "k-4",
+    "kanji": "済",
+    "on": "サイ、ザイ",
+    "kun": "す・む、す・ます",
+    "meaning": "Selesai, lunas",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "済む",
+        "reading": "すむ",
+        "meaning": "Selesai"
+      },
+      {
+        "word": "返済",
+        "reading": "へんさい",
+        "meaning": "Pelunasan cicilan"
+      }
+    ]
+  },
+  {
+    "id": "k-5",
+    "kanji": "歴",
+    "on": "レキ",
+    "kun": "",
+    "meaning": "Riwayat, sejarah",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "歴史",
+        "reading": "れきし",
+        "meaning": "Sejarah"
+      },
+      {
+        "word": "履歴書",
+        "reading": "りれきしょ",
+        "meaning": "CV / riwayat hidup"
+      }
+    ]
+  },
+  {
+    "id": "k-6",
+    "kanji": "史",
+    "on": "シ",
+    "kun": "",
+    "meaning": "Catatan sejarah",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "日本史",
+        "reading": "にほんし",
+        "meaning": "Sejarah Jepang"
+      },
+      {
+        "word": "世界史",
+        "reading": "せかいし",
+        "meaning": "Sejarah dunia"
+      }
+    ]
+  },
+  {
+    "id": "k-7",
+    "kanji": "育",
+    "on": "イク",
+    "kun": "そだ・つ、そだ・てる",
+    "meaning": "Mendidik, tumbuh",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "教育",
+        "reading": "きょういく",
+        "meaning": "Pendidikan"
+      },
+      {
+        "word": "育てる",
+        "reading": "そだてる",
+        "meaning": "Membesarkan"
+      }
+    ]
+  },
+  {
+    "id": "k-8",
+    "kanji": "化",
+    "on": "カ、ケ",
+    "kun": "ば・ける",
+    "meaning": "Berubah, transformasi",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "文化",
+        "reading": "ぶんか",
+        "meaning": "Kebudayaan"
+      },
+      {
+        "word": "化学",
+        "reading": "かがく",
+        "meaning": "Kimia"
+      }
+    ]
+  },
+  {
+    "id": "k-9",
+    "kanji": "理",
+    "on": "リ",
+    "kun": "ことわり",
+    "meaning": "Nalar, alasan, hukum alam",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "理由",
+        "reading": "りゆう",
+        "meaning": "Alasan"
+      },
+      {
+        "word": "料理",
+        "reading": "りょうり",
+        "meaning": "Masakan"
+      }
+    ]
+  },
+  {
+    "id": "k-10",
+    "kanji": "科",
+    "on": "カ",
+    "kun": "",
+    "meaning": "Departemen, jurusan ilmu",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "科学",
+        "reading": "かがく",
+        "meaning": "Sains"
+      },
+      {
+        "word": "教科書",
+        "reading": "きょうかしょ",
+        "meaning": "Buku teks pelajaran"
+      }
+    ]
+  },
+  {
+    "id": "k-11",
+    "kanji": "数",
+    "on": "スウ、ス",
+    "kun": "かず、かぞ・える",
+    "meaning": "Jumlah, angka, berhitung",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "数字",
+        "reading": "すうじ",
+        "meaning": "Angka"
+      },
+      {
+        "word": "数学",
+        "reading": "すうがく",
+        "meaning": "Matematika"
+      }
+    ]
+  },
+  {
+    "id": "k-12",
+    "kanji": "図",
+    "on": "ズ、ト",
+    "kun": "はか・る",
+    "meaning": "Gambar, peta, merencanakan",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "地図",
+        "reading": "ちず",
+        "meaning": "Peta"
+      },
+      {
+        "word": "図書館",
+        "reading": "としょかん",
+        "meaning": "Perpustakaan"
+      }
+    ]
+  },
+  {
+    "id": "k-13",
+    "kanji": "館",
+    "on": "カン",
+    "kun": "やかた",
+    "meaning": "Gedung, balai besar",
+    "strokes": 16,
+    "words": [
+      {
+        "word": "博物館",
+        "reading": "はくぶつかん",
+        "meaning": "Museum"
+      },
+      {
+        "word": "映画館",
+        "reading": "えいがかん",
+        "meaning": "Bioskop"
+      }
+    ]
+  },
+  {
+    "id": "k-14",
+    "kanji": "線",
+    "on": "セン",
+    "kun": "すじ",
+    "meaning": "Garis, jalur lintasan",
+    "strokes": 15,
+    "words": [
+      {
+        "word": "新幹線",
+        "reading": "しんかんせん",
+        "meaning": "Shinkansen"
+      },
+      {
+        "word": "地下鉄線",
+        "reading": "ちかてつせん",
+        "meaning": "Jalur subway"
+      }
+    ]
+  },
+  {
+    "id": "k-15",
+    "kanji": "面",
+    "on": "メン",
+    "kun": "おも、おもて、つら",
+    "meaning": "Permukaan, wajah, sisi",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "面接",
+        "reading": "めんせつ",
+        "meaning": "Wawancara kerja"
+      },
+      {
+        "word": "方面",
+        "reading": "ほうめん",
+        "meaning": "Arah/jurusan"
+      }
+    ]
+  },
+  {
+    "id": "k-16",
+    "kanji": "発",
+    "on": "ハツ、ホツ",
+    "kun": "た・つ",
+    "meaning": "Berangkat, memancarkan, terbit",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "発表",
+        "reading": "はっぴょう",
+        "meaning": "Presentasi"
+      },
+      {
+        "word": "出発",
+        "reading": "しゅっぱつ",
+        "meaning": "Keberangkatan"
+      }
+    ]
+  },
+  {
+    "id": "k-17",
+    "kanji": "表",
+    "on": "ヒョウ",
+    "kun": "おもて、あらわ・す",
+    "meaning": "Tabel, bagian luar, menyatakan",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "表現",
+        "reading": "ひょうげん",
+        "meaning": "Ungkapan"
+      },
+      {
+        "word": "代表",
+        "reading": "だいひょう",
+        "meaning": "Perwakilan"
+      }
+    ]
+  },
+  {
+    "id": "k-18",
+    "kanji": "現",
+    "on": "ゲン",
+    "kun": "あらわ・れる",
+    "meaning": "Muncul, nyata, sekarang",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "現在",
+        "reading": "げんざい",
+        "meaning": "Saat ini"
+      },
+      {
+        "word": "現象",
+        "reading": "げんしょう",
+        "meaning": "Fenomena"
+      }
+    ]
+  },
+  {
+    "id": "k-19",
+    "kanji": "調",
+    "on": "チョウ",
+    "kun": "しら・べる、ととの・う",
+    "meaning": "Menyelidiki, nada, harmoni",
+    "strokes": 15,
+    "words": [
+      {
+        "word": "調査",
+        "reading": "ちょうさ",
+        "meaning": "Investigasi/riset"
+      },
+      {
+        "word": "調子",
+        "reading": "ちょうし",
+        "meaning": "Kondisi tubuh/alat"
+      }
+    ]
+  },
+  {
+    "id": "k-20",
+    "kanji": "査",
+    "on": "サ",
+    "kun": "",
+    "meaning": "Memeriksa, meninjau",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "検査",
+        "reading": "けんさ",
+        "meaning": "Pemeriksaan medis"
+      },
+      {
+        "word": "審査",
+        "reading": "しんさ",
+        "meaning": "Penilaian/penjurian"
+      }
+    ]
+  },
+  {
+    "id": "k-21",
+    "kanji": "法",
+    "on": "ホウ、ハッ",
+    "kun": "",
+    "meaning": "Hukum, metode, kaidah",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "法律",
+        "reading": "ほうりつ",
+        "meaning": "Hukum"
+      },
+      {
+        "word": "方法",
+        "reading": "ほうほう",
+        "meaning": "Metode / cara"
+      }
+    ]
+  },
+  {
+    "id": "k-22",
+    "kanji": "規",
+    "on": "キ",
+    "kun": "",
+    "meaning": "Standar, aturan",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "規則",
+        "reading": "きそく",
+        "meaning": "Peraturan"
+      },
+      {
+        "word": "定規",
+        "reading": "じょうぎ",
+        "meaning": "Penggaris"
+      }
+    ]
+  },
+  {
+    "id": "k-23",
+    "kanji": "則",
+    "on": "ソク",
+    "kun": "のっと・る",
+    "meaning": "Kaidah, asas",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "原則",
+        "reading": "げんそく",
+        "meaning": "Prinsip dasar"
+      },
+      {
+        "word": "反則",
+        "reading": "はんそく",
+        "meaning": "Pelanggaran"
+      }
+    ]
+  },
+  {
+    "id": "k-24",
+    "kanji": "制",
+    "on": "セイ",
+    "kun": "",
+    "meaning": "Sistem, kendali, batas",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "制度",
+        "reading": "せいど",
+        "meaning": "Sistem / tatanan"
+      },
+      {
+        "word": "制限",
+        "reading": "せいげん",
+        "meaning": "Pembatasan"
+      }
+    ]
+  },
+  {
+    "id": "k-25",
+    "kanji": "度",
+    "on": "ド、ト",
+    "kun": "たび",
+    "meaning": "Derajat, kali, batasan",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "態度",
+        "reading": "たいど",
+        "meaning": "Sikap"
+      },
+      {
+        "word": "温度",
+        "reading": "おんど",
+        "meaning": "Temperatur"
+      }
+    ]
+  },
+  {
+    "id": "k-26",
+    "kanji": "役",
+    "on": "ヤク、エキ",
+    "kun": "",
+    "meaning": "Peran, tugas, dinas",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "役に立つ",
+        "reading": "やくにたつ",
+        "meaning": "Bermanfaat"
+      },
+      {
+        "word": "役員",
+        "reading": "やくいん",
+        "meaning": "Pejabat eksekutif"
+      }
+    ]
+  },
+  {
+    "id": "k-27",
+    "kanji": "判",
+    "on": "ハン、バン",
+    "kun": "わか・る",
+    "meaning": "Menilai, stempel, vonis",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "判断",
+        "reading": "はんだん",
+        "meaning": "Keputusan/penilaian"
+      },
+      {
+        "word": "裁判",
+        "reading": "さいばん",
+        "meaning": "Pengadilan"
+      }
+    ]
+  },
+  {
+    "id": "k-28",
+    "kanji": "断",
+    "on": "ダン",
+    "kun": "ことわ・る、た・つ",
+    "meaning": "Memutus, menolak, tegas",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "断る",
+        "reading": "ことわる",
+        "meaning": "Menolak"
+      },
+      {
+        "word": "決断",
+        "reading": "けつだん",
+        "meaning": "Ketegasan tekad"
+      }
+    ]
+  },
+  {
+    "id": "k-29",
+    "kanji": "告",
+    "on": "コク",
+    "kun": "つ・げる",
+    "meaning": "Memberitahu, membeberkan",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "広告",
+        "reading": "こうこく",
+        "meaning": "Iklan"
+      },
+      {
+        "word": "報告",
+        "reading": "ほうこく",
+        "meaning": "Laporan"
+      }
+    ]
+  },
+  {
+    "id": "k-30",
+    "kanji": "報",
+    "on": "ホウ",
+    "kun": "むく・いる",
+    "meaning": "Berita, balasan",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "情報",
+        "reading": "じょうほう",
+        "meaning": "Informasi"
+      },
+      {
+        "word": "予報",
+        "reading": "よほう",
+        "meaning": "Prakiraan cuaca"
+      }
+    ]
+  },
+  {
+    "id": "k-31",
+    "kanji": "連",
+    "on": "レン",
+    "kun": "つ・れる、つら・なる",
+    "meaning": "Menghubungkan, memimpin",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "連絡",
+        "reading": "れんらく",
+        "meaning": "Komunikasi"
+      },
+      {
+        "word": "連休",
+        "reading": "れんきゅう",
+        "meaning": "Libur beruntun"
+      }
+    ]
+  },
+  {
+    "id": "k-32",
+    "kanji": "絡",
+    "on": "ラク",
+    "kun": "から・む",
+    "meaning": "Terjerat, terhubung",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "連絡先",
+        "reading": "れんらくさき",
+        "meaning": "Kontak person"
+      },
+      {
+        "word": "短絡",
+        "reading": "たんらく",
+        "meaning": "Gegabah / korsleting"
+      }
+    ]
+  },
+  {
+    "id": "k-33",
+    "kanji": "信",
+    "on": "シン",
+    "kun": "しん・じる",
+    "meaning": "Percaya, pesan",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "信用",
+        "reading": "しんよう",
+        "meaning": "Kepercayaan"
+      },
+      {
+        "word": "自信",
+        "reading": "じしん",
+        "meaning": "Percaya diri"
+      }
+    ]
+  },
+  {
+    "id": "k-34",
+    "kanji": "号",
+    "on": "ゴウ",
+    "kun": "",
+    "meaning": "Nomor, tanda, nama sebutan",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "信号",
+        "reading": "しんごう",
+        "meaning": "Lampu lalu lintas"
+      },
+      {
+        "word": "番号",
+        "reading": "ばんごう",
+        "meaning": "Nomor urut"
+      }
+    ]
+  },
+  {
+    "id": "k-35",
+    "kanji": "機",
+    "on": "キ",
+    "kun": "はた",
+    "meaning": "Mesin, kesempatan, pesawat",
+    "strokes": 16,
+    "words": [
+      {
+        "word": "機会",
+        "reading": "きかい",
+        "meaning": "Kesempatan"
+      },
+      {
+        "word": "飛行機",
+        "reading": "ひこうき",
+        "meaning": "Pesawat terbang"
+      }
+    ]
+  },
+  {
+    "id": "k-36",
+    "kanji": "械",
+    "on": "カイ",
+    "kun": "",
+    "meaning": "Perangkat, perkakas mesin",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "機械",
+        "reading": "きかい",
+        "meaning": "Mesin"
+      },
+      {
+        "word": "器械",
+        "reading": "きかい",
+        "meaning": "Instrumen aparatur"
+      }
+    ]
+  },
+  {
+    "id": "k-37",
+    "kanji": "関",
+    "on": "カン",
+    "kun": "せき、かか・わる",
+    "meaning": "Kaitan, pos gerbang",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "関係",
+        "reading": "かんけい",
+        "meaning": "Hubungan"
+      },
+      {
+        "word": "関心",
+        "reading": "かんしん",
+        "meaning": "Minat/perhatian"
+      }
+    ]
+  },
+  {
+    "id": "k-38",
+    "kanji": "係",
+    "on": "ケイ",
+    "kun": "かか・る、かかり",
+    "meaning": "Petugas penanggung jawab, relasi",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "係員",
+        "reading": "かかりいん",
+        "meaning": "Petugas staf"
+      },
+      {
+        "word": "関係者",
+        "reading": "かんけいしゃ",
+        "meaning": "Pihak terkait"
+      }
+    ]
+  },
+  {
+    "id": "k-39",
+    "kanji": "設",
+    "on": "セツ",
+    "kun": "もう・ける",
+    "meaning": "Mendirikan, memasang",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "設計",
+        "reading": "せっけい",
+        "meaning": "Perancangan/desain"
+      },
+      {
+        "word": "施設",
+        "reading": "しせつ",
+        "meaning": "Fasilitas"
+      }
+    ]
+  },
+  {
+    "id": "k-40",
+    "kanji": "備",
+    "on": "ビ",
+    "kun": "そな・える、そな・わる",
+    "meaning": "Mempersiapkan, melengkapi",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "準備",
+        "reading": "じゅんび",
+        "meaning": "Persiapan"
+      },
+      {
+        "word": "予備",
+        "reading": "よび",
+        "meaning": "Cadangan"
+      }
+    ]
+  },
+  {
+    "id": "k-41",
+    "kanji": "客",
+    "on": "キャク、カク",
+    "kun": "",
+    "meaning": "Tamu, pelanggan",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "客席",
+        "reading": "きゃくせき",
+        "meaning": "Tempat duduk tamu"
+      },
+      {
+        "word": "乗客",
+        "reading": "じょうきゃく",
+        "meaning": "Penumpang"
+      }
+    ]
+  },
+  {
+    "id": "k-42",
+    "kanji": "席",
+    "on": "セキ",
+    "kun": "むしろ",
+    "meaning": "Kursi, bangku",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "出席",
+        "reading": "しゅっせき",
+        "meaning": "Kehadiran"
+      },
+      {
+        "word": "指定席",
+        "reading": "していせき",
+        "meaning": "Kursi bernomor"
+      }
+    ]
+  },
+  {
+    "id": "k-43",
+    "kanji": "常",
+    "on": "ジョウ",
+    "kun": "つね、とこ",
+    "meaning": "Selalu, biasa, konstan",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "非常",
+        "reading": "ひじょう",
+        "meaning": "Darurat / luar biasa"
+      },
+      {
+        "word": "日常",
+        "reading": "にちじょう",
+        "meaning": "Sehari-hari"
+      }
+    ]
+  },
+  {
+    "id": "k-44",
+    "kanji": "非",
+    "on": "ヒ",
+    "kun": "あら・ず",
+    "meaning": "Bukan, tidak adil, salah",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "非常口",
+        "reading": "ひじょうぐち",
+        "meaning": "Pintu darurat"
+      },
+      {
+        "word": "是非",
+        "reading": "ぜひ",
+        "meaning": "Pasti / harus coba"
+      }
+    ]
+  },
+  {
+    "id": "k-45",
+    "kanji": "指",
+    "on": "シ",
+    "kun": "ゆび、さ・す",
+    "meaning": "Jari, menunjuk",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "指示",
+        "reading": "しじ",
+        "meaning": "Petunjuk/arahan"
+      },
+      {
+        "word": "指輪",
+        "reading": "ゆびわ",
+        "meaning": "Cincin"
+      }
+    ]
+  },
+  {
+    "id": "k-46",
+    "kanji": "定",
+    "on": "テイ、ジョウ",
+    "kun": "さだ・める",
+    "meaning": "Menentukan, pasti, tetap",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "予定",
+        "reading": "よてい",
+        "meaning": "Rencana jadwal"
+      },
+      {
+        "word": "定休日",
+        "reading": "ていきゅうび",
+        "meaning": "Hari libur rutin"
+      }
+    ]
+  },
+  {
+    "id": "k-47",
+    "kanji": "期",
+    "on": "キ、ゴ",
+    "kun": "",
+    "meaning": "Periode, batas jangka waktu",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "期間",
+        "reading": "きかん",
+        "meaning": "Jangka waktu"
+      },
+      {
+        "word": "期待",
+        "reading": "きたい",
+        "meaning": "Harapan besar"
+      }
+    ]
+  },
+  {
+    "id": "k-48",
+    "kanji": "限",
+    "on": "ゲン",
+    "kun": "かぎ・る",
+    "meaning": "Batas, membatasi",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "期限",
+        "reading": "きげん",
+        "meaning": "Batas waktu"
+      },
+      {
+        "word": "限界",
+        "reading": "げんかい",
+        "meaning": "Batas kemampuan"
+      }
+    ]
+  },
+  {
+    "id": "k-49",
+    "kanji": "界",
+    "on": "カイ",
+    "kun": "",
+    "meaning": "Dunia, batas wilayah",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "世界",
+        "reading": "せかい",
+        "meaning": "Dunia"
+      },
+      {
+        "word": "限界",
+        "reading": "げんかい",
+        "meaning": "Batas maksimal"
+      }
+    ]
+  },
+  {
+    "id": "k-50",
+    "kanji": "由",
+    "on": "ユ、ユウ",
+    "kun": "よし",
+    "meaning": "Asal-usul, alasan",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "自由",
+        "reading": "じゆう",
+        "meaning": "Bebas"
+      },
+      {
+        "word": "経由",
+        "reading": "けいゆ",
+        "meaning": "Transit / via"
+      }
+    ]
+  },
+  {
+    "id": "k-51",
+    "kanji": "情",
+    "on": "ジョウ、セイ",
+    "kun": "なさ・け",
+    "meaning": "Perasaan, informasi, iba",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "感情",
+        "reading": "かんじょう",
+        "meaning": "Emosi"
+      },
+      {
+        "word": "事情",
+        "reading": "じじょう",
+        "meaning": "Situasi/kondisi"
+      }
+    ]
+  },
+  {
+    "id": "k-52",
+    "kanji": "感",
+    "on": "カン",
+    "kun": "かん・じる",
+    "meaning": "Merasakan, kesan batin",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "感想",
+        "reading": "かんそう",
+        "meaning": "Kesan/opini"
+      },
+      {
+        "word": "感動",
+        "reading": "かんどう",
+        "meaning": "Terharu"
+      }
+    ]
+  },
+  {
+    "id": "k-53",
+    "kanji": "想",
+    "on": "ソウ、ソ",
+    "kun": "おも・う",
+    "meaning": "Gagasan, angan-angan",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "想像",
+        "reading": "そうぞう",
+        "meaning": "Imajinasi"
+      },
+      {
+        "word": "理想",
+        "reading": "りそう",
+        "meaning": "Cita-cita ideal"
+      }
+    ]
+  },
+  {
+    "id": "k-54",
+    "kanji": "愛",
+    "on": "アイ",
+    "kun": "いと・しい",
+    "meaning": "Cinta, kasih sayang",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "愛情",
+        "reading": "あいじょう",
+        "meaning": "Kasih sayang"
+      },
+      {
+        "word": "恋愛",
+        "reading": "れんあい",
+        "meaning": "Percintaan"
+      }
+    ]
+  },
+  {
+    "id": "k-55",
+    "kanji": "恋",
+    "on": "レン",
+    "kun": "こ・う、こい",
+    "meaning": "Asmara, rindu, jatuh cinta",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "恋人",
+        "reading": "こいびと",
+        "meaning": "Kekasih"
+      },
+      {
+        "word": "失恋",
+        "reading": "しつれん",
+        "meaning": "Patah hati"
+      }
+    ]
+  },
+  {
+    "id": "k-56",
+    "kanji": "痛",
+    "on": "ツウ",
+    "kun": "いた・い、いた・む",
+    "meaning": "Sakit, nyeri",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "頭痛",
+        "reading": "ずつう",
+        "meaning": "Sakit kepala"
+      },
+      {
+        "word": "苦痛",
+        "reading": "くつう",
+        "meaning": "Penderitaan"
+      }
+    ]
+  },
+  {
+    "id": "k-57",
+    "kanji": "苦",
+    "on": "ク",
+    "kun": "くる・しい、にが・い",
+    "meaning": "Pahit, menderita, susah",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "苦労",
+        "reading": "くろう",
+        "meaning": "Kerja keras/kesulitan"
+      },
+      {
+        "word": "苦手",
+        "reading": "にがて",
+        "meaning": "Kurang mahir/lemah"
+      }
+    ]
+  },
+  {
+    "id": "k-58",
+    "kanji": "悩",
+    "on": "ノウ",
+    "kun": "なや・む",
+    "meaning": "Gelisah, bingung memikirkan",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "悩み",
+        "reading": "なやみ",
+        "meaning": "Beban pikiran"
+      },
+      {
+        "word": "苦悩",
+        "reading": "くのう",
+        "meaning": "Kegalauan"
+      }
+    ]
+  },
+  {
+    "id": "k-59",
+    "kanji": "困",
+    "on": "コン",
+    "kun": "こま・る",
+    "meaning": "Kesulitan, bingung",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "困る",
+        "reading": "こまる",
+        "meaning": "Kesusahan"
+      },
+      {
+        "word": "困難",
+        "reading": "こんなん",
+        "meaning": "Rintangan sulit"
+      }
+    ]
+  },
+  {
+    "id": "k-60",
+    "kanji": "難",
+    "on": "ナン",
+    "kun": "むずか・しい",
+    "meaning": "Sulit, sukar, bencana",
+    "strokes": 18,
+    "words": [
+      {
+        "word": "難しい",
+        "reading": "むずかしい",
+        "meaning": "Sulit"
+      },
+      {
+        "word": "避難",
+        "reading": "ひなん",
+        "meaning": "Evakuasi"
+      }
+    ]
+  },
+  {
+    "id": "k-61",
+    "kanji": "危",
+    "on": "キ",
+    "kun": "あぶ・ない、あや・うい",
+    "meaning": "Bahaya, kritis",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "危険",
+        "reading": "きけん",
+        "meaning": "Berbahaya"
+      },
+      {
+        "word": "危機",
+        "reading": "きき",
+        "meaning": "Krisis"
+      }
+    ]
+  },
+  {
+    "id": "k-62",
+    "kanji": "険",
+    "on": "ケン",
+    "kun": "けわ・しい",
+    "meaning": "Curam, terjal, bahaya",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "保険",
+        "reading": "ほけん",
+        "meaning": "Asuransi"
+      },
+      {
+        "word": "険しい",
+        "reading": "けわしい",
+        "meaning": "Terjal"
+      }
+    ]
+  },
+  {
+    "id": "k-63",
+    "kanji": "防",
+    "on": "ボウ",
+    "kun": "ふせ・ぐ",
+    "meaning": "Mencegah, membendung",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "予防",
+        "reading": "よぼう",
+        "meaning": "Pencegahan"
+      },
+      {
+        "word": "防水",
+        "reading": "ぼうすい",
+        "meaning": "Tahan air"
+      }
+    ]
+  },
+  {
+    "id": "k-64",
+    "kanji": "災",
+    "on": "サイ",
+    "kun": "わざわ・い",
+    "meaning": "Bencana, kemalangan",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "火災",
+        "reading": "かさい",
+        "meaning": "Kebakaran"
+      },
+      {
+        "word": "防災",
+        "reading": "ぼうさい",
+        "meaning": "Mitigasi bencana"
+      }
+    ]
+  },
+  {
+    "id": "k-65",
+    "kanji": "害",
+    "on": "ガイ",
+    "kun": "",
+    "meaning": "Kerusakan, bahaya racun",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "被害",
+        "reading": "ひがい",
+        "meaning": "Korban/kerugian"
+      },
+      {
+        "word": "公害",
+        "reading": "こうがい",
+        "meaning": "Pencemaran"
+      }
+    ]
+  },
+  {
+    "id": "k-66",
+    "kanji": "警",
+    "on": "ケイ",
+    "kun": "",
+    "meaning": "Peringatan, waspada, polisi",
+    "strokes": 19,
+    "words": [
+      {
+        "word": "警察",
+        "reading": "けいさつ",
+        "meaning": "Kepolisian"
+      },
+      {
+        "word": "警告",
+        "reading": "けいこく",
+        "meaning": "Peringatan keras"
+      }
+    ]
+  },
+  {
+    "id": "k-67",
+    "kanji": "察",
+    "on": "サツ",
+    "kun": "",
+    "meaning": "Menyelidiki, menduga",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "診察",
+        "reading": "しんさつ",
+        "meaning": "Pemeriksaan dokter"
+      },
+      {
+        "word": "観察",
+        "reading": "かんさつ",
+        "meaning": "Observasi"
+      }
+    ]
+  },
+  {
+    "id": "k-68",
+    "kanji": "署",
+    "on": "ショ",
+    "kun": "",
+    "meaning": "Kantor dinas pemerintah",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "警察署",
+        "reading": "けいさつしょ",
+        "meaning": "Kantor polisi"
+      },
+      {
+        "word": "消防署",
+        "reading": "しょうぼうしょ",
+        "meaning": "Dinas damkar"
+      }
+    ]
+  },
+  {
+    "id": "k-69",
+    "kanji": "役",
+    "on": "ヤク",
+    "kun": "",
+    "meaning": "Dinas kemasyarakatan",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "役所",
+        "reading": "やくしょ",
+        "meaning": "Kantor balai kota"
+      },
+      {
+        "word": "市役所",
+        "reading": "しやくしょ",
+        "meaning": "Kantor walikota"
+      }
+    ]
+  },
+  {
+    "id": "k-70",
+    "kanji": "民",
+    "on": "ミン",
+    "kun": "たみ",
+    "meaning": "Rakyat, warga",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "市民",
+        "reading": "しみん",
+        "meaning": "Warga kota"
+      },
+      {
+        "word": "国民",
+        "reading": "こくみん",
+        "meaning": "Rakyat bangsa"
+      }
+    ]
+  },
+  {
+    "id": "k-71",
+    "kanji": "票",
+    "on": "ヒョウ",
+    "kun": "",
+    "meaning": "Surat suara, tiket/kupon",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "投票",
+        "reading": "とうひょう",
+        "meaning": "Pemungutan suara"
+      },
+      {
+        "word": "得票",
+        "reading": "とくひょう",
+        "meaning": "Perolehan suara"
+      }
+    ]
+  },
+  {
+    "id": "k-72",
+    "kanji": "投",
+    "on": "トウ",
+    "kun": "な・げる",
+    "meaning": "Melempar, menaruh dana",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "投げる",
+        "reading": "なげる",
+        "meaning": "Melempar"
+      },
+      {
+        "word": "投資",
+        "reading": "とうし",
+        "meaning": "Investasi modal"
+      }
+    ]
+  },
+  {
+    "id": "k-73",
+    "kanji": "資",
+    "on": "シ",
+    "kun": "",
+    "meaning": "Modal, aset, bahan baku",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "資格",
+        "reading": "しかく",
+        "meaning": "Sertifikasi/kualifikasi"
+      },
+      {
+        "word": "資料",
+        "reading": "しりょう",
+        "meaning": "Materi/dokumen"
+      }
+    ]
+  },
+  {
+    "id": "k-74",
+    "kanji": "格",
+    "on": "カク、コウ",
+    "kun": "",
+    "meaning": "Status, peringkat, kelayakan",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "合格",
+        "reading": "ごうかく",
+        "meaning": "Lulus ujian"
+      },
+      {
+        "word": "価格",
+        "reading": "かかく",
+        "meaning": "Harga barang"
+      }
+    ]
+  },
+  {
+    "id": "k-75",
+    "kanji": "価",
+    "on": "カ",
+    "kun": "あたい",
+    "meaning": "Nilai, harga patokan",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "物価",
+        "reading": "ぶっか",
+        "meaning": "Harga kebutuhan hidup"
+      },
+      {
+        "word": "評価",
+        "reading": "ひょうか",
+        "meaning": "Evaluasi/apresiasi"
+      }
+    ]
+  },
+  {
+    "id": "k-76",
+    "kanji": "商",
+    "on": "ショウ",
+    "kun": "あきな・う",
+    "meaning": "Berdagang, berniaga",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "商品",
+        "reading": "しょうひん",
+        "meaning": "Komoditas barang"
+      },
+      {
+        "word": "商業",
+        "reading": "しょうぎょう",
+        "meaning": "Perdagangan"
+      }
+    ]
+  },
+  {
+    "id": "k-77",
+    "kanji": "品",
+    "on": "ヒン",
+    "kun": "しな",
+    "meaning": "Barang, kualitas martabat",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "作品",
+        "reading": "さくひん",
+        "meaning": "Karya seni"
+      },
+      {
+        "word": "食品",
+        "reading": "しょくひん",
+        "meaning": "Bahan makanan"
+      }
+    ]
+  },
+  {
+    "id": "k-78",
+    "kanji": "買",
+    "on": "バイ",
+    "kun": "か・う",
+    "meaning": "Membeli",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "売買",
+        "reading": "ばいばい",
+        "meaning": "Jual beli"
+      },
+      {
+        "word": "買い物",
+        "reading": "かいもの",
+        "meaning": "Belanja"
+      }
+    ]
+  },
+  {
+    "id": "k-79",
+    "kanji": "売",
+    "on": "バイ",
+    "kun": "う・る、う・れる",
+    "meaning": "Menjual, laku",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "自動販売機",
+        "reading": "じどうはんばいき",
+        "meaning": "Mesin penjual otomatis"
+      },
+      {
+        "word": "売り切れ",
+        "reading": "うりきれ",
+        "meaning": "Habis terjual"
+      }
+    ]
+  },
+  {
+    "id": "k-80",
+    "kanji": "払",
+    "on": "フツ",
+    "kun": "はら・う",
+    "meaning": "Membayar, menyapu bersih",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "支払い",
+        "reading": "しはらい",
+        "meaning": "Pembayaran"
+      },
+      {
+        "word": "払い戻し",
+        "reading": "はらいもどし",
+        "meaning": "Pengembalian uang"
+      }
+    ]
+  },
+  {
+    "id": "k-81",
+    "kanji": "税",
+    "on": "ゼイ",
+    "kun": "",
+    "meaning": "Pajak",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "消費税",
+        "reading": "しょうひぜい",
+        "meaning": "PPN"
+      },
+      {
+        "word": "税金",
+        "reading": "ぜいきん",
+        "meaning": "Uang pajak"
+      }
+    ]
+  },
+  {
+    "id": "k-82",
+    "kanji": "費",
+    "on": "ヒ",
+    "kun": "つい・やす",
+    "meaning": "Biaya, ongkos pengeluaran",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "費用",
+        "reading": "ひよう",
+        "meaning": "Biaya total"
+      },
+      {
+        "word": "交通費",
+        "reading": "こうつうひ",
+        "meaning": "Ongkos transportasi"
+      }
+    ]
+  },
+  {
+    "id": "k-83",
+    "kanji": "借",
+    "on": "シャク",
+    "kun": "か・りる",
+    "meaning": "Meminjam",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "借金",
+        "reading": "しゃっきん",
+        "meaning": "Hutang uang"
+      },
+      {
+        "word": "借りる",
+        "reading": "かりる",
+        "meaning": "Meminjam"
+      }
+    ]
+  },
+  {
+    "id": "k-84",
+    "kanji": "貸",
+    "on": "タイ",
+    "kun": "か・す",
+    "meaning": "Meminjamkan, menyewakan",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "貸出",
+        "reading": "かしだし",
+        "meaning": "Peminjaman"
+      },
+      {
+        "word": "賃貸",
+        "reading": "ちんたい",
+        "meaning": "Sewa menyewa"
+      }
+    ]
+  },
+  {
+    "id": "k-85",
+    "kanji": "貸",
+    "on": "タイ",
+    "kun": "か・す",
+    "meaning": "Pemberian pinjaman",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "貸付",
+        "reading": "かしつけ",
+        "meaning": "Kredit/pinjaman"
+      },
+      {
+        "word": "貸家",
+        "reading": "かしや",
+        "meaning": "Rumah kontrakan"
+      }
+    ]
+  },
+  {
+    "id": "k-86",
+    "kanji": "賃",
+    "on": "チン",
+    "kun": "",
+    "meaning": "Upah, sewa ongkos",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "家賃",
+        "reading": "やちん",
+        "meaning": "Uang sewa rumah"
+      },
+      {
+        "word": "運賃",
+        "reading": "うんちん",
+        "meaning": "Tarif ongkos kirim/tiket"
+      }
+    ]
+  },
+  {
+    "id": "k-87",
+    "kanji": "預",
+    "on": "ヨ",
+    "kun": "あず・ける、あず・かる",
+    "meaning": "Menitipkan, menyimpan",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "預金",
+        "reading": "よきん",
+        "meaning": "Tabungan bank"
+      },
+      {
+        "word": "預かる",
+        "reading": "あずかる",
+        "meaning": "Menjaga titipan"
+      }
+    ]
+  },
+  {
+    "id": "k-88",
+    "kanji": "貯",
+    "on": "チョ",
+    "kun": "た・める",
+    "meaning": "Menimbun, menabung",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "貯金",
+        "reading": "ちょきん",
+        "meaning": "Menabung uang"
+      },
+      {
+        "word": "貯蔵",
+        "reading": "ちょぞう",
+        "meaning": "Penyimpanan stok"
+      }
+    ]
+  },
+  {
+    "id": "k-89",
+    "kanji": "得",
+    "on": "トク",
+    "kun": "え・る",
+    "meaning": "Memperoleh, untung",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "得意",
+        "reading": "とくい",
+        "meaning": "Keahlian unggul"
+      },
+      {
+        "word": "納得",
+        "reading": "なっとく",
+        "meaning": "Paham/menerima"
+      }
+    ]
+  },
+  {
+    "id": "k-90",
+    "kanji": "失",
+    "on": "シツ",
+    "kun": "うしな・う",
+    "meaning": "Hilang, luput",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "失敗",
+        "reading": "しっぱい",
+        "meaning": "Kegagalan"
+      },
+      {
+        "word": "失望",
+        "reading": "しつぼう",
+        "meaning": "Kekecewaan"
+      }
+    ]
+  },
+  {
+    "id": "k-91",
+    "kanji": "礼",
+    "on": "レイ、ライ",
+    "kun": "",
+    "meaning": "Tata krama, ucapan syukur",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "お礼",
+        "reading": "おれい",
+        "meaning": "Ucapan terima kasih"
+      },
+      {
+        "word": "礼儀",
+        "reading": "れいぎ",
+        "meaning": "Kesopanan"
+      }
+    ]
+  },
+  {
+    "id": "k-92",
+    "kanji": "儀",
+    "on": "ギ",
+    "kun": "",
+    "meaning": "Upacara, etiket kesopanan",
+    "strokes": 15,
+    "words": [
+      {
+        "word": "儀式",
+        "reading": "ぎしき",
+        "meaning": "Upacara resmi"
+      },
+      {
+        "word": "マナー・礼儀",
+        "reading": "れいぎ",
+        "meaning": "Sopan santun"
+      }
+    ]
+  },
+  {
+    "id": "k-93",
+    "kanji": "謝",
+    "on": "シャ",
+    "kun": "あやま・る",
+    "meaning": "Meminta maaf, berterima kasih",
+    "strokes": 17,
+    "words": [
+      {
+        "word": "謝る",
+        "reading": "あやまる",
+        "meaning": "Minta maaf"
+      },
+      {
+        "word": "感謝",
+        "reading": "かんしゃ",
+        "meaning": "Rasa syukur"
+      }
+    ]
+  },
+  {
+    "id": "k-94",
+    "kanji": "敬",
+    "on": "ケイ",
+    "kun": "うやま・う",
+    "meaning": "Menghormati, takzim",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "敬語",
+        "reading": "けいご",
+        "meaning": "Bahasa sopan/keigo"
+      },
+      {
+        "word": "尊敬",
+        "reading": "そんけい",
+        "meaning": "Rasa hormat"
+      }
+    ]
+  },
+  {
+    "id": "k-95",
+    "kanji": "尊",
+    "on": "ソン",
+    "kun": "とうと・い",
+    "meaning": "Mulia, berharga tinggi",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "尊重",
+        "reading": "そんちょう",
+        "meaning": "Menghargai hak"
+      },
+      {
+        "word": "尊い",
+        "reading": "とうとい",
+        "meaning": "Amat mulia"
+      }
+    ]
+  },
+  {
+    "id": "k-96",
+    "kanji": "重",
+    "on": "ジュウ、チョウ",
+    "kun": "おも・い、かさ・なる",
+    "meaning": "Berat, rangkap, penting",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "重要",
+        "reading": "じゅうよう",
+        "meaning": "Penting sekali"
+      },
+      {
+        "word": "体重",
+        "reading": "たいじゅう",
+        "meaning": "Berat badan"
+      }
+    ]
+  },
+  {
+    "id": "k-97",
+    "kanji": "軽",
+    "on": "ケイ",
+    "kun": "かる・い",
+    "meaning": "Ringan, sepele",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "手軽",
+        "reading": "てがる",
+        "meaning": "Praktis/ringan"
+      },
+      {
+        "word": "軽食",
+        "reading": "けいしょく",
+        "meaning": "Kudapan ringan"
+      }
+    ]
+  },
+  {
+    "id": "k-98",
+    "kanji": "深",
+    "on": "シン",
+    "kun": "ふか・い",
+    "meaning": "Dalam, mendalam",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "深刻",
+        "reading": "しんこく",
+        "meaning": "Gawat / serius"
+      },
+      {
+        "word": "水深",
+        "reading": "すいしん",
+        "meaning": "Kedalaman air"
+      }
+    ]
+  },
+  {
+    "id": "k-99",
+    "kanji": "浅",
+    "on": "セン",
+    "kun": "あさ・い",
+    "meaning": "Dangkal",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "浅い",
+        "reading": "あさい",
+        "meaning": "Dangkal"
+      },
+      {
+        "word": "浅薄",
+        "reading": "せんぱく",
+        "meaning": "Ceteka nalar"
+      }
+    ]
+  },
+  {
+    "id": "k-100",
+    "kanji": "刻",
+    "on": "コク",
+    "kun": "きざ・む",
+    "meaning": "Mengukir, mencacah waktu",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "時刻",
+        "reading": "じこく",
+        "meaning": "Waktu tepat"
+      },
+      {
+        "word": "遅刻",
+        "reading": "ちこく",
+        "meaning": "Keterlambatan"
+      }
+    ]
+  },
+  {
+    "id": "k-101",
+    "kanji": "守",
+    "on": "シュ、ス",
+    "kun": "まも・る",
+    "meaning": "Melindungi, mematuhi",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "留守",
+        "reading": "るす",
+        "meaning": "Meninggalkan rumah"
+      },
+      {
+        "word": "守る",
+        "reading": "まもる",
+        "meaning": "Menjaga janji"
+      }
+    ]
+  },
+  {
+    "id": "k-102",
+    "kanji": "受",
+    "on": "ジュ",
+    "kun": "う・ける",
+    "meaning": "Menerima, menempuh",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "受付",
+        "reading": "うけつけ",
+        "meaning": "Resepsionis"
+      },
+      {
+        "word": "受験",
+        "reading": "じゅけん",
+        "meaning": "Mengikuti ujian"
+      }
+    ]
+  },
+  {
+    "id": "k-103",
+    "kanji": "付",
+    "on": "フ",
+    "kun": "つ・ける、つ・く",
+    "meaning": "Menempelkan, menyertakan",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "片付ける",
+        "reading": "かたづける",
+        "meaning": "Merapikan"
+      },
+      {
+        "word": "日付",
+        "reading": "ひづけ",
+        "meaning": "Tanggal"
+      }
+    ]
+  },
+  {
+    "id": "k-104",
+    "kanji": "取",
+    "on": "シュ",
+    "kun": "と・る",
+    "meaning": "Mengambil",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "受取",
+        "reading": "うけとり",
+        "meaning": "Tanda terima"
+      },
+      {
+        "word": "取消",
+        "reading": "とりけし",
+        "meaning": "Pembatalan"
+      }
+    ]
+  },
+  {
+    "id": "k-105",
+    "kanji": "消",
+    "on": "ショウ",
+    "kun": "き・える、け・す",
+    "meaning": "Padam, menghapus",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "消しゴム",
+        "reading": "けしゴム",
+        "meaning": "Penghapus"
+      },
+      {
+        "word": "消化",
+        "reading": "しょうか",
+        "meaning": "Pencernaan"
+      }
+    ]
+  },
+  {
+    "id": "k-106",
+    "kanji": "防",
+    "on": "ボウ",
+    "kun": "ふせ・ぐ",
+    "meaning": "Menangkal bahaya",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "消防",
+        "reading": "しょうぼう",
+        "meaning": "Pemadam api"
+      },
+      {
+        "word": "防衛",
+        "reading": "ぼうえい",
+        "meaning": "Pertahanan"
+      }
+    ]
+  },
+  {
+    "id": "k-107",
+    "kanji": "救",
+    "on": "キュウ",
+    "kun": "すく・う",
+    "meaning": "Menolong, menyelamatkan",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "救急車",
+        "reading": "きゅうきゅうしゃ",
+        "meaning": "Ambulans"
+      },
+      {
+        "word": "救助",
+        "reading": "きゅうじょ",
+        "meaning": "Penyelamatan SAR"
+      }
+    ]
+  },
+  {
+    "id": "k-108",
+    "kanji": "助",
+    "on": "ジョ",
+    "kun": "たす・かる、たす・ける",
+    "meaning": "Membantu, terselamatkan",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "助ける",
+        "reading": "たすける",
+        "meaning": "Menolong orang"
+      },
+      {
+        "word": "助手",
+        "reading": "じょしゅ",
+        "meaning": "Asisten staf"
+      }
+    ]
+  },
+  {
+    "id": "k-109",
+    "kanji": "招",
+    "on": "ショウ",
+    "kun": "まね・く",
+    "meaning": "Mengundang, mengajak",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "招待",
+        "reading": "しょうたい",
+        "meaning": "Undangan pesta"
+      },
+      {
+        "word": "招く",
+        "reading": "まねく",
+        "meaning": "Mengundang"
+      }
+    ]
+  },
+  {
+    "id": "k-110",
+    "kanji": "待",
+    "on": "タイ",
+    "kun": "ま・つ",
+    "meaning": "Menunggu",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "待合室",
+        "reading": "まちあいしつ",
+        "meaning": "Ruang tunggu"
+      },
+      {
+        "word": "期待",
+        "reading": "きたい",
+        "meaning": "Harapan"
+      }
+    ]
+  },
+  {
+    "id": "k-111",
+    "kanji": "呼",
+    "on": "コ",
+    "kun": "よ・ぶ",
+    "meaning": "Memanggil, bernapas",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "呼ぶ",
+        "reading": "よぶ",
+        "meaning": "Memanggil"
+      },
+      {
+        "word": "呼吸",
+        "reading": "こきゅう",
+        "meaning": "Pernapasan"
+      }
+    ]
+  },
+  {
+    "id": "k-112",
+    "kanji": "吸",
+    "on": "キュウ",
+    "kun": "す・う",
+    "meaning": "Menghisap, menyedot",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "吸う",
+        "reading": "すう",
+        "meaning": "Menghisap rokok"
+      },
+      {
+        "word": "吸収",
+        "reading": "きゅうしゅう",
+        "meaning": "Penyerapan"
+      }
+    ]
+  },
+  {
+    "id": "k-113",
+    "kanji": "収",
+    "on": "シュウ",
+    "kun": "おさ・める",
+    "meaning": "Menampung, memperoleh penghasilan",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "収入",
+        "reading": "しゅうにゅう",
+        "meaning": "Penghasilan"
+      },
+      {
+        "word": "領収書",
+        "reading": "りょうしゅうしょ",
+        "meaning": "Kuitansi"
+      }
+    ]
+  },
+  {
+    "id": "k-114",
+    "kanji": "領",
+    "on": "リョウ",
+    "kun": "",
+    "meaning": "Wilayah, memimpin",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "大統領",
+        "reading": "だいとうりょう",
+        "meaning": "Presiden"
+      },
+      {
+        "word": "領事館",
+        "reading": "りょうじかん",
+        "meaning": "Konsulat"
+      }
+    ]
+  },
+  {
+    "id": "k-115",
+    "kanji": "導",
+    "on": "ドウ",
+    "kun": "みちび・く",
+    "meaning": "Membimbing, menuntun",
+    "strokes": 15,
+    "words": [
+      {
+        "word": "指導",
+        "reading": "しどう",
+        "meaning": "Bimbingan arahan"
+      },
+      {
+        "word": "導入",
+        "reading": "どうにゅう",
+        "meaning": "Penerapan awal"
+      }
+    ]
+  },
+  {
+    "id": "k-116",
+    "kanji": "指",
+    "on": "シ",
+    "kun": "さ・す",
+    "meaning": "Menunjuk arah",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "指導者",
+        "reading": "しどうしゃ",
+        "meaning": "Pemimpin/pelatih"
+      },
+      {
+        "word": "指定",
+        "reading": "してい",
+        "meaning": "Penunjukan"
+      }
+    ]
+  },
+  {
+    "id": "k-117",
+    "kanji": "向",
+    "on": "コウ",
+    "kun": "む・く、む・かう",
+    "meaning": "Menghadap, menuju",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "傾向",
+        "reading": "けいこう",
+        "meaning": "Kecenderungan tren"
+      },
+      {
+        "word": "方向",
+        "reading": "ほうこう",
+        "meaning": "Arah haluan"
+      }
+    ]
+  },
+  {
+    "id": "k-118",
+    "kanji": "傾",
+    "on": "ケイ",
+    "kun": "かたむ・く",
+    "meaning": "Miring, condong",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "傾向",
+        "reading": "けいこう",
+        "meaning": "Tren orientasi"
+      },
+      {
+        "word": "傾斜",
+        "reading": "けいしゃ",
+        "meaning": "Kemiringan lereng"
+      }
+    ]
+  },
+  {
+    "id": "k-119",
+    "kanji": "横",
+    "on": "オウ",
+    "kun": "よこ",
+    "meaning": "Mendatar, horizontal, samping",
+    "strokes": 15,
+    "words": [
+      {
+        "word": "横断歩道",
+        "reading": "おうだんほどう",
+        "meaning": "Zebra cross"
+      },
+      {
+        "word": "横",
+        "reading": "よこ",
+        "meaning": "Sebelah / samping"
+      }
+    ]
+  },
+  {
+    "id": "k-120",
+    "kanji": "断",
+    "on": "ダン",
+    "kun": "",
+    "meaning": "Melintasi garis",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "横断",
+        "reading": "おうだん",
+        "meaning": "Menyeberang jalan"
+      },
+      {
+        "word": "診断",
+        "reading": "しんだん",
+        "meaning": "Diagnosis medis"
+      }
+    ]
+  },
+  {
+    "id": "k-121",
+    "kanji": "側",
+    "on": "ソク",
+    "kun": "がわ、そば",
+    "meaning": "Sisi, sebelah pihak",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "右側",
+        "reading": "みぎがわ",
+        "meaning": "Sisi kanan"
+      },
+      {
+        "word": "両側",
+        "reading": "りょうがわ",
+        "meaning": "Kedua belah sisi"
+      }
+    ]
+  },
+  {
+    "id": "k-122",
+    "kanji": "端",
+    "on": "タン",
+    "kun": "はし、は",
+    "meaning": "Ujung, tepi",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "先端",
+        "reading": "せんたん",
+        "meaning": "Teknologi tercanggih"
+      },
+      {
+        "word": "端",
+        "reading": "はし",
+        "meaning": "Ujung pinggir"
+      }
+    ]
+  },
+  {
+    "id": "k-123",
+    "kanji": "先",
+    "on": "セン",
+    "kun": "さき、ま・ず",
+    "meaning": "Dulu, depan, ujung",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "先輩",
+        "reading": "せんぱい",
+        "meaning": "Senior"
+      },
+      {
+        "word": "先月",
+        "reading": "せんげつ",
+        "meaning": "Bulan lalu"
+      }
+    ]
+  },
+  {
+    "id": "k-124",
+    "kanji": "輩",
+    "on": "ハイ",
+    "kun": "",
+    "meaning": "Rekan segenerasi",
+    "strokes": 15,
+    "words": [
+      {
+        "word": "後輩",
+        "reading": "こうはい",
+        "meaning": "Junior"
+      },
+      {
+        "word": "同輩",
+        "reading": "どうはい",
+        "meaning": "Teman sebaya"
+      }
+    ]
+  },
+  {
+    "id": "k-125",
+    "kanji": "後",
+    "on": "ゴ、コウ",
+    "kun": "うし・ろ、あと、おく・れる",
+    "meaning": "Belakang, setelah, terlambat",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "午後",
+        "reading": "ごご",
+        "meaning": "Sore/PM"
+      },
+      {
+        "word": "後半",
+        "reading": "こうはん",
+        "meaning": "Babak kedua"
+      }
+    ]
+  },
+  {
+    "id": "k-126",
+    "kanji": "前",
+    "on": "ゼン",
+    "kun": "まえ",
+    "meaning": "Depan, sebelum",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "午前",
+        "reading": "ごぜん",
+        "meaning": "Pagi/AM"
+      },
+      {
+        "word": "前後",
+        "reading": "ぜんご",
+        "meaning": "Depan belakang / kira-kira"
+      }
+    ]
+  },
+  {
+    "id": "k-127",
+    "kanji": "直",
+    "on": "チョク、ジキ",
+    "kun": "ただ・ちに、なお・す",
+    "meaning": "Lurus, segera, memperbaiki",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "直接",
+        "reading": "ちょくせつ",
+        "meaning": "Secara langsung"
+      },
+      {
+        "word": "正直",
+        "reading": "しょうじき",
+        "meaning": "Jujur tulus"
+      }
+    ]
+  },
+  {
+    "id": "k-128",
+    "kanji": "接",
+    "on": "セツ",
+    "kun": "つ・ぐ",
+    "meaning": "Menempel, kontak",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "接近",
+        "reading": "せっきん",
+        "meaning": "Mendekat"
+      },
+      {
+        "word": "接客",
+        "reading": "せっきゃく",
+        "meaning": "Pelayanan pembeli"
+      }
+    ]
+  },
+  {
+    "id": "k-129",
+    "kanji": "近",
+    "on": "キン",
+    "kun": "ちか・い",
+    "meaning": "Dekat",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "近所",
+        "reading": "きんじょ",
+        "meaning": "Lingkungan tetangga"
+      },
+      {
+        "word": "最近",
+        "reading": "さいきん",
+        "meaning": "Akhir-akhir ini"
+      }
+    ]
+  },
+  {
+    "id": "k-130",
+    "kanji": "遠",
+    "on": "エン、オン",
+    "kun": "とお・い",
+    "meaning": "Jauh",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "遠慮",
+        "reading": "えんりょ",
+        "meaning": "Sungkan / menahan diri"
+      },
+      {
+        "word": "遠足",
+        "reading": "えんそく",
+        "meaning": "Piknik sekolah"
+      }
+    ]
+  },
+  {
+    "id": "k-131",
+    "kanji": "慮",
+    "on": "リョ",
+    "kun": "",
+    "meaning": "Pertimbangan, rasa cemas",
+    "strokes": 15,
+    "words": [
+      {
+        "word": "配慮",
+        "reading": "はいりょ",
+        "meaning": "Perhatian kepedulian"
+      },
+      {
+        "word": "考慮",
+        "reading": "こうりょ",
+        "meaning": "Pertimbangan mendalam"
+      }
+    ]
+  },
+  {
+    "id": "k-132",
+    "kanji": "配",
+    "on": "ハイ",
+    "kun": "くば・る",
+    "meaning": "Membagikan, mengatur",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "心配",
+        "reading": "しんぱい",
+        "meaning": "Cemas"
+      },
+      {
+        "word": "配達",
+        "reading": "はいたつ",
+        "meaning": "Pengantaran paket"
+      }
+    ]
+  },
+  {
+    "id": "k-133",
+    "kanji": "達",
+    "on": "タツ",
+    "kun": "たち",
+    "meaning": "Mencapai, menguasai, jamak",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "友達",
+        "reading": "ともだち",
+        "meaning": "Sahabat teman"
+      },
+      {
+        "word": "発達",
+        "reading": "はったつ",
+        "meaning": "Perkembangan fisik/sistem"
+      }
+    ]
+  },
+  {
+    "id": "k-134",
+    "kanji": "送",
+    "on": "ソウ",
+    "kun": "おく・る",
+    "meaning": "Mengirim, mengantar",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "送金",
+        "reading": "そうきん",
+        "meaning": "Transfer uang"
+      },
+      {
+        "word": "見送り",
+        "reading": "みおくり",
+        "meaning": "Mengantar perpisahan"
+      }
+    ]
+  },
+  {
+    "id": "k-135",
+    "kanji": "返",
+    "on": "ヘン",
+    "kun": "かえ・す、かえ・る",
+    "meaning": "Mengembalikan, membalas",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "返事",
+        "reading": "へんじ",
+        "meaning": "Balasan jawaban"
+      },
+      {
+        "word": "返却",
+        "reading": "へんきゃく",
+        "meaning": "Pengembalian barang"
+      }
+    ]
+  },
+  {
+    "id": "k-136",
+    "kanji": "却",
+    "on": "キャク",
+    "kun": "",
+    "meaning": "Mundur, menolak balik",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "却下",
+        "reading": "きゃっか",
+        "meaning": "Ditolak permohonannya"
+      },
+      {
+        "word": "償却",
+        "reading": "しょうきゃく",
+        "meaning": "Amortisasi"
+      }
+    ]
+  },
+  {
+    "id": "k-137",
+    "kanji": "折",
+    "on": "セツ",
+    "kun": "お・る、お・れる",
+    "meaning": "Melipat, patah",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "折り紙",
+        "reading": "おりがみ",
+        "meaning": "Origami"
+      },
+      {
+        "word": "骨折",
+        "reading": "こっせつ",
+        "meaning": "Patah tulang"
+      }
+    ]
+  },
+  {
+    "id": "k-138",
+    "kanji": "骨",
+    "on": "コツ",
+    "kun": "ほね",
+    "meaning": "Tulang, kerangka",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "骨",
+        "reading": "ほね",
+        "meaning": "Tulang"
+      },
+      {
+        "word": "骨組み",
+        "reading": "ほねぐみ",
+        "meaning": "Kerangka struktur"
+      }
+    ]
+  },
+  {
+    "id": "k-139",
+    "kanji": "組",
+    "on": "ソ",
+    "kun": "く・む、くみ",
+    "meaning": "Menyusun, regu, kelompok",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "組織",
+        "reading": "そしき",
+        "meaning": "Organisasi"
+      },
+      {
+        "word": "番組",
+        "reading": "ばんぐみ",
+        "meaning": "Acara siaran TV"
+      }
+    ]
+  },
+  {
+    "id": "k-140",
+    "kanji": "織",
+    "on": "ショク、シキ",
+    "kun": "お・る",
+    "meaning": "Menenun, merajut",
+    "strokes": 18,
+    "words": [
+      {
+        "word": "織物",
+        "reading": "おりもの",
+        "meaning": "Kain tenun"
+      },
+      {
+        "word": "組織的",
+        "reading": "そしきてき",
+        "meaning": "Secara sistematis terorganisir"
+      }
+    ]
+  },
+  {
+    "id": "k-141",
+    "kanji": "成",
+    "on": "セイ、ジョウ",
+    "kun": "な・る",
+    "meaning": "Menjadi, tercapai, tumbuh",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "成功",
+        "reading": "せいこう",
+        "meaning": "Kesuksesan"
+      },
+      {
+        "word": "完成",
+        "reading": "かんせい",
+        "meaning": "Penyelesaian paripurna"
+      }
+    ]
+  },
+  {
+    "id": "k-142",
+    "kanji": "功",
+    "on": "コウ",
+    "kun": "いさお",
+    "meaning": "Prestasi, jasa gemilang",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "功績",
+        "reading": "こうせき",
+        "meaning": "Jasa besar"
+      },
+      {
+        "word": "成功者",
+        "reading": "せいこうしゃ",
+        "meaning": "Orang sukses"
+      }
+    ]
+  },
+  {
+    "id": "k-143",
+    "kanji": "完",
+    "on": "カン",
+    "kun": "",
+    "meaning": "Lengkap, sempurna",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "完全",
+        "reading": "かんぜん",
+        "meaning": "Sempurna utuh"
+      },
+      {
+        "word": "完了",
+        "reading": "かんりょう",
+        "meaning": "Tuntas selesai"
+      }
+    ]
+  },
+  {
+    "id": "k-144",
+    "kanji": "了",
+    "on": "リョウ",
+    "kun": "",
+    "meaning": "Selesai, paham",
+    "strokes": 2,
+    "words": [
+      {
+        "word": "了解",
+        "reading": "りょうかい",
+        "meaning": "Dimengerti/roger"
+      },
+      {
+        "word": "終了",
+        "reading": "しゅうりょう",
+        "meaning": "Berakhir"
+      }
+    ]
+  },
+  {
+    "id": "k-145",
+    "kanji": "終",
+    "on": "シュウ",
+    "kun": "お・わる、お・える",
+    "meaning": "Selesai, penghabisan",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "終点",
+        "reading": "しゅうてん",
+        "meaning": "Pemberhentian terakhir"
+      },
+      {
+        "word": "終電",
+        "reading": "しゅうでん",
+        "meaning": "Kereta terakhir malam"
+      }
+    ]
+  },
+  {
+    "id": "k-146",
+    "kanji": "始",
+    "on": "シ",
+    "kun": "はじ・まる、はじ・める",
+    "meaning": "Mulai",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "開始",
+        "reading": "かいし",
+        "meaning": "Dimulai"
+      },
+      {
+        "word": "始発",
+        "reading": "しはつ",
+        "meaning": "Kereta pertama subuh"
+      }
+    ]
+  },
+  {
+    "id": "k-147",
+    "kanji": "開",
+    "on": "カイ",
+    "kun": "ひら・く、あ・ける",
+    "meaning": "Membuka",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "開店",
+        "reading": "かいてん",
+        "meaning": "Buka toko"
+      },
+      {
+        "word": "開発",
+        "reading": "かいはつ",
+        "meaning": "Pengembangan teknologi"
+      }
+    ]
+  },
+  {
+    "id": "k-148",
+    "kanji": "閉",
+    "on": "ヘイ",
+    "kun": "と・じる、し・める",
+    "meaning": "Menutup",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "閉店",
+        "reading": "へいてん",
+        "meaning": "Tutup toko"
+      },
+      {
+        "word": "閉会",
+        "reading": "へいかい",
+        "meaning": "Penutupan acara"
+      }
+    ]
+  },
+  {
+    "id": "k-149",
+    "kanji": "点",
+    "on": "テン",
+    "kun": "つ・ける",
+    "meaning": "Titik, nilai skor",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "交差点",
+        "reading": "こうさてん",
+        "meaning": "Persimpangan jalan"
+      },
+      {
+        "word": "欠点",
+        "reading": "けってん",
+        "meaning": "Kekurangan/kelemahan"
+      }
+    ]
+  },
+  {
+    "id": "k-150",
+    "kanji": "交",
+    "on": "コウ",
+    "kun": "まじ・わる、か・わす",
+    "meaning": "Silang, interaksi, bertukar",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "交流",
+        "reading": "こうりゅう",
+        "meaning": "Pertukaran budaya"
+      },
+      {
+        "word": "交渉",
+        "reading": "こうしょう",
+        "meaning": "Negosiasi"
+      }
+    ]
+  },
+  {
+    "id": "k-151",
+    "kanji": "差",
+    "on": "サ",
+    "kun": "さ・す",
+    "meaning": "Selisih, perbedaan",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "格差",
+        "reading": "かくさ",
+        "meaning": "Kesenjangan"
+      },
+      {
+        "word": "時差",
+        "reading": "じさ",
+        "meaning": "Perbedaan zona waktu"
+      }
+    ]
+  },
+  {
+    "id": "k-152",
+    "kanji": "欠",
+    "on": "ケツ",
+    "kun": "か・ける",
+    "meaning": "Kurang, absen, cacat",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "欠席",
+        "reading": "けっせき",
+        "meaning": "Absen ketidakhadiran"
+      },
+      {
+        "word": "不可欠",
+        "reading": "ふかけつ",
+        "meaning": "Mutlak diperlukan"
+      }
+    ]
+  },
+  {
+    "id": "k-153",
+    "kanji": "席",
+    "on": "セキ",
+    "kun": "",
+    "meaning": "Tempat duduk resmi",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "空席",
+        "reading": "くうせき",
+        "meaning": "Kursi kosong"
+      },
+      {
+        "word": "満席",
+        "reading": "まんせき",
+        "meaning": "Penuh terisi"
+      }
+    ]
+  },
+  {
+    "id": "k-154",
+    "kanji": "空",
+    "on": "クウ",
+    "kun": "そら、あ・く、から",
+    "meaning": "Langit, kosong",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "空港",
+        "reading": "くうこう",
+        "meaning": "Bandara udara"
+      },
+      {
+        "word": "空気",
+        "reading": "くうき",
+        "meaning": "Udara hawa"
+      }
+    ]
+  },
+  {
+    "id": "k-155",
+    "kanji": "港",
+    "on": "コウ",
+    "kun": "みなと",
+    "meaning": "Pelabuhan",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "出港",
+        "reading": "しゅっこう",
+        "meaning": "Kapal berlayar keluar"
+      },
+      {
+        "word": "港町",
+        "reading": "みなとまち",
+        "meaning": "Kota pelabuhan"
+      }
+    ]
+  },
+  {
+    "id": "k-156",
+    "kanji": "湾",
+    "on": "ワン",
+    "kun": "いりえ",
+    "meaning": "Teluk perairan",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "東京湾",
+        "reading": "とうきょうわん",
+        "meaning": "Teluk Tokyo"
+      },
+      {
+        "word": "湾岸",
+        "reading": "わんがん",
+        "meaning": "Pesisir teluk"
+      }
+    ]
+  },
+  {
+    "id": "k-157",
+    "kanji": "岸",
+    "on": "ガン",
+    "kun": "きし",
+    "meaning": "Pesisir, tepi pantai/sungai",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "海岸",
+        "reading": "かいがん",
+        "meaning": "Tepi laut"
+      },
+      {
+        "word": "対岸",
+        "reading": "たいがん",
+        "meaning": "Tepi seberang"
+      }
+    ]
+  },
+  {
+    "id": "k-158",
+    "kanji": "陸",
+    "on": "リク",
+    "kun": "おか",
+    "meaning": "Daratan benua",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "着陸",
+        "reading": "ちゃくりく",
+        "meaning": "Pendaratan pesawat"
+      },
+      {
+        "word": "大陸",
+        "reading": "たいりく",
+        "meaning": "Benua daratan besar"
+      }
+    ]
+  },
+  {
+    "id": "k-159",
+    "kanji": "着",
+    "on": "チャク、ジャク",
+    "kun": "つ・く、き・る",
+    "meaning": "Tiba, mengenakan baju",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "到着",
+        "reading": "とうちゃく",
+        "meaning": "Kedatangan"
+      },
+      {
+        "word": "上着",
+        "reading": "うわぎ",
+        "meaning": "Jaket/baju luar"
+      }
+    ]
+  },
+  {
+    "id": "k-160",
+    "kanji": "倒",
+    "on": "トウ",
+    "kun": "たお・れる、たお・す",
+    "meaning": "Tumbang, roboh, bangkrut",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "倒産",
+        "reading": "とうさん",
+        "meaning": "Kebangkrutan bisnis"
+      },
+      {
+        "word": "倒れる",
+        "reading": "たおれる",
+        "meaning": "Tumbang pingsan"
+      }
+    ]
+  },
+  {
+    "id": "k-161",
+    "kanji": "産",
+    "on": "サン",
+    "kun": "う・む、う・まれる",
+    "meaning": "Melahirkan, memproduksi",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "産業",
+        "reading": "さんぎょう",
+        "meaning": "Sektor industri"
+      },
+      {
+        "word": "生産",
+        "reading": "せいさん",
+        "meaning": "Produksi"
+      }
+    ]
+  },
+  {
+    "id": "k-162",
+    "kanji": "業",
+    "on": "ギョウ、ゴウ",
+    "kun": "わざ",
+    "meaning": "Pekerjaan industri, usaha",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "授業",
+        "reading": "じゅぎょう",
+        "meaning": "Pelajaran kelas"
+      },
+      {
+        "word": "残業",
+        "reading": "ざんぎょう",
+        "meaning": "Lembur kerja"
+      }
+    ]
+  },
+  {
+    "id": "k-163",
+    "kanji": "残",
+    "on": "ザン",
+    "kun": "のこ・る、のこ・す",
+    "meaning": "Tersisa, meninggalkan",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "残念",
+        "reading": "ざんねん",
+        "meaning": "Sangat disayangkan"
+      },
+      {
+        "word": "残り",
+        "reading": "のこり",
+        "meaning": "Sisa"
+      }
+    ]
+  },
+  {
+    "id": "k-164",
+    "kanji": "念",
+    "on": "ネン",
+    "kun": "",
+    "meaning": "Pikiran, hasrat batin",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "記念",
+        "reading": "きねん",
+        "meaning": "Peringatan memoratorium"
+      },
+      {
+        "word": "信念",
+        "reading": "しんねん",
+        "meaning": "Keyakinan teguh"
+      }
+    ]
+  },
+  {
+    "id": "k-165",
+    "kanji": "記",
+    "on": "キ",
+    "kun": "しる・す",
+    "meaning": "Mencatat, menorehkan",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "記事",
+        "reading": "きじ",
+        "meaning": "Artikel berita"
+      },
+      {
+        "word": "記入",
+        "reading": "きにゅう",
+        "meaning": "Pengisian formulir"
+      }
+    ]
+  },
+  {
+    "id": "k-166",
+    "kanji": "録",
+    "on": "ロク",
+    "kun": "",
+    "meaning": "Rekaman data, arsip",
+    "strokes": 16,
+    "words": [
+      {
+        "word": "記録",
+        "reading": "きろく",
+        "meaning": "Rekor/catatan"
+      },
+      {
+        "word": "登録",
+        "reading": "とうろく",
+        "meaning": "Pendaftaran akun"
+      }
+    ]
+  },
+  {
+    "id": "k-167",
+    "kanji": "登",
+    "on": "トウ、ト",
+    "kun": "のぼ・る",
+    "meaning": "Mendaki, terdaftar naik",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "登山",
+        "reading": "とざん",
+        "meaning": "Mendaki gunung"
+      },
+      {
+        "word": "登場",
+        "reading": "とうじょう",
+        "meaning": "Tampil di panggung"
+      }
+    ]
+  },
+  {
+    "id": "k-168",
+    "kanji": "録",
+    "on": "ロク",
+    "kun": "",
+    "meaning": "Perekaman",
+    "strokes": 16,
+    "words": [
+      {
+        "word": "録音",
+        "reading": "ろくおん",
+        "meaning": "Rekaman suara"
+      },
+      {
+        "word": "録画",
+        "reading": "ろくが",
+        "meaning": "Rekaman video"
+      }
+    ]
+  },
+  {
+    "id": "k-169",
+    "kanji": "音",
+    "on": "オン、イン",
+    "kun": "おと、ね",
+    "meaning": "Bunyi nada, suara",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "音楽",
+        "reading": "おんがく",
+        "meaning": "Musik"
+      },
+      {
+        "word": "発音",
+        "reading": "はつおん",
+        "meaning": "Pelafalan pengucapan"
+      }
+    ]
+  },
+  {
+    "id": "k-170",
+    "kanji": "楽",
+    "on": "ガク、ラク",
+    "kun": "たの・しい",
+    "meaning": "Gembira, nyaman, santai",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "気楽",
+        "reading": "きらく",
+        "meaning": "Santai tanpa beban"
+      },
+      {
+        "word": "楽しみ",
+        "reading": "たのしみ",
+        "meaning": "Kesenangan antusias"
+      }
+    ]
+  },
+  {
+    "id": "k-171",
+    "kanji": "試",
+    "on": "シ",
+    "kun": "こころ・みる、ため・す",
+    "meaning": "Mencoba, menguji",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "試験",
+        "reading": "しけん",
+        "meaning": "Ujian pengetesan"
+      },
+      {
+        "word": "試合",
+        "reading": "しあい",
+        "meaning": "Pertandingan turnamen"
+      }
+    ]
+  },
+  {
+    "id": "k-172",
+    "kanji": "験",
+    "on": "ケン、ゲン",
+    "kun": "",
+    "meaning": "Bukti uji coba, hasil",
+    "strokes": 18,
+    "words": [
+      {
+        "word": "実験",
+        "reading": "じっけん",
+        "meaning": "Eksperimen lab"
+      },
+      {
+        "word": "体験",
+        "reading": "たいけん",
+        "meaning": "Pengalaman langsung"
+      }
+    ]
+  },
+  {
+    "id": "k-173",
+    "kanji": "合",
+    "on": "ゴウ、ガッ",
+    "kun": "あ・う、あ・わせる",
+    "meaning": "Cocok, bergabung, padu",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "都合",
+        "reading": "つごう",
+        "meaning": "Kenyamanan waktu/kondisi"
+      },
+      {
+        "word": "場合",
+        "reading": "ばあい",
+        "meaning": "Situasi kejadian"
+      }
+    ]
+  },
+  {
+    "id": "k-174",
+    "kanji": "実",
+    "on": "ジツ",
+    "kun": "み、みの・る",
+    "meaning": "Nyata, buah hasil",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "実際",
+        "reading": "じっさい",
+        "meaning": "Kenyataan riil"
+      },
+      {
+        "word": "真実",
+        "reading": "しんじつ",
+        "meaning": "Kebenaran sejati"
+      }
+    ]
+  },
+  {
+    "id": "k-175",
+    "kanji": "真",
+    "on": "シン",
+    "kun": "ま、まこと",
+    "meaning": "Murni, sejati",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "写真",
+        "reading": "しゃしん",
+        "meaning": "Foto potret"
+      },
+      {
+        "word": "真面目",
+        "reading": "まじめ",
+        "meaning": "Rajin tekun/jujur"
+      }
+    ]
+  },
+  {
+    "id": "k-176",
+    "kanji": "写",
+    "on": "シャ",
+    "kun": "うつ・す、うつ・る",
+    "meaning": "Menyalin, memotret",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "写生",
+        "reading": "しゃせい",
+        "meaning": "Menggambar sketsa"
+      },
+      {
+        "word": "複写",
+        "reading": "ふくしゃ",
+        "meaning": "Fotokopi"
+      }
+    ]
+  },
+  {
+    "id": "k-177",
+    "kanji": "複",
+    "on": "フク",
+    "kun": "",
+    "meaning": "Ganda, majemuk",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "複雑",
+        "reading": "ふくざつ",
+        "meaning": "Rumit kompleks"
+      },
+      {
+        "word": "複数",
+        "reading": "ふくすう",
+        "meaning": "Jumlah jamak"
+      }
+    ]
+  },
+  {
+    "id": "k-178",
+    "kanji": "雑",
+    "on": "ザツ、ゾウ",
+    "kun": "ま・ぜる",
+    "meaning": "Campur baur, aneka",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "雑誌",
+        "reading": "ざっし",
+        "meaning": "Majalah"
+      },
+      {
+        "word": "雑音",
+        "reading": "ざつおん",
+        "meaning": "Suara berisik / noise"
+      }
+    ]
+  },
+  {
+    "id": "k-179",
+    "kanji": "誌",
+    "on": "シ",
+    "kun": "",
+    "meaning": "Catatan berkala, buletin",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "週刊誌",
+        "reading": "しゅうかんし",
+        "meaning": "Majalah mingguan"
+      },
+      {
+        "word": "日誌",
+        "reading": "にっし",
+        "meaning": "Buku harian jurnal"
+      }
+    ]
+  },
+  {
+    "id": "k-180",
+    "kanji": "刊",
+    "on": "カン",
+    "kun": "",
+    "meaning": "Menerbitkan, cetakan publikasi",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "朝刊",
+        "reading": "ちょうかん",
+        "meaning": "Koran pagi"
+      },
+      {
+        "word": "夕刊",
+        "reading": "ゆうかん",
+        "meaning": "Koran sore"
+      }
+    ]
+  },
+  {
+    "id": "k-181",
+    "kanji": "朝",
+    "on": "チョウ",
+    "kun": "あさ",
+    "meaning": "Pagi hari, dinasti",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "朝食",
+        "reading": "ちょうしょく",
+        "meaning": "Sarapan pagi"
+      },
+      {
+        "word": "今朝",
+        "reading": "けさ",
+        "meaning": "Tadi pagi"
+      }
+    ]
+  },
+  {
+    "id": "k-182",
+    "kanji": "昼",
+    "on": "チュウ",
+    "kun": "ひる",
+    "meaning": "Siang hari",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "昼食",
+        "reading": "ちゅうしょく",
+        "meaning": "Makan siang"
+      },
+      {
+        "word": "昼休み",
+        "reading": "ひるやすみ",
+        "meaning": "Istirahat siang"
+      }
+    ]
+  },
+  {
+    "id": "k-183",
+    "kanji": "夜",
+    "on": "ヤ",
+    "kun": "よる、よ",
+    "meaning": "Malam hari",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "夜景",
+        "reading": "やけい",
+        "meaning": "Pemandangan malam"
+      },
+      {
+        "word": "今夜",
+        "reading": "こんや",
+        "meaning": "Malam ini"
+      }
+    ]
+  },
+  {
+    "id": "k-184",
+    "kanji": "晩",
+    "on": "バン",
+    "kun": "",
+    "meaning": "Senja malam",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "今晩",
+        "reading": "こんばん",
+        "meaning": "Malam ini"
+      },
+      {
+        "word": "晩ご飯",
+        "reading": "ばんごはん",
+        "meaning": "Makan malam"
+      }
+    ]
+  },
+  {
+    "id": "k-185",
+    "kanji": "景",
+    "on": "ケイ",
+    "kun": "",
+    "meaning": "Panorama pemandangan, kondisi",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "景色",
+        "reading": "けしき",
+        "meaning": "Pemandangan alam"
+      },
+      {
+        "word": "不景気",
+        "reading": "ふけいき",
+        "meaning": "Resesi lesu"
+      }
+    ]
+  },
+  {
+    "id": "k-186",
+    "kanji": "色",
+    "on": "ショク、シキ",
+    "kun": "いろ",
+    "meaning": "Warna, corak rupa",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "特色",
+        "reading": "とくしょく",
+        "meaning": "Ciri khas unik"
+      },
+      {
+        "word": "茶色",
+        "reading": "ちゃいろ",
+        "meaning": "Cokelat"
+      }
+    ]
+  },
+  {
+    "id": "k-187",
+    "kanji": "特",
+    "on": "トク",
+    "kun": "",
+    "meaning": "Spesial, istimewa khusus",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "特別",
+        "reading": "とくべつ",
+        "meaning": "Istimewa"
+      },
+      {
+        "word": "特に",
+        "reading": "とくに",
+        "meaning": "Khususnya"
+      }
+    ]
+  },
+  {
+    "id": "k-188",
+    "kanji": "別",
+    "on": "ベツ",
+    "kun": "わか・れる",
+    "meaning": "Berpisah, lain, berbeda",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "差別",
+        "reading": "さべつ",
+        "meaning": "Diskriminasi"
+      },
+      {
+        "word": "別れる",
+        "reading": "わかれる",
+        "meaning": "Berpisah"
+      }
+    ]
+  },
+  {
+    "id": "k-189",
+    "kanji": "差",
+    "on": "サ",
+    "kun": "さ・す",
+    "meaning": "Perbedaan diskriminatif",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "男女差",
+        "reading": "だんじょさ",
+        "meaning": "Perbedaan gender"
+      },
+      {
+        "word": "大差",
+        "reading": "たいさ",
+        "meaning": "Perbedaan mencolok"
+      }
+    ]
+  },
+  {
+    "id": "k-190",
+    "kanji": "有",
+    "on": "ユウ、ウ",
+    "kun": "あ・る",
+    "meaning": "Ada, memiliki",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "有名",
+        "reading": "ゆうめい",
+        "meaning": "Terkenal"
+      },
+      {
+        "word": "有料",
+        "reading": "ゆうりょう",
+        "meaning": "Berbayar"
+      }
+    ]
+  },
+  {
+    "id": "k-191",
+    "kanji": "名",
+    "on": "メイ、ミョウ",
+    "kun": "な",
+    "meaning": "Nama, reputasi",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "名所",
+        "reading": "めいしょ",
+        "meaning": "Tempat wisata kondang"
+      },
+      {
+        "word": "名字",
+        "reading": "みょうじ",
+        "meaning": "Marga / nama keluarga"
+      }
+    ]
+  },
+  {
+    "id": "k-192",
+    "kanji": "利",
+    "on": "リ",
+    "kun": "き・く",
+    "meaning": "Manfaat faedah, bunga bank",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "便利",
+        "reading": "べんり",
+        "meaning": "Praktis nyaman"
+      },
+      {
+        "word": "利益",
+        "reading": "りえき",
+        "meaning": "Keuntungan laba"
+      }
+    ]
+  },
+  {
+    "id": "k-193",
+    "kanji": "便",
+    "on": "ベン、ビン",
+    "kun": "たよ・り",
+    "meaning": "Penerbangan/pos, kemudahan",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "郵便",
+        "reading": "ゆうびん",
+        "meaning": "Pos surat"
+      },
+      {
+        "word": "航空便",
+        "reading": "こうくうびん",
+        "meaning": "Surat udara pos"
+      }
+    ]
+  },
+  {
+    "id": "k-194",
+    "kanji": "郵",
+    "on": "ユウ",
+    "kun": "",
+    "meaning": "Pos jawatan",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "郵便局",
+        "reading": "ゆうびんきょく",
+        "meaning": "Kantor pos"
+      },
+      {
+        "word": "郵送",
+        "reading": "ゆうそう",
+        "meaning": "Pengiriman pos"
+      }
+    ]
+  },
+  {
+    "id": "k-195",
+    "kanji": "局",
+    "on": "キョク",
+    "kun": "",
+    "meaning": "Biro jawatan, kantor stasiun",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "結局",
+        "reading": "けっきょく",
+        "meaning": "Pada akhirnya"
+      },
+      {
+        "word": "薬局",
+        "reading": "やっきょく",
+        "meaning": "Apotek"
+      }
+    ]
+  },
+  {
+    "id": "k-196",
+    "kanji": "結",
+    "on": "ケツ",
+    "kun": "むす・ぶ、ゆ・わえる",
+    "meaning": "Mengikat, menyimpulkan",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "結婚",
+        "reading": "けっこん",
+        "meaning": "Pernikahan"
+      },
+      {
+        "word": "結果",
+        "reading": "けっか",
+        "meaning": "Hasil akibat"
+      }
+    ]
+  },
+  {
+    "id": "k-197",
+    "kanji": "果",
+    "on": "カ",
+    "kun": "は・たす、くだ",
+    "meaning": "Buah, mewujudkan",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "果物",
+        "reading": "くだもの",
+        "meaning": "Buah-buahan"
+      },
+      {
+        "word": "効果",
+        "reading": "こうか",
+        "meaning": "Khasiat efektivitas"
+      }
+    ]
+  },
+  {
+    "id": "k-198",
+    "kanji": "効",
+    "on": "コウ",
+    "kun": "き・く",
+    "meaning": "Manjur, khasiat ampuh",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "有効",
+        "reading": "ゆうこう",
+        "meaning": "Berlaku sah / efektif"
+      },
+      {
+        "word": "無効",
+        "reading": "むこう",
+        "meaning": "Tidak berlaku invalid"
+      }
+    ]
+  },
+  {
+    "id": "k-199",
+    "kanji": "無",
+    "on": "ム、ブ",
+    "kun": "な・い",
+    "meaning": "Tiada, nihil",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "無料",
+        "reading": "むりょう",
+        "meaning": "Gratis cuma-cuma"
+      },
+      {
+        "word": "無理",
+        "reading": "むり",
+        "meaning": "Mustahil / memaksa diri"
+      }
+    ]
+  },
+  {
+    "id": "k-200",
+    "kanji": "料",
+    "on": "リョウ",
+    "kun": "",
+    "meaning": "Biaya, takaran materi",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "料金",
+        "reading": "りょうきん",
+        "meaning": "Tarif biaya"
+      },
+      {
+        "word": "原料",
+        "reading": "げんりょう",
+        "meaning": "Bahan mentah baku"
+      }
+    ]
+  },
+  {
+    "id": "k-201",
+    "kanji": "原",
+    "on": "ゲン",
+    "kun": "はら",
+    "meaning": "Padang, asal mula orisinil",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "原因",
+        "reading": "げんいん",
+        "meaning": "Penyebab mula"
+      },
+      {
+        "word": "野原",
+        "reading": "のはら",
+        "meaning": "Padang rumput"
+      }
+    ]
+  },
+  {
+    "id": "k-202",
+    "kanji": "因",
+    "on": "イン",
+    "kun": "よ・る",
+    "meaning": "Faktor penyebab",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "要因",
+        "reading": "よういん",
+        "meaning": "Faktor penentu"
+      },
+      {
+        "word": "死因",
+        "reading": "しいん",
+        "meaning": "Penyebab kematian"
+      }
+    ]
+  },
+  {
+    "id": "k-203",
+    "kanji": "要",
+    "on": "ヨウ",
+    "kun": "い・る",
+    "meaning": "Perlu, penting utama",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "必要",
+        "reading": "ひつよう",
+        "meaning": "Dibutuhkan"
+      },
+      {
+        "word": "要点",
+        "reading": "ようてん",
+        "meaning": "Poin inti penting"
+      }
+    ]
+  },
+  {
+    "id": "k-204",
+    "kanji": "必",
+    "on": "ヒツ",
+    "kun": "かなら・ず",
+    "meaning": "Pasti, mutlak niscaya",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "必ず",
+        "reading": "かならず",
+        "meaning": "Pasti niscaya"
+      },
+      {
+        "word": "必死",
+        "reading": "ひっし",
+        "meaning": "Mati-matian gigih"
+      }
+    ]
+  },
+  {
+    "id": "k-205",
+    "kanji": "死",
+    "on": "シ",
+    "kun": "し・ぬ",
+    "meaning": "Mati, wafat",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "死亡",
+        "reading": "しぼう",
+        "meaning": "Meninggal dunia"
+      },
+      {
+        "word": "死者",
+        "reading": "ししゃ",
+        "meaning": "Korban tewas"
+      }
+    ]
+  },
+  {
+    "id": "k-206",
+    "kanji": "亡",
+    "on": "ボウ、モウ",
+    "kun": "な・くなる",
+    "meaning": "Wafat, hilang sirna",
+    "strokes": 3,
+    "words": [
+      {
+        "word": "亡くなる",
+        "reading": "なくなる",
+        "meaning": "Meninggal"
+      },
+      {
+        "word": "未亡人",
+        "reading": "みぼうじん",
+        "meaning": "Janda"
+      }
+    ]
+  },
+  {
+    "id": "k-207",
+    "kanji": "急",
+    "on": "キュウ",
+    "kun": "いそ・ぐ",
+    "meaning": "Cepat mendesak, bergegas",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "急行",
+        "reading": "きゅうこう",
+        "meaning": "Kereta ekspres"
+      },
+      {
+        "word": "大急ぎ",
+        "reading": "おおいそぎ",
+        "meaning": "Sangat terburu-buru"
+      }
+    ]
+  },
+  {
+    "id": "k-208",
+    "kanji": "速",
+    "on": "ソク",
+    "kun": "はや・い、すみ・やか",
+    "meaning": "Laju cepat",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "速度",
+        "reading": "そくど",
+        "meaning": "Kecepatan speed"
+      },
+      {
+        "word": "急速",
+        "reading": "きゅうそく",
+        "meaning": "Sangat pesat"
+      }
+    ]
+  },
+  {
+    "id": "k-209",
+    "kanji": "遅",
+    "on": "チ",
+    "kun": "おく・れる、おそ・い",
+    "meaning": "Lambat, terlambat",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "遅延",
+        "reading": "ちえん",
+        "meaning": "Penundaan jadwal"
+      },
+      {
+        "word": "手遅れ",
+        "reading": "ておくれ",
+        "meaning": "Sudah terlambat nasi jadi bubur"
+      }
+    ]
+  },
+  {
+    "id": "k-210",
+    "kanji": "延",
+    "on": "エン",
+    "kun": "の・びる、の・ばす",
+    "meaning": "Memperpanjang, molor",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "延期",
+        "reading": "えんき",
+        "meaning": "Penundaan tanggal"
+      },
+      {
+        "word": "延長",
+        "reading": "えんちょう",
+        "meaning": "Perpanjangan waktu"
+      }
+    ]
+  },
+  {
+    "id": "k-211",
+    "kanji": "長",
+    "on": "チョウ",
+    "kun": "なが・い",
+    "meaning": "Panjang, pimpinan",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "部長",
+        "reading": "ぶちょう",
+        "meaning": "Kepala divisi departemen"
+      },
+      {
+        "word": "市長",
+        "reading": "しちょう",
+        "meaning": "Walikota"
+      }
+    ]
+  },
+  {
+    "id": "k-212",
+    "kanji": "短",
+    "on": "タン",
+    "kun": "みじか・い",
+    "meaning": "Pendek, singkat",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "短気",
+        "reading": "たんき",
+        "meaning": "Mudah marah pemarah"
+      },
+      {
+        "word": "短所",
+        "reading": "たんしょ",
+        "meaning": "Kekurangan diri"
+      }
+    ]
+  },
+  {
+    "id": "k-213",
+    "kanji": "所",
+    "on": "ショ",
+    "kun": "ところ",
+    "meaning": "Tempat, bagian titik",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "場所",
+        "reading": "ばしょ",
+        "meaning": "Tempat lokasi"
+      },
+      {
+        "word": "長所",
+        "reading": "ちょうしょ",
+        "meaning": "Kelebihan keunggulan"
+      }
+    ]
+  },
+  {
+    "id": "k-214",
+    "kanji": "場",
+    "on": "ジョウ",
+    "kun": "ば",
+    "meaning": "Area lokasi arena",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "広場",
+        "reading": "ひろば",
+        "meaning": "Alun-alun lapangan"
+      },
+      {
+        "word": "立場",
+        "reading": "たちば",
+        "meaning": "Posisi sudut pandang"
+      }
+    ]
+  },
+  {
+    "id": "k-215",
+    "kanji": "立",
+    "on": "リツ、リュウ",
+    "kun": "た・つ、た・てる",
+    "meaning": "Berdiri, mendirikan",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "自立",
+        "reading": "じりつ",
+        "meaning": "Mandiri independen"
+      },
+      {
+        "word": "国立",
+        "reading": "こくりつ",
+        "meaning": "Negeri/nasional"
+      }
+    ]
+  },
+  {
+    "id": "k-216",
+    "kanji": "座",
+    "on": "ザ",
+    "kun": "すわ・る",
+    "meaning": "Duduk, teater konstelasi",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "座席",
+        "reading": "ざせき",
+        "meaning": "Tempat duduk"
+      },
+      {
+        "word": "口座",
+        "reading": "こうざ",
+        "meaning": "Rekening bank"
+      }
+    ]
+  },
+  {
+    "id": "k-217",
+    "kanji": "口",
+    "on": "コウ、ク",
+    "kun": "くち",
+    "meaning": "Mulut, pintu masuk, bukaan",
+    "strokes": 3,
+    "words": [
+      {
+        "word": "入口",
+        "reading": "いりぐち",
+        "meaning": "Pintu masuk"
+      },
+      {
+        "word": "窓口",
+        "reading": "まどぐち",
+        "meaning": "Loket pelayanan"
+      }
+    ]
+  },
+  {
+    "id": "k-218",
+    "kanji": "窓",
+    "on": "ソウ",
+    "kun": "まど",
+    "meaning": "Jendela",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "同窓会",
+        "reading": "どうそうかい",
+        "meaning": "Reuni alumni"
+      },
+      {
+        "word": "車窓",
+        "reading": "しゃそう",
+        "meaning": "Jendela kereta/kendaraan"
+      }
+    ]
+  },
+  {
+    "id": "k-219",
+    "kanji": "車",
+    "on": "シャ",
+    "kun": "くるま",
+    "meaning": "Kendaraan mobil roda",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "駐車場",
+        "reading": "ちゅうしゃじょう",
+        "meaning": "Tempat parkir"
+      },
+      {
+        "word": "電車",
+        "reading": "でんしゃ",
+        "meaning": "Kereta listrik"
+      }
+    ]
+  },
+  {
+    "id": "k-220",
+    "kanji": "駐",
+    "on": "チュウ",
+    "kun": "",
+    "meaning": "Parkir, tinggal sementara",
+    "strokes": 15,
+    "words": [
+      {
+        "word": "駐輪場",
+        "reading": "ちゅうりんじょう",
+        "meaning": "Tempat parkir sepeda"
+      },
+      {
+        "word": "駐車違反",
+        "reading": "ちゅうしゃいはん",
+        "meaning": "Pelanggaran parkir"
+      }
+    ]
+  },
+  {
+    "id": "k-221",
+    "kanji": "輪",
+    "on": "リン",
+    "kun": "わ",
+    "meaning": "Roda, lingkaran cincin",
+    "strokes": 15,
+    "words": [
+      {
+        "word": "五輪",
+        "reading": "ごりん",
+        "meaning": "Olimpiade"
+      },
+      {
+        "word": "車輪",
+        "reading": "しゃりん",
+        "meaning": "Roda gerobak/kendaraan"
+      }
+    ]
+  },
+  {
+    "id": "k-222",
+    "kanji": "違",
+    "on": "イ",
+    "kun": "ちが・う、ちが・える",
+    "meaning": "Berbeda, keliru, melanggar",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "間違える",
+        "reading": "まちがえる",
+        "meaning": "Membuat kesalahan"
+      },
+      {
+        "word": "違反",
+        "reading": "いはん",
+        "meaning": "Pelanggaran aturan"
+      }
+    ]
+  },
+  {
+    "id": "k-223",
+    "kanji": "反",
+    "on": "ハン、ホン",
+    "kun": "そ・る",
+    "meaning": "Menentang, membalik",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "反対",
+        "reading": "はんたい",
+        "meaning": "Tidak setuju lawan"
+      },
+      {
+        "word": "反省",
+        "reading": "はんせい",
+        "meaning": "Mawas diri introspeksi"
+      }
+    ]
+  },
+  {
+    "id": "k-224",
+    "kanji": "省",
+    "on": "ショウ、セイ",
+    "kun": "はぶ・く、かえり・みる",
+    "meaning": "Kementerian, menghemat, merenungi",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "文部科学省",
+        "reading": "もんぶかがくしょう",
+        "meaning": "Kemendikbud Jepang"
+      },
+      {
+        "word": "省エネ",
+        "reading": "しょうエネ",
+        "meaning": "Hemat energi"
+      }
+    ]
+  },
+  {
+    "id": "k-225",
+    "kanji": "対",
+    "on": "タイ、ツイ",
+    "kun": "",
+    "meaning": "Berhadapan, lawan tanding",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "対象",
+        "reading": "たいしょう",
+        "meaning": "Target sasaran objek"
+      },
+      {
+        "word": "応対",
+        "reading": "おうたい",
+        "meaning": "Menerima melayani tamu"
+      }
+    ]
+  },
+  {
+    "id": "k-226",
+    "kanji": "応",
+    "on": "オウ",
+    "kun": "こた・える",
+    "meaning": "Menanggapi, memenuhi respons",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "応援",
+        "reading": "おうえん",
+        "meaning": "Dukungan sorak sorai"
+      },
+      {
+        "word": "応用",
+        "reading": "おうよう",
+        "meaning": "Aplikasi terapan"
+      }
+    ]
+  },
+  {
+    "id": "k-227",
+    "kanji": "援",
+    "on": "エン",
+    "kun": "",
+    "meaning": "Membantu menolong menyokong",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "支援",
+        "reading": "しえん",
+        "meaning": "Dukungan donasi sokongan"
+      },
+      {
+        "word": "救援",
+        "reading": "きゅうえん",
+        "meaning": "Pertolongan darurat SAR"
+      }
+    ]
+  },
+  {
+    "id": "k-228",
+    "kanji": "助",
+    "on": "ジョ",
+    "kun": "すけ",
+    "meaning": "Bantuan pembantu",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "救助隊",
+        "reading": "きゅうじょたい",
+        "meaning": "Regu penyelamat"
+      },
+      {
+        "word": "援助",
+        "reading": "えんじょ",
+        "meaning": "Bantuan subsidi finansial"
+      }
+    ]
+  },
+  {
+    "id": "k-229",
+    "kanji": "隊",
+    "on": "タイ",
+    "kun": "",
+    "meaning": "Pasukan, regu kontingen",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "部隊",
+        "reading": "ぶたい",
+        "meaning": "Kesatuan korps militer"
+      },
+      {
+        "word": "隊員",
+        "reading": "たいいん",
+        "meaning": "Anggota regu tim"
+      }
+    ]
+  },
+  {
+    "id": "k-230",
+    "kanji": "員",
+    "on": "イン",
+    "kun": "",
+    "meaning": "Anggota personel",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "会社員",
+        "reading": "かいしゃいん",
+        "meaning": "Pegawai kantor swasta"
+      },
+      {
+        "word": "全員",
+        "reading": "ぜんいん",
+        "meaning": "Semua anggota tanpa kecuali"
+      }
+    ]
+  },
+  {
+    "id": "k-231",
+    "kanji": "全",
+    "on": "ゼン",
+    "kun": "まった・く、すべ・て",
+    "meaning": "Seluruh, komplit total",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "安全",
+        "reading": "あんぜん",
+        "meaning": "Aman tenteram"
+      },
+      {
+        "word": "全国",
+        "reading": "ぜんこく",
+        "meaning": "Seluruh penjuru negeri"
+      }
+    ]
+  },
+  {
+    "id": "k-232",
+    "kanji": "安",
+    "on": "アン",
+    "kun": "やす・い",
+    "meaning": "Murah, damai tenang",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "安心",
+        "reading": "あんしん",
+        "meaning": "Lega tenteram batin"
+      },
+      {
+        "word": "不安",
+        "reading": "ふあん",
+        "meaning": "Gelisah was-was"
+      }
+    ]
+  },
+  {
+    "id": "k-233",
+    "kanji": "不",
+    "on": "フ、ブ",
+    "kun": "",
+    "meaning": "Tidak, bukan, defisit",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "不便",
+        "reading": "ふべん",
+        "meaning": "Kurang praktis merepotkan"
+      },
+      {
+        "word": "不足",
+        "reading": "ふそく",
+        "meaning": "Kekurangan defisit"
+      }
+    ]
+  },
+  {
+    "id": "k-234",
+    "kanji": "足",
+    "on": "ソク",
+    "kun": "あし、た・りる",
+    "meaning": "Kaki, mencukupi",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "足りる",
+        "reading": "たりる",
+        "meaning": "Cukup memadai"
+      },
+      {
+        "word": "遠足",
+        "reading": "えんそく",
+        "meaning": "Piknik tamasya"
+      }
+    ]
+  },
+  {
+    "id": "k-235",
+    "kanji": "手",
+    "on": "シュ",
+    "kun": "て、た",
+    "meaning": "Tangan, tenaga kerja",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "歌手",
+        "reading": "かしゅ",
+        "meaning": "Penyanyi vokal"
+      },
+      {
+        "word": "運転手",
+        "reading": "うんてんしゅ",
+        "meaning": "Sopir pengemudi"
+      }
+    ]
+  },
+  {
+    "id": "k-236",
+    "kanji": "歌",
+    "on": "カ",
+    "kun": "うた、うた・う",
+    "meaning": "Lagu tembang, bernyanyi",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "国歌",
+        "reading": "こっか",
+        "meaning": "Lagu kebangsaan"
+      },
+      {
+        "word": "歌詞",
+        "reading": "かし",
+        "meaning": "Lirik syair lagu"
+      }
+    ]
+  },
+  {
+    "id": "k-237",
+    "kanji": "詞",
+    "on": "シ",
+    "kun": "",
+    "meaning": "Kata partikel bait lirik",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "品詞",
+        "reading": "ひんし",
+        "meaning": "Kelas kata gramatikal"
+      },
+      {
+        "word": "名詞",
+        "reading": "めいし",
+        "meaning": "Kata benda nomina"
+      }
+    ]
+  },
+  {
+    "id": "k-238",
+    "kanji": "動",
+    "on": "ドウ",
+    "kun": "うご・く、うご・かす",
+    "meaning": "Bergerak, menggerakkan",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "動詞",
+        "reading": "どうし",
+        "meaning": "Kata kerja verba"
+      },
+      {
+        "word": "運動",
+        "reading": "うんどう",
+        "meaning": "Olahraga gerak badan"
+      }
+    ]
+  },
+  {
+    "id": "k-239",
+    "kanji": "運",
+    "on": "ウン",
+    "kun": "はこ・ぶ",
+    "meaning": "Mengangkut, nasib keberuntungan",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "運転",
+        "reading": "うんてん",
+        "meaning": "Menyetir berkendara"
+      },
+      {
+        "word": "幸運",
+        "reading": "こううん",
+        "meaning": "Beruntung bernasib mujur"
+      }
+    ]
+  },
+  {
+    "id": "k-240",
+    "kanji": "幸",
+    "on": "コウ",
+    "kun": "さいわ・い、しあわ・せ",
+    "meaning": "Bahagia, berkah mujur",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "幸せ",
+        "reading": "しあわせ",
+        "meaning": "Kebahagiaan hidup"
+      },
+      {
+        "word": "不幸",
+        "reading": "ふこう",
+        "meaning": "Kemalangan musibah"
+      }
+    ]
+  },
+  {
+    "id": "k-241",
+    "kanji": "福",
+    "on": "フク",
+    "kun": "",
+    "meaning": "Kemakmuran berkah sejahtera",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "幸福",
+        "reading": "こうふく",
+        "meaning": "Kebahagiaan berkah"
+      },
+      {
+        "word": "福祉",
+        "reading": "ふくし",
+        "meaning": "Kesejahteraan sosial"
+      }
+    ]
+  },
+  {
+    "id": "k-242",
+    "kanji": "祉",
+    "on": "シ",
+    "kun": "",
+    "meaning": "Kesejahteraan warga",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "社会福祉",
+        "reading": "しゃかいふくし",
+        "meaning": "Kesejahteraan sosial"
+      },
+      {
+        "word": "福祉施設",
+        "reading": "ふくししせつ",
+        "meaning": "Fasilitas panti sosial"
+      }
+    ]
+  },
+  {
+    "id": "k-243",
+    "kanji": "社",
+    "on": "シャ",
+    "kun": "やしろ",
+    "meaning": "Perusahaan komunitas kuil",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "社会",
+        "reading": "しゃかい",
+        "meaning": "Masyarakat sosial"
+      },
+      {
+        "word": "神社",
+        "reading": "じんじゃ",
+        "meaning": "Kuil Shinto"
+      }
+    ]
+  },
+  {
+    "id": "k-244",
+    "kanji": "神",
+    "on": "シン、ジン",
+    "kun": "かみ",
+    "meaning": "Tuhan, dewa dewi",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "神道",
+        "reading": "しんとう",
+        "meaning": "Agama Shinto"
+      },
+      {
+        "word": "神経",
+        "reading": "しんけい",
+        "meaning": "Saraf urat batin"
+      }
+    ]
+  },
+  {
+    "id": "k-245",
+    "kanji": "道",
+    "on": "ドウ、トウ",
+    "kun": "みち",
+    "meaning": "Jalan lintas, ajaran tata",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "歩道",
+        "reading": "ほどう",
+        "meaning": "Trotoar pejalan"
+      },
+      {
+        "word": "柔道",
+        "reading": "じゅうどう",
+        "meaning": "Judo beladiri"
+      }
+    ]
+  },
+  {
+    "id": "k-246",
+    "kanji": "歩",
+    "on": "ホ、ポ",
+    "kun": "ある・く、あゆ・む",
+    "meaning": "Berjalan melangkah",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "散歩",
+        "reading": "さんぽ",
+        "meaning": "Jalan-jalan santai"
+      },
+      {
+        "word": "進歩",
+        "reading": "しんぽ",
+        "meaning": "Kemajuan progres pesat"
+      }
+    ]
+  },
+  {
+    "id": "k-247",
+    "kanji": "散",
+    "on": "サン",
+    "kun": "ち・る、ち・らかす",
+    "meaning": "Menyebar, berserakan",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "解散",
+        "reading": "かいさん",
+        "meaning": "Bubar berpisah"
+      },
+      {
+        "word": "散乱",
+        "reading": "さんらん",
+        "meaning": "Berantakan berserakan"
+      }
+    ]
+  },
+  {
+    "id": "k-248",
+    "kanji": "解",
+    "on": "カイ、ゲ",
+    "kun": "と・く、と・ける",
+    "meaning": "Memecahkan teka-teki, melepas",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "解決",
+        "reading": "かいけつ",
+        "meaning": "Penyelesaian solusi"
+      },
+      {
+        "word": "解答",
+        "reading": "かいとう",
+        "meaning": "Kunci jawaban solusi"
+      }
+    ]
+  },
+  {
+    "id": "k-249",
+    "kanji": "答",
+    "on": "トウ",
+    "kun": "こた・える、こた・え",
+    "meaning": "Menjawab, respons solusi",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "答案",
+        "reading": "とうあん",
+        "meaning": "Lembar jawaban ujian"
+      },
+      {
+        "word": "回答",
+        "reading": "かいとう",
+        "meaning": "Jawaban survei tanggapan"
+      }
+    ]
+  },
+  {
+    "id": "k-250",
+    "kanji": "案",
+    "on": "アン",
+    "kun": "",
+    "meaning": "Rancangan usulan draf",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "案内",
+        "reading": "あんない",
+        "meaning": "Pemandu instruksi rute"
+      },
+      {
+        "word": "提案",
+        "reading": "ていあん",
+        "meaning": "Usulan ide proposal"
+      }
+    ]
+  },
+  {
+    "id": "k-251",
+    "kanji": "内",
+    "on": "ナイ、ダイ",
+    "kun": "うち",
+    "meaning": "Di dalam, domestik",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "案内所",
+        "reading": "あんないじょ",
+        "meaning": "Pusat informasi pemandu"
+      },
+      {
+        "word": "国内",
+        "reading": "こくない",
+        "meaning": "Domestik dalam negeri"
+      }
+    ]
+  },
+  {
+    "id": "k-252",
+    "kanji": "提",
+    "on": "テイ",
+    "kun": "さ・げる",
+    "meaning": "Menenteng, mengajukan",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "提出",
+        "reading": "ていしゅつ",
+        "meaning": "Pengumpulan berkas"
+      },
+      {
+        "word": "提供",
+        "reading": "ていきょう",
+        "meaning": "Pemberian sponsor sajian"
+      }
+    ]
+  },
+  {
+    "id": "k-253",
+    "kanji": "供",
+    "on": "キョウ、ク",
+    "kun": "そな・える、とも",
+    "meaning": "Menyajikan, menemani anak",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "子供",
+        "reading": "こども",
+        "meaning": "Anak kecil"
+      },
+      {
+        "word": "供給",
+        "reading": "きょうきゅう",
+        "meaning": "Pasokan supply"
+      }
+    ]
+  },
+  {
+    "id": "k-254",
+    "kanji": "給",
+    "on": "キュウ",
+    "kun": "たま・う",
+    "meaning": "Gaji upah, menyuplai",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "給料",
+        "reading": "きゅうりょう",
+        "meaning": "Gaji bulanan"
+      },
+      {
+        "word": "月給",
+        "reading": "げっきゅう",
+        "meaning": "Gaji sebulan"
+      }
+    ]
+  },
+  {
+    "id": "k-255",
+    "kanji": "月",
+    "on": "ゲツ、ガツ",
+    "kun": "つき",
+    "meaning": "Bulan kalender astronomi",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "毎月",
+        "reading": "まいつき",
+        "meaning": "Tiap bulan"
+      },
+      {
+        "word": "来月",
+        "reading": "らいげつ",
+        "meaning": "Bulan depan"
+      }
+    ]
+  },
+  {
+    "id": "k-256",
+    "kanji": "火",
+    "on": "カ",
+    "kun": "ひ",
+    "meaning": "Api bara kobaran",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "火災",
+        "reading": "かさい",
+        "meaning": "Kebakaran fatal"
+      },
+      {
+        "word": "花火",
+        "reading": "はなび",
+        "meaning": "Kembang api semarak"
+      }
+    ]
+  },
+  {
+    "id": "k-257",
+    "kanji": "水",
+    "on": "スイ",
+    "kun": "みず",
+    "meaning": "Air tawar jernih",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "水道",
+        "reading": "すいどう",
+        "meaning": "Saluran pipa air PAM"
+      },
+      {
+        "word": "水泳",
+        "reading": "すいえい",
+        "meaning": "Berenang olahraga"
+      }
+    ]
+  },
+  {
+    "id": "k-258",
+    "kanji": "木",
+    "on": "モク、ボク",
+    "kun": "き",
+    "meaning": "Pohon kayu belantara",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "木曜日",
+        "reading": "もくようび",
+        "meaning": "Hari Kamis"
+      },
+      {
+        "word": "植木",
+        "reading": "うえき",
+        "meaning": "Tanaman pot kebun"
+      }
+    ]
+  },
+  {
+    "id": "k-259",
+    "kanji": "金",
+    "on": "キン、コン",
+    "kun": "かね",
+    "meaning": "Emas logam, uang kas",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "現金",
+        "reading": "げんきん",
+        "meaning": "Uang tunai cash"
+      },
+      {
+        "word": "貯金",
+        "reading": "ちょきん",
+        "meaning": "Uang tabungan"
+      }
+    ]
+  },
+  {
+    "id": "k-260",
+    "kanji": "土",
+    "on": "ド、ト",
+    "kun": "つち",
+    "meaning": "Tanah bumi tanah liat",
+    "strokes": 3,
+    "words": [
+      {
+        "word": "土地",
+        "reading": "とち",
+        "meaning": "Tanah kapling lahan"
+      },
+      {
+        "word": "土曜日",
+        "reading": "どようび",
+        "meaning": "Hari Sabtu"
+      }
+    ]
+  },
+  {
+    "id": "k-261",
+    "kanji": "地",
+    "on": "チ、ジ",
+    "kun": "",
+    "meaning": "Bumi daratan tempat",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "地震",
+        "reading": "じしん",
+        "meaning": "Gempa bumi tektonik"
+      },
+      {
+        "word": "地域",
+        "reading": "ちいき",
+        "meaning": "Wilayah teritorial"
+      }
+    ]
+  },
+  {
+    "id": "k-262",
+    "kanji": "震",
+    "on": "シン",
+    "kun": "ふる・える",
+    "meaning": "Guncangan getaran gempa",
+    "strokes": 15,
+    "words": [
+      {
+        "word": "震度",
+        "reading": "しんど",
+        "meaning": "Skala intensitas gempa"
+      },
+      {
+        "word": "震える",
+        "reading": "ふるえる",
+        "meaning": "Gemetar kedinginan"
+      }
+    ]
+  },
+  {
+    "id": "k-263",
+    "kanji": "域",
+    "on": "イキ",
+    "kun": "",
+    "meaning": "Zona teritori kawasan",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "区域",
+        "reading": "くいき",
+        "meaning": "Zona batasan wilayah"
+      },
+      {
+        "word": "流域",
+        "reading": "りゅういき",
+        "meaning": "Daerah aliran sungai DAS"
+      }
+    ]
+  },
+  {
+    "id": "k-264",
+    "kanji": "流",
+    "on": "リュウ、ル",
+    "kun": "なが・れる、なが・す",
+    "meaning": "Mengalir, arus tren",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "流行",
+        "reading": "りゅうこう",
+        "meaning": "Tren populer mewabah"
+      },
+      {
+        "word": "一流",
+        "reading": "いちりゅう",
+        "meaning": "Kelas wahid ternama"
+      }
+    ]
+  },
+  {
+    "id": "k-265",
+    "kanji": "行",
+    "on": "コウ、ギョウ",
+    "kun": "い・く、ゆ・く、おこな・う",
+    "meaning": "Pergi, menyelenggarakan",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "行動",
+        "reading": "こうどう",
+        "meaning": "Tindakan aksi laku"
+      },
+      {
+        "word": "行事",
+        "reading": "ぎょうじ",
+        "meaning": "Agenda acara festival"
+      }
+    ]
+  },
+  {
+    "id": "k-266",
+    "kanji": "事",
+    "on": "ジ",
+    "kun": "こと",
+    "meaning": "Urusan hal fakta peristiwa",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "大事",
+        "reading": "だいじ",
+        "meaning": "Penting krusial"
+      },
+      {
+        "word": "食事",
+        "reading": "しょくじ",
+        "meaning": "Makan bersantap"
+      }
+    ]
+  },
+  {
+    "id": "k-267",
+    "kanji": "食",
+    "on": "ショク",
+    "kun": "た・べる、く・う",
+    "meaning": "Makan, pangan panganan",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "定食",
+        "reading": "ていしょく",
+        "meaning": "Menu paket komplit"
+      },
+      {
+        "word": "外食",
+        "reading": "がいしょく",
+        "meaning": "Makan di luar resto"
+      }
+    ]
+  },
+  {
+    "id": "k-268",
+    "kanji": "飲",
+    "on": "イン",
+    "kun": "の・む",
+    "meaning": "Minum meneguk",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "飲料水",
+        "reading": "いんりょうすい",
+        "meaning": "Air minum bersih"
+      },
+      {
+        "word": "飲み物",
+        "reading": "のみもの",
+        "meaning": "Minuman"
+      }
+    ]
+  },
+  {
+    "id": "k-269",
+    "kanji": "物",
+    "on": "ブツ、モツ",
+    "kun": "もの",
+    "meaning": "Barang benda zat",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "荷物",
+        "reading": "にもつ",
+        "meaning": "Barang bawaan paket"
+      },
+      {
+        "word": "本物",
+        "reading": "ほんもの",
+        "meaning": "Asli original bukan tiruan"
+      }
+    ]
+  },
+  {
+    "id": "k-270",
+    "kanji": "荷",
+    "on": "カ",
+    "kun": "に",
+    "meaning": "Beban bawaan muatan",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "手荷物",
+        "reading": "てにもつ",
+        "meaning": "Tas tenteng kabin"
+      },
+      {
+        "word": "重荷",
+        "reading": "おもに",
+        "meaning": "Beban berat tanggungan"
+      }
+    ]
+  },
+  {
+    "id": "k-271",
+    "kanji": "重",
+    "on": "ジュウ",
+    "kun": "かさ・ねる",
+    "meaning": "Bertumpuk rangkap",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "貴重",
+        "reading": "きちょう",
+        "meaning": "Amat berharga bernilai"
+      },
+      {
+        "word": "重複",
+        "reading": "ちょうふく",
+        "meaning": "Duplikasi tumpang tindih"
+      }
+    ]
+  },
+  {
+    "id": "k-272",
+    "kanji": "貴",
+    "on": "キ",
+    "kun": "とうと・い",
+    "meaning": "Mulia terhormat berharga",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "貴重品",
+        "reading": "きちょうひん",
+        "meaning": "Barang berharga mulia"
+      },
+      {
+        "word": "貴族",
+        "reading": "きぞく",
+        "meaning": "Bangsawan priyayi"
+      }
+    ]
+  },
+  {
+    "id": "k-273",
+    "kanji": "族",
+    "on": "ゾク",
+    "kun": "",
+    "meaning": "Keluarga klan suku",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "家族",
+        "reading": "かぞく",
+        "meaning": "Keluarga inti"
+      },
+      {
+        "word": "民族",
+        "reading": "みんぞく",
+        "meaning": "Etnis suku bangsa"
+      }
+    ]
+  },
+  {
+    "id": "k-274",
+    "kanji": "親",
+    "on": "シン",
+    "kun": "おや、した・しい",
+    "meaning": "Orang tua, akrab karib",
+    "strokes": 16,
+    "words": [
+      {
+        "word": "両親",
+        "reading": "りょうしん",
+        "meaning": "Kedua orang tua"
+      },
+      {
+        "word": "親切",
+        "reading": "しんせつ",
+        "meaning": "Baik hati ramah"
+      }
+    ]
+  },
+  {
+    "id": "k-275",
+    "kanji": "切",
+    "on": "セツ、サイ",
+    "kun": "き・る、き・れる",
+    "meaning": "Memotong, mendesak",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "切手",
+        "reading": "きって",
+        "meaning": "Prangko pos"
+      },
+      {
+        "word": "切符",
+        "reading": "きっぷ",
+        "meaning": "Karcis tiket karcis"
+      }
+    ]
+  },
+  {
+    "id": "k-276",
+    "kanji": "符",
+    "on": "フ",
+    "kun": "",
+    "meaning": "Kupon tanda token tiket",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "音符",
+        "reading": "おんぷ",
+        "meaning": "Not balok balok nada"
+      },
+      {
+        "word": "符号",
+        "reading": "ふごう",
+        "meaning": "Tanda simbol kode"
+      }
+    ]
+  },
+  {
+    "id": "k-277",
+    "kanji": "券",
+    "on": "ケン",
+    "kun": "",
+    "meaning": "Voucher tiket karcis kupon",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "定期券",
+        "reading": "ていきけん",
+        "meaning": "Tiket komuter terusan"
+      },
+      {
+        "word": "旅券",
+        "reading": "りょけん",
+        "meaning": "Paspor buku paspor"
+      }
+    ]
+  },
+  {
+    "id": "k-278",
+    "kanji": "旅",
+    "on": "リョ",
+    "kun": "たび",
+    "meaning": "Bepergian bertamasya safar",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "旅行",
+        "reading": "りょこう",
+        "meaning": "Wisata melancong"
+      },
+      {
+        "word": "旅館",
+        "reading": "りょかん",
+        "meaning": "Penginapan ryokan Jepang"
+      }
+    ]
+  },
+  {
+    "id": "k-279",
+    "kanji": "宿",
+    "on": "シュク",
+    "kun": "やど、やど・る",
+    "meaning": "Penginapan losmen bermalam",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "宿泊",
+        "reading": "しゅくはく",
+        "meaning": "Menginap reservasi"
+      },
+      {
+        "word": "宿題",
+        "reading": "しゅくだい",
+        "meaning": "PR pekerjaan rumah"
+      }
+    ]
+  },
+  {
+    "id": "k-280",
+    "kanji": "泊",
+    "on": "ハク",
+    "kun": "と・まる、と・める",
+    "meaning": "Bermalam menginap",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "一泊二日",
+        "reading": "いっぱくふつか",
+        "meaning": "2 hari 1 malam"
+      },
+      {
+        "word": "泊まる",
+        "reading": "とまる",
+        "meaning": "Menginap di hotel"
+      }
+    ]
+  },
+  {
+    "id": "k-281",
+    "kanji": "題",
+    "on": "ダイ",
+    "kun": "",
+    "meaning": "Judul tema materi soal",
+    "strokes": 18,
+    "words": [
+      {
+        "word": "問題",
+        "reading": "もんだい",
+        "meaning": "Masalah kendala soal"
+      },
+      {
+        "word": "話題",
+        "reading": "わだい",
+        "meaning": "Topik perbincangan hangat"
+      }
+    ]
+  },
+  {
+    "id": "k-282",
+    "kanji": "話",
+    "on": "ワ",
+    "kun": "はな・す、はなし",
+    "meaning": "Berbicara, cerita kisah",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "会話",
+        "reading": "かいわ",
+        "meaning": "Percakapan dialog"
+      },
+      {
+        "word": "電話",
+        "reading": "でんわ",
+        "meaning": "Telepon hubungan suara"
+      }
+    ]
+  },
+  {
+    "id": "k-283",
+    "kanji": "電",
+    "on": "デン",
+    "kun": "",
+    "meaning": "Listrik kilat petir",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "電力",
+        "reading": "でんりょく",
+        "meaning": "Tenaga daya listrik"
+      },
+      {
+        "word": "電子",
+        "reading": "でんし",
+        "meaning": "Elektronik digital"
+      }
+    ]
+  },
+  {
+    "id": "k-284",
+    "kanji": "力",
+    "on": "リョク、リキ",
+    "kun": "ちから",
+    "meaning": "Tenaga daya kekuatan",
+    "strokes": 2,
+    "words": [
+      {
+        "word": "能力",
+        "reading": "のうりょく",
+        "meaning": "Kapabilitas kemampuan"
+      },
+      {
+        "word": "努力",
+        "reading": "どりょく",
+        "meaning": "Upaya ikhtiar gigih"
+      }
+    ]
+  },
+  {
+    "id": "k-285",
+    "kanji": "能",
+    "on": "ノウ",
+    "kun": "",
+    "meaning": "Kemampuan bakat fungsi",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "可能",
+        "reading": "かのう",
+        "meaning": "Mungkin terealisasi"
+      },
+      {
+        "word": "才能",
+        "reading": "さいのう",
+        "meaning": "Bakat talenta seni"
+      }
+    ]
+  },
+  {
+    "id": "k-286",
+    "kanji": "努",
+    "on": "ド",
+    "kun": "つと・める",
+    "meaning": "Berikhtiar berusaha keras",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "努力家",
+        "reading": "どりょくか",
+        "meaning": "Orang pekerja keras"
+      },
+      {
+        "word": "努める",
+        "reading": "つとめる",
+        "meaning": "Berupaya sekuat tenaga"
+      }
+    ]
+  },
+  {
+    "id": "k-287",
+    "kanji": "勤",
+    "on": "キン、ゴン",
+    "kun": "つと・める",
+    "meaning": "Dinas bekerja mengabdi",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "通勤",
+        "reading": "つうきん",
+        "meaning": "Pergi pulang kantor"
+      },
+      {
+        "word": "勤務",
+        "reading": "きんむ",
+        "meaning": "Jam tugas kerja kantor"
+      }
+    ]
+  },
+  {
+    "id": "k-288",
+    "kanji": "務",
+    "on": "ム",
+    "kun": "つと・める",
+    "meaning": "Tugas kewajiban fungsi",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "事務所",
+        "reading": "じむしょ",
+        "meaning": "Kantor dinas studio"
+      },
+      {
+        "word": "公務員",
+        "reading": "こうむいん",
+        "meaning": "PNS pegawai negeri"
+      }
+    ]
+  },
+  {
+    "id": "k-289",
+    "kanji": "公",
+    "on": "コウ",
+    "kun": "おおやけ",
+    "meaning": "Publik umum terbuka resmi",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "公園",
+        "reading": "こうえん",
+        "meaning": "Taman umum kota"
+      },
+      {
+        "word": "公式",
+        "reading": "こうしき",
+        "meaning": "Resmi formal formula"
+      }
+    ]
+  },
+  {
+    "id": "k-290",
+    "kanji": "園",
+    "on": "エン",
+    "kun": "その",
+    "meaning": "Kebun taman asri",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "動物園",
+        "reading": "どうぶつえん",
+        "meaning": "Kebun binatang"
+      },
+      {
+        "word": "遊園地",
+        "reading": "ゆうえんち",
+        "meaning": "Taman bermain hiburan"
+      }
+    ]
+  },
+  {
+    "id": "k-291",
+    "kanji": "遊",
+    "on": "ユウ、ユ",
+    "kun": "あそ・ぶ",
+    "meaning": "Bermain rekreasi riang",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "遊び",
+        "reading": "あそび",
+        "meaning": "Permainan santai"
+      },
+      {
+        "word": "周遊",
+        "reading": "しゅうゆう",
+        "meaning": "Tur keliling darmawisata"
+      }
+    ]
+  },
+  {
+    "id": "k-292",
+    "kanji": "周",
+    "on": "シュウ",
+    "kun": "まわ・り",
+    "meaning": "Sekeliling putaran keliling",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "周囲",
+        "reading": "しゅうい",
+        "meaning": "Lingkungan sekitar"
+      },
+      {
+        "word": "一周年",
+        "reading": "いっしゅうねん",
+        "meaning": "Ulang tahun genap 1 tahun"
+      }
+    ]
+  },
+  {
+    "id": "k-293",
+    "kanji": "囲",
+    "on": "イ",
+    "kun": "かこ・む、かこ・う",
+    "meaning": "Mengepung melingkari",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "雰囲気",
+        "reading": "ふんいき",
+        "meaning": "Atmosfer suasana hawa"
+      },
+      {
+        "word": "囲む",
+        "reading": "かこむ",
+        "meaning": "Mengelilingi melingkari"
+      }
+    ]
+  },
+  {
+    "id": "k-294",
+    "kanji": "気",
+    "on": "キ、ケ",
+    "kun": "",
+    "meaning": "Hawa energi roh rasa",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "気持ち",
+        "reading": "きもち",
+        "meaning": "Perasaan hati sensasi"
+      },
+      {
+        "word": "気候",
+        "reading": "きこう",
+        "meaning": "Iklim cuaca global"
+      }
+    ]
+  },
+  {
+    "id": "k-295",
+    "kanji": "候",
+    "on": "コウ",
+    "kun": "そうろう",
+    "meaning": "Musim hawa calon cuaca",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "天候",
+        "reading": "てんこう",
+        "meaning": "Kondisi cuaca harian"
+      },
+      {
+        "word": "候補",
+        "reading": "こうほ",
+        "meaning": "Kandidat calon terpilih"
+      }
+    ]
+  },
+  {
+    "id": "k-296",
+    "kanji": "天",
+    "on": "テン",
+    "kun": "あまつ、あめ",
+    "meaning": "Langit surga cakrawala",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "天気",
+        "reading": "てんき",
+        "meaning": "Cuaca hari ini"
+      },
+      {
+        "word": "天才",
+        "reading": "てんさい",
+        "meaning": "Jenius berbakat alami"
+      }
+    ]
+  },
+  {
+    "id": "k-297",
+    "kanji": "才",
+    "on": "サイ",
+    "kun": "",
+    "meaning": "Bakat kecerdasan umur",
+    "strokes": 3,
+    "words": [
+      {
+        "word": "秀才",
+        "reading": "しゅうさい",
+        "meaning": "Pelajar brilian berprestasi"
+      },
+      {
+        "word": "何歳・何才",
+        "reading": "なんさい",
+        "meaning": "Berapa umur usia"
+      }
+    ]
+  },
+  {
+    "id": "k-298",
+    "kanji": "補",
+    "on": "ホ",
+    "kun": "おぎな・う",
+    "meaning": "Menambal melengkapi subsidi",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "補給",
+        "reading": "ほきゅう",
+        "meaning": "Pengisian bekal pasokan"
+      },
+      {
+        "word": "補習",
+        "reading": "ほしゅう",
+        "meaning": "Pelajaran tambahan remidi"
+      }
+    ]
+  },
+  {
+    "id": "k-299",
+    "kanji": "習",
+    "on": "シュウ",
+    "kun": "なら・う",
+    "meaning": "Mempelajari membiasakan",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "習慣",
+        "reading": "しゅうかん",
+        "meaning": "Kebiasaan adat tradisi"
+      },
+      {
+        "word": "練習",
+        "reading": "れんしゅう",
+        "meaning": "Latihan drill soal"
+      }
+    ]
+  },
+  {
+    "id": "k-300",
+    "kanji": "練",
+    "on": "レン",
+    "kun": "ね・る",
+    "meaning": "Melatih mengasah adonan",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "訓練",
+        "reading": "くんれん",
+        "meaning": "Pelatihan simulasi gempa"
+      },
+      {
+        "word": "練る",
+        "reading": "ねる",
+        "meaning": "Mematangkan taktik strategi"
+      }
+    ]
+  },
+  {
+    "id": "k-301",
+    "kanji": "訓",
+    "on": "クン",
+    "kun": "",
+    "meaning": "Bimbingan didikan lafal kun",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "教訓",
+        "reading": "きょうくん",
+        "meaning": "Pelajaran moral petuah"
+      },
+      {
+        "word": "特訓",
+        "reading": "とっくん",
+        "meaning": "Latihan kilat intensif"
+      }
+    ]
+  },
+  {
+    "id": "k-302",
+    "kanji": "慣",
+    "on": "カン",
+    "kun": "な・れる、な・らす",
+    "meaning": "Terbiasa akrab lazim",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "慣習",
+        "reading": "かんしゅう",
+        "meaning": "Adat istiadat kelaziman"
+      },
+      {
+        "word": "見慣れる",
+        "reading": "みなれる",
+        "meaning": "Sudah biasa terbiasa melihat"
+      }
+    ]
+  },
+  {
+    "id": "k-303",
+    "kanji": "見",
+    "on": "ケン",
+    "kun": "み・る、み・える、み・せる",
+    "meaning": "Melihat tampak memperlihatkan",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "意見",
+        "reading": "いけん",
+        "meaning": "Pendapat opini pemikiran"
+      },
+      {
+        "word": "見学",
+        "reading": "けんがく",
+        "meaning": "Kunjungan studi edukatif"
+      }
+    ]
+  },
+  {
+    "id": "k-304",
+    "kanji": "意",
+    "on": "イ",
+    "kun": "",
+    "meaning": "Maksud tekad makna isi batin",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "意味",
+        "reading": "いみ",
+        "meaning": "Arti makna semantik"
+      },
+      {
+        "word": "注意",
+        "reading": "ちゅうい",
+        "meaning": "Perhatian peringatan waspada"
+      }
+    ]
+  },
+  {
+    "id": "k-305",
+    "kanji": "注",
+    "on": "チュウ",
+    "kun": "そそ・ぐ",
+    "meaning": "Menuang fokus perhatian order",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "注文",
+        "reading": "ちゅうもん",
+        "meaning": "Pesanan order makanan"
+      },
+      {
+        "word": "注目",
+        "reading": "ちゅうもく",
+        "meaning": "Sorotan perhatian khalayak"
+      }
+    ]
+  },
+  {
+    "id": "k-306",
+    "kanji": "文",
+    "on": "ブン、モン",
+    "kun": "ふみ",
+    "meaning": "Kalimat sastra teks aksara",
+    "strokes": 4,
+    "words": [
+      {
+        "word": "文学",
+        "reading": "ぶんがく",
+        "meaning": "Kesusastraan karya novel"
+      },
+      {
+        "word": "作文",
+        "reading": "さくぶん",
+        "meaning": "Karangan esai tulis"
+      }
+    ]
+  },
+  {
+    "id": "k-307",
+    "kanji": "学",
+    "on": "ガク",
+    "kun": "まな・ぶ",
+    "meaning": "Belajar menuntut ilmu sains",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "学者",
+        "reading": "がくしゃ",
+        "meaning": "Cendekiawan sarjana peneliti"
+      },
+      {
+        "word": "留学",
+        "reading": "りゅうがく",
+        "meaning": "Studi menuntut ilmu di LN"
+      }
+    ]
+  },
+  {
+    "id": "k-308",
+    "kanji": "留",
+    "on": "リュウ、ル",
+    "kun": "と・まる、と・める",
+    "meaning": "Tinggal menetap menahan",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "保留",
+        "reading": "ほりゅう",
+        "meaning": "Penangguhan pending simpan"
+      },
+      {
+        "word": "書留",
+        "reading": "かきとめ",
+        "meaning": "Surat pos tercatat resmi"
+      }
+    ]
+  },
+  {
+    "id": "k-309",
+    "kanji": "保",
+    "on": "ホ、ホウ",
+    "kun": "たも・つ",
+    "meaning": "Menjaga memelihara garansi",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "保護",
+        "reading": "ほご",
+        "meaning": "Perlindungan proteksi cagar"
+      },
+      {
+        "word": "保存",
+        "reading": "ほぞん",
+        "meaning": "Menyimpan file awet"
+      }
+    ]
+  },
+  {
+    "id": "k-310",
+    "kanji": "護",
+    "on": "ゴ",
+    "kun": "",
+    "meaning": "Mengawal membela membentengi",
+    "strokes": 20,
+    "words": [
+      {
+        "word": "弁護士",
+        "reading": "べんごし",
+        "meaning": "Pengacara advokat hukum"
+      },
+      {
+        "word": "看護師",
+        "reading": "かんごし",
+        "meaning": "Perawat suster medis"
+      }
+    ]
+  },
+  {
+    "id": "k-311",
+    "kanji": "弁",
+    "on": "ベン",
+    "kun": "",
+    "meaning": "Bicara dialek katup membela",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "関西弁",
+        "reading": "かんさいべん",
+        "meaning": "Dialek logat Kansai"
+      },
+      {
+        "word": "お弁当",
+        "reading": "おべんとう",
+        "meaning": "Kotak bekal makan siang"
+      }
+    ]
+  },
+  {
+    "id": "k-312",
+    "kanji": "看",
+    "on": "カン",
+    "kun": "み・る",
+    "meaning": "Menjaga mengawasi merawat",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "看板",
+        "reading": "かんばん",
+        "meaning": "Papan reklame plang toko"
+      },
+      {
+        "word": "看病",
+        "reading": "かんびょう",
+        "meaning": "Merawat orang sakit"
+      }
+    ]
+  },
+  {
+    "id": "k-313",
+    "kanji": "病",
+    "on": "ビョウ、ヘイ",
+    "kun": "や・む、やまい",
+    "meaning": "Sakit penyakit gangguan fisik",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "病院",
+        "reading": "びょういん",
+        "meaning": "Rumah sakit klinik"
+      },
+      {
+        "word": "病気",
+        "reading": "びょうき",
+        "meaning": "Penyakit kondisi sakit"
+      }
+    ]
+  },
+  {
+    "id": "k-314",
+    "kanji": "院",
+    "on": "イン",
+    "kun": "",
+    "meaning": "Institusi balai agung lembaga",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "大学院",
+        "reading": "だいがくいん",
+        "meaning": "Sekolah pascasarjana S2/S3"
+      },
+      {
+        "word": "入院",
+        "reading": "にゅういん",
+        "meaning": "Rawat inap di RS"
+      }
+    ]
+  },
+  {
+    "id": "k-315",
+    "kanji": "入",
+    "on": "ニュウ",
+    "kun": "はい・る、い・れる",
+    "meaning": "Masuk memasukkan",
+    "strokes": 2,
+    "words": [
+      {
+        "word": "入学",
+        "reading": "にゅうがく",
+        "meaning": "Masuk sekolah tahun ajaran"
+      },
+      {
+        "word": "輸入",
+        "reading": "ゆにゅう",
+        "meaning": "Impor komoditas masuk"
+      }
+    ]
+  },
+  {
+    "id": "k-316",
+    "kanji": "輸",
+    "on": "ユ",
+    "kun": "",
+    "meaning": "Mengangkut logistik lintas benua",
+    "strokes": 16,
+    "words": [
+      {
+        "word": "輸出",
+        "reading": "ゆしゅつ",
+        "meaning": "Ekspor barang ke luar negeri"
+      },
+      {
+        "word": "輸送",
+        "reading": "ゆそう",
+        "meaning": "Transportasi distribusi kargo"
+      }
+    ]
+  },
+  {
+    "id": "k-317",
+    "kanji": "出",
+    "on": "シュツ、スイ",
+    "kun": "で・る、だ・す",
+    "meaning": "Keluar mengeluarkan tampil",
+    "strokes": 5,
+    "words": [
+      {
+        "word": "出席",
+        "reading": "しゅっせき",
+        "meaning": "Kehadiran absensi"
+      },
+      {
+        "word": "出身",
+        "reading": "しゅっしん",
+        "meaning": "Asal kampung daerah"
+      }
+    ]
+  },
+  {
+    "id": "k-318",
+    "kanji": "身",
+    "on": "シン",
+    "kun": "み",
+    "meaning": "Tubuh raga status diri",
+    "strokes": 7,
+    "words": [
+      {
+        "word": "身分",
+        "reading": "みぶん",
+        "meaning": "Identitas kedudukan status"
+      },
+      {
+        "word": "独身",
+        "reading": "どくしん",
+        "meaning": "Lajang belum menikah"
+      }
+    ]
+  },
+  {
+    "id": "k-319",
+    "kanji": "独",
+    "on": "ドク",
+    "kun": "ひと・り",
+    "meaning": "Sendiri tunggal mandiri",
+    "strokes": 9,
+    "words": [
+      {
+        "word": "独立",
+        "reading": "どくりつ",
+        "meaning": "Kemerdekaan berdikari"
+      },
+      {
+        "word": "独自",
+        "reading": "どくじ",
+        "meaning": "Orisinil khas tersendiri"
+      }
+    ]
+  },
+  {
+    "id": "k-320",
+    "kanji": "自",
+    "on": "ジ、シ",
+    "kun": "みずか・ら",
+    "meaning": "Diri sendiri spontan alamiah",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "自分",
+        "reading": "じぶん",
+        "meaning": "Diri sendiri"
+      },
+      {
+        "word": "自然",
+        "reading": "しぜん",
+        "meaning": "Alam raya naturalis"
+      }
+    ]
+  },
+  {
+    "id": "k-321",
+    "kanji": "然",
+    "on": "ゼン、ネン",
+    "kun": "しか・り",
+    "meaning": "Demikian adanya wujud nyata",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "突然",
+        "reading": "とつぜん",
+        "meaning": "Tiba-tiba mendadak sontak"
+      },
+      {
+        "word": "当然",
+        "reading": "とうぜん",
+        "meaning": "Sudah sepantasnya wajar"
+      }
+    ]
+  },
+  {
+    "id": "k-322",
+    "kanji": "当",
+    "on": "トウ",
+    "kun": "あ・たる、あ・てる",
+    "meaning": "Tepat kena sesuai tanggung",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "本当",
+        "reading": "ほんとう",
+        "meaning": "Sungguh-sungguh nyata benar"
+      },
+      {
+        "word": "担当",
+        "reading": "たんとう",
+        "meaning": "Penanggung jawab pic tim"
+      }
+    ]
+  },
+  {
+    "id": "k-323",
+    "kanji": "担",
+    "on": "タン",
+    "kun": "にな・う、かつ・ぐ",
+    "meaning": "Memikul menanggung memegang",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "負担",
+        "reading": "ふたん",
+        "meaning": "Beban tanggung jawab"
+      },
+      {
+        "word": "担任",
+        "reading": "たんにん",
+        "meaning": "Wali kelas penanggung jawab"
+      }
+    ]
+  },
+  {
+    "id": "k-324",
+    "kanji": "任",
+    "on": "ニン",
+    "kun": "まか・せる、まか・す",
+    "meaning": "Pasrah menugaskan menyerahkan",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "責任",
+        "reading": "せきにん",
+        "meaning": "Tanggung jawab moral tugas"
+      },
+      {
+        "word": "辞任",
+        "reading": "じにん",
+        "meaning": "Mengundurkan diri mundur"
+      }
+    ]
+  },
+  {
+    "id": "k-325",
+    "kanji": "責",
+    "on": "セキ",
+    "kun": "せ・める",
+    "meaning": "Menyalahkan mendesak tugas",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "非難",
+        "reading": "ひなん",
+        "meaning": "Kecaman celaan keras"
+      },
+      {
+        "word": "責める",
+        "reading": "せめる",
+        "meaning": "Menyalahkan menegur"
+      }
+    ]
+  },
+  {
+    "id": "k-326",
+    "kanji": "辞",
+    "on": "ジ",
+    "kun": "や・める",
+    "meaning": "Kamus kata mengundurkan diri",
+    "strokes": 13,
+    "words": [
+      {
+        "word": "辞書",
+        "reading": "じしょ",
+        "meaning": "Kamus leksikon bahasa"
+      },
+      {
+        "word": "世辞",
+        "reading": "せじ",
+        "meaning": "Pujian basa-basi sanjungan"
+      }
+    ]
+  },
+  {
+    "id": "k-327",
+    "kanji": "書",
+    "on": "ショ",
+    "kun": "か・く",
+    "meaning": "Menulis surat buku dokumen",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "書類",
+        "reading": "しょるい",
+        "meaning": "Berkas dokumen kertas"
+      },
+      {
+        "word": "読書",
+        "reading": "どくしょ",
+        "meaning": "Membaca buku gemar baca"
+      }
+    ]
+  },
+  {
+    "id": "k-328",
+    "kanji": "類",
+    "on": "ルイ",
+    "kun": "たぐ・い",
+    "meaning": "Jenis rumpun ragam klasifikasi",
+    "strokes": 18,
+    "words": [
+      {
+        "word": "種類",
+        "reading": "しゅるい",
+        "meaning": "Ragam macam varian"
+      },
+      {
+        "word": "人類",
+        "reading": "じんるい",
+        "meaning": "Umat manusia sedunia"
+      }
+    ]
+  },
+  {
+    "id": "k-329",
+    "kanji": "種",
+    "on": "シュ",
+    "kun": "たね",
+    "meaning": "Benih biji rumpun ras",
+    "strokes": 14,
+    "words": [
+      {
+        "word": "人種",
+        "reading": "じんしゅ",
+        "meaning": "Ras etnis suku bangsa"
+      },
+      {
+        "word": "各種",
+        "reading": "かくしゅ",
+        "meaning": "Beraneka macam ragam"
+      }
+    ]
+  },
+  {
+    "id": "k-330",
+    "kanji": "各",
+    "on": "カク",
+    "kun": "おのおの",
+    "meaning": "Masing-masing tiap-tiap",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "各地",
+        "reading": "かくち",
+        "meaning": "Tiap daerah seantero negeri"
+      },
+      {
+        "word": "各国",
+        "reading": "かっこく",
+        "meaning": "Masing-masing negara bangsa"
+      }
+    ]
+  },
+  {
+    "id": "k-331",
+    "kanji": "国",
+    "on": "コク",
+    "kun": "くに",
+    "meaning": "Negara tanah air bangsa",
+    "strokes": 8,
+    "words": [
+      {
+        "word": "外国",
+        "reading": "がいこく",
+        "meaning": "Luar negeri mancanegara"
+      },
+      {
+        "word": "帰国",
+        "reading": "きこく",
+        "meaning": "Kembali pulang ke tanah air"
+      }
+    ]
+  },
+  {
+    "id": "k-332",
+    "kanji": "帰",
+    "on": "キ",
+    "kun": "かえ・る、かえ・す",
+    "meaning": "Pulang kembali ke pangkuan",
+    "strokes": 10,
+    "words": [
+      {
+        "word": "日帰り",
+        "reading": "ひがえり",
+        "meaning": "Perjalanan PP satu hari"
+      },
+      {
+        "word": "復帰",
+        "reading": "ふっき",
+        "meaning": "Kembali beraktivitas sembuh"
+      }
+    ]
+  },
+  {
+    "id": "k-333",
+    "kanji": "復",
+    "on": "フク",
+    "kun": "また",
+    "meaning": "Pulih kembali lagi dobel",
+    "strokes": 12,
+    "words": [
+      {
+        "word": "回復",
+        "reading": "かいふく",
+        "meaning": "Pemulihan kesehatan pulih"
+      },
+      {
+        "word": "復習",
+        "reading": "ふくしゅう",
+        "meaning": "Mengulang materi pelajaran"
+      }
+    ]
+  },
+  {
+    "id": "k-334",
+    "kanji": "回",
+    "on": "カイ、エ",
+    "kun": "まわ・る、まわ・す",
+    "meaning": "Berputar ronde rotasi kali",
+    "strokes": 6,
+    "words": [
+      {
+        "word": "何回",
+        "reading": "なんかい",
+        "meaning": "Berapa kali putaran"
+      },
+      {
+        "word": "回転",
+        "reading": "かいてん",
+        "meaning": "Putaran rotasi gasing"
+      }
+    ]
+  },
+  {
+    "id": "k-335",
+    "kanji": "転",
+    "on": "テン",
+    "kun": "ころ・がる、ころ・ぶ",
+    "meaning": "Terguling berbelok berpindah",
+    "strokes": 11,
+    "words": [
+      {
+        "word": "自転車",
+        "reading": "じてんしゃ",
+        "meaning": "Sepeda kayuh gowes"
+      },
+      {
+        "word": "転職",
+        "reading": "てんしょく",
+        "meaning": "Pindah profesi karir baru"
+      }
+    ]
+  },
+  {
+    "id": "k-336",
+    "kanji": "職",
+    "on": "ショク",
+    "kun": "",
+    "meaning": "Pekerjaan profesi karir jawatan",
+    "strokes": 18,
+    "words": [
+      {
+        "word": "職業",
+        "reading": "しょくぎょう",
+        "meaning": "Mata pencaharian profesi"
+      },
+      {
+        "word": "職場",
+        "reading": "しょくば",
+        "meaning": "Tempat kerja kantor instansi"
+      }
+    ]
+  }
+]
