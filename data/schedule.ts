@@ -249,3 +249,32 @@ export function getCurriculumStats() {
     totalGrammar: typedGrammar.length,
   };
 }
+
+export function getCumulativeProgress(completedDays: number[]) {
+  let kanjiMastered = 0;
+  let vocabMastered = 0;
+  let grammarMastered = 0;
+
+  const validDays = completedDays.filter((d) => d >= 1 && d <= TOTAL_DAYS);
+
+  validDays.forEach((d) => {
+    const kRange = getSliceRange(d, typedKanji.length, TOTAL_DAYS);
+    const vRange = getSliceRange(d, typedVocab.length, TOTAL_DAYS);
+    const gRange = getSliceRange(d, typedGrammar.length, TOTAL_DAYS);
+    kanjiMastered += kRange.end - kRange.start;
+    vocabMastered += vRange.end - vRange.start;
+    grammarMastered += gRange.end - gRange.start;
+  });
+
+  return {
+    completedDaysCount: validDays.length,
+    totalDays: TOTAL_DAYS,
+    kanjiMastered: Math.min(typedKanji.length, kanjiMastered),
+    totalKanji: typedKanji.length,
+    vocabMastered: Math.min(typedVocab.length, vocabMastered),
+    totalVocab: typedVocab.length,
+    grammarMastered: Math.min(typedGrammar.length, grammarMastered),
+    totalGrammar: typedGrammar.length,
+  };
+}
+
