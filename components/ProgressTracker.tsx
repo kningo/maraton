@@ -15,13 +15,15 @@ import {
   getCompletedDays,
   getBookmarks,
   getStudyStreak,
+  getTargetDays,
   resetAllProgress,
   PROGRESS_EVENT_NAME,
 } from "../lib/storage";
-import { TOTAL_DAYS, getCurriculumStats } from "../data/schedule";
+import { getCurriculumStats } from "../data/schedule";
 
 export function ProgressTracker() {
   const [completedDays, setCompletedDays] = useState<number[]>([]);
+  const [targetDays, setTargetDays] = useState<number>(70);
   const [bookmarks, setBookmarks] = useState<string[]>([]);
   const [streak, setStreak] = useState<{ current: number; longest: number }>({
     current: 0,
@@ -32,6 +34,7 @@ export function ProgressTracker() {
   useEffect(() => {
     const update = () => {
       setCompletedDays(getCompletedDays());
+      setTargetDays(getTargetDays());
       setBookmarks(getBookmarks());
       const s = getStudyStreak();
       setStreak({ current: s.current, longest: s.longest });
@@ -47,13 +50,14 @@ export function ProgressTracker() {
     };
   }, []);
 
+  const safeTargetDays = Math.max(1, targetDays);
   const completedCount = completedDays.length;
-  const percentage = Math.round((completedCount / TOTAL_DAYS) * 100);
+  const percentage = Math.round((completedCount / safeTargetDays) * 100);
 
   // Estimates of items covered based on completed days
-  const estimatedKanji = Math.min(stats.totalKanji, Math.round((completedCount / TOTAL_DAYS) * stats.totalKanji));
-  const estimatedVocab = Math.min(stats.totalVocab, Math.round((completedCount / TOTAL_DAYS) * stats.totalVocab));
-  const estimatedGrammar = Math.min(stats.totalGrammar, Math.round((completedCount / TOTAL_DAYS) * stats.totalGrammar));
+  const estimatedKanji = Math.min(stats.totalKanji, Math.round((completedCount / safeTargetDays) * stats.totalKanji));
+  const estimatedVocab = Math.min(stats.totalVocab, Math.round((completedCount / safeTargetDays) * stats.totalVocab));
+  const estimatedGrammar = Math.min(stats.totalGrammar, Math.round((completedCount / safeTargetDays) * stats.totalGrammar));
 
   const handleReset = () => {
     if (
@@ -76,7 +80,7 @@ export function ProgressTracker() {
           <div>
             <h3 className="text-lg font-bold text-slate-100">Progress Maraton Belajar</h3>
             <p className="text-xs text-slate-400">
-              {completedCount} dari {TOTAL_DAYS} modul hari telah diselesaikan
+              {completedCount} dari {targetDays} modul hari telah diselesaikan
             </p>
           </div>
         </div>
@@ -108,7 +112,7 @@ export function ProgressTracker() {
       {/* Progress Bar */}
       <div className="mt-6">
         <div className="flex justify-between items-center text-xs font-semibold mb-2">
-          <span className="text-slate-300">Target Kurikulum 70 Hari</span>
+          <span className="text-slate-300">Target Kurikulum {targetDays} Hari</span>
           <span className="text-emerald-400 font-mono text-sm">{percentage}% Selesai</span>
         </div>
         <div className="h-3 w-full bg-slate-950 rounded-full overflow-hidden border border-slate-800/80">

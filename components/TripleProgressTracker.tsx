@@ -12,7 +12,7 @@ import {
   Sparkles,
   Award,
 } from "lucide-react";
-import { getCompletedDays, getBookmarks, getStudyStreak, PROGRESS_EVENT_NAME } from "../lib/storage";
+import { getCompletedDays, getBookmarks, getStudyStreak, getTargetDays, PROGRESS_EVENT_NAME } from "../lib/storage";
 import { getCumulativeProgress } from "../data/schedule";
 
 export function TripleProgressTracker({ className = "" }: { className?: string }) {
@@ -33,7 +33,8 @@ export function TripleProgressTracker({ className = "" }: { className?: string }
   useEffect(() => {
     const update = () => {
       const completed = getCompletedDays();
-      const cumulative = getCumulativeProgress(completed);
+      const tDays = getTargetDays();
+      const cumulative = getCumulativeProgress(completed, tDays);
       setProgress(cumulative);
 
       const s = getStudyStreak();

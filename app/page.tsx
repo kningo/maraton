@@ -7,25 +7,37 @@ import {
   PlayCircle,
   Sparkles,
   Search,
-  Filter,
   Tv,
   ArrowRight,
   Unlock,
   Lock,
   Calendar,
   CheckCircle2,
-  Layers,
+  Sliders,
+  X,
 } from "lucide-react";
 import { CountdownTimer } from "../components/CountdownTimer";
 import { TripleProgressTracker } from "../components/TripleProgressTracker";
 import { DayCard } from "../components/DayCard";
 import { WallDisplayModal } from "../components/WallDisplayModal";
-import { getAllDaysSummary, TOTAL_DAYS, getDailyContent } from "../data/schedule";
-import { getCompletedDays, getQuizResults, PROGRESS_EVENT_NAME } from "../lib/storage";
+import { TargetConfigModal } from "../components/TargetConfigModal";
+import {
+  getAllDaysSummary,
+  getDailyContent,
+  getDailyLoadEstimates,
+} from "../data/schedule";
+import {
+  getCompletedDays,
+  getQuizResults,
+  getTargetDays,
+  DEFAULT_TARGET_DAYS,
+  PROGRESS_EVENT_NAME,
+} from "../lib/storage";
 import { FlashcardItem } from "../components/FlashcardModal";
 
 export default function DashboardPage() {
   const [completedDays, setCompletedDays] = useState<number[]>([]);
+  const [targetDays, setTargetDays] = useState<number>(DEFAULT_TARGET_DAYS);
   const [quizResults, setQuizResults] = useState<Record<number, any>>({});
   const [selectedWeek, setSelectedWeek] = useState<number | "all">(1);
   const [hasUserSelectedWeek, setHasUserSelectedWeek] = useState(false);
@@ -33,35 +45,44 @@ export default function DashboardPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [allowFreeAccess, setAllowFreeAccess] = useState(true);
   const [isWallModeOpen, setIsWallModeOpen] = useState(false);
+  const [isTargetModalOpen, setIsTargetModalOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [featuredCards, setFeaturedCards] = useState<FlashcardItem[]>([]);
 
-  const allSummaries = useMemo(() => getAllDaysSummary(), []);
+  // Dynamically partition master curriculum into targetDays
+  const allSummaries = useMemo(() => getAllDaysSummary(targetDays), [targetDays]);
+  const estimates = useMemo(() => getDailyLoadEstimates(targetDays), [targetDays]);
+  const totalWeeks = useMemo(() => Math.ceil(targetDays / 7), [targetDays]);
 
-  // Compute next incomplete day
+  // Compute next incomplete day within current targetDays
   const nextIncompleteDay = useMemo(() => {
-    for (let d = 1; d <= TOTAL_DAYS; d++) {
+    for (let d = 1; d <= targetDays; d++) {
       if (!completedDays.includes(d)) return d;
     }
     return 1;
-  }, [completedDays]);
+  }, [completedDays, targetDays]);
 
   // Synchronize storage
   useEffect(() => {
     const update = () => {
       const completed = getCompletedDays();
+      const currentTarget = getTargetDays();
       setCompletedDays(completed);
+      setTargetDays(currentTarget);
       setQuizResults(getQuizResults());
+
+      const computedWeeks = Math.ceil(currentTarget / 7);
 
       // Auto set default active week to the current unfinished day's week (if user hasn't explicitly chosen another)
       if (!hasUserSelectedWeek) {
         let firstUnfinished = 1;
-        for (let d = 1; d <= TOTAL_DAYS; d++) {
+        for (let d = 1; d <= currentTarget; d++) {
           if (!completed.includes(d)) {
             firstUnfinished = d;
             break;
           }
         }
-        const activeWeek = Math.min(10, Math.ceil(firstUnfinished / 7));
+        const activeWeek = Math.min(computedWeeks, Math.ceil(firstUnfinished / 7));
         setSelectedWeek(activeWeek);
       }
     };
@@ -71,7 +92,7 @@ export default function DashboardPage() {
     window.addEventListener("storage", update);
 
     // Preload cards for Wall Mode
-    const d1 = getDailyContent(1);
+    const d1 = getDailyContent(1, getTargetDays());
     const initialWallCards: FlashcardItem[] = [
       ...d1.kanji.map((k) => ({
         id: k.id,
@@ -106,22 +127,44 @@ export default function DashboardPage() {
     };
   }, [hasUserSelectedWeek]);
 
+  // When totalWeeks shrinks, clamp selectedWeek if outside bounds
+  useEffect(() => {
+    if (selectedWeek !== "all" && selectedWeek > totalWeeks) {
+      setSelectedWeek(totalWeeks);
+    }
+  }, [totalWeeks, selectedWeek]);
+
   // Handle manual week selection
   const handleSelectWeek = (week: number | "all") => {
     setSelectedWeek(week);
     setHasUserSelectedWeek(true);
   };
 
+  // Toast notification callback when user alters target days
+  const handleTargetSaved = (newDays: number) => {
+    setTargetDays(newDays);
+    const newWeeks = Math.ceil(newDays / 7);
+    if (selectedWeek !== "all" && selectedWeek > newWeeks) {
+      setSelectedWeek(newWeeks);
+    }
+    setToastMessage(
+      `Target sprint disesuaikan ke ${newDays} hari (${newWeeks} minggu). Porsi materi harian berhasil dikalkulasi ulang secara proporsional!`
+    );
+    setTimeout(() => {
+      setToastMessage((cur) => (cur?.includes(`${newDays}`) ? null : cur));
+    }, 5500);
+  };
+
   // Week statistics helper for pills
   const weekStats = useMemo(() => {
     const stats: Record<number, { completed: number; total: number }> = {};
-    for (let w = 1; w <= 10; w++) {
+    for (let w = 1; w <= totalWeeks; w++) {
       const daysInThisWeek = allSummaries.filter((d) => d.week === w);
       const doneCount = daysInThisWeek.filter((d) => completedDays.includes(d.dayId)).length;
       stats[w] = { completed: doneCount, total: daysInThisWeek.length };
     }
     return stats;
-  }, [allSummaries, completedDays]);
+  }, [allSummaries, completedDays, totalWeeks]);
 
   // Filter summaries based on week, status, and search
   const filteredSummaries = useMemo(() => {
@@ -153,13 +196,47 @@ export default function DashboardPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-10">
+      {/* Non-blocking Floating Toast Alert */}
+      {toastMessage && (
+        <div className="fixed bottom-6 right-6 z-50 max-w-md animate-in fade-in slide-in-from-bottom-5 duration-300">
+          <div className="flex items-start gap-3 rounded-2xl border border-emerald-500/40 bg-slate-900/95 p-4 text-slate-100 shadow-2xl backdrop-blur-md">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400">
+              <Sparkles size={16} />
+            </div>
+            <div className="flex-1 text-xs">
+              <p className="font-bold text-emerald-300">Target Belajar Diperbarui!</p>
+              <p className="mt-0.5 text-slate-300 leading-relaxed">{toastMessage}</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setToastMessage(null)}
+              className="shrink-0 rounded-lg p-1 text-slate-400 hover:bg-slate-800 hover:text-slate-200"
+              aria-label="Tutup notifikasi"
+            >
+              <X size={14} />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Hero Header Section */}
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 p-6 sm:p-10 shadow-2xl">
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold text-emerald-300">
-              <Sparkles size={14} className="text-emerald-400" />
-              <span>Program Intensif JLPT N3 Maraton (70 Hari)</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold text-emerald-300">
+                <Sparkles size={14} className="text-emerald-400" />
+                <span>Program Intensif JLPT N3 ({targetDays} Hari • {totalWeeks} Minggu)</span>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsTargetModalOpen(true)}
+                className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/90 px-3 py-1 text-xs font-bold text-slate-300 hover:border-emerald-500/50 hover:text-emerald-300 hover:bg-slate-800 transition-all shadow-sm"
+              >
+                <Sliders size={13} className="text-emerald-400" />
+                <span>Ubah Sprint Target</span>
+              </button>
             </div>
 
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-100 leading-tight">
@@ -170,8 +247,39 @@ export default function DashboardPage() {
             </h1>
 
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
-              336 Kanji, 1100+ Kosakata, dan 100 Tata Bahasa terdistribusi seimbang dalam 10 minggu bertahap. Belajar fokus per minggu tanpa terbebani tumpukan materi.
+              336 Kanji, 1155 Kosakata, dan 100 Tata Bahasa terdistribusi adaptif dalam sprint {targetDays} hari. Beban harian terkalibrasi proporsional agar penguasaan materi optimal tanpa rasa lelah.
             </p>
+
+            {/* Daily Load Estimator Cards */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 py-1 text-xs font-medium">
+              <div className="rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
+                <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
+                  Kanji / Hari
+                </span>
+                <span className="text-base sm:text-lg font-black font-mono text-emerald-400">
+                  ~{estimates.kanjiPerDay}
+                </span>
+                <span className="text-[10px] text-slate-400 block mt-0.5">karakter/hari</span>
+              </div>
+              <div className="rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
+                <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
+                  Kosakata / Hari
+                </span>
+                <span className="text-base sm:text-lg font-black font-mono text-cyan-400">
+                  ~{estimates.vocabPerDay}
+                </span>
+                <span className="text-[10px] text-slate-400 block mt-0.5">kata/hari</span>
+              </div>
+              <div className="rounded-xl border border-slate-800 bg-slate-950/70 p-2.5">
+                <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
+                  Bunpou / Hari
+                </span>
+                <span className="text-base sm:text-lg font-black font-mono text-indigo-400">
+                  ~{estimates.grammarPerDay}
+                </span>
+                <span className="text-[10px] text-slate-400 block mt-0.5">pola/hari</span>
+              </div>
+            </div>
 
             {/* Prominent Sticky Quick Resume Banner */}
             <div className="pt-2">
@@ -187,6 +295,9 @@ export default function DashboardPage() {
                     <div className="flex items-center gap-2">
                       <span className="text-base font-black text-slate-100">
                         Hari ke-{nextIncompleteDay}
+                        <span className="text-xs font-normal text-slate-400 ml-1.5 font-mono">
+                          dari {targetDays} Hari
+                        </span>
                       </span>
                       <span className="text-xs text-slate-300 font-medium line-clamp-1">
                         • {nextDaySummary?.focus}
@@ -206,14 +317,23 @@ export default function DashboardPage() {
             </div>
 
             {/* Auxiliary actions */}
-            <div className="flex items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <button
+                type="button"
+                onClick={() => setIsTargetModalOpen(true)}
+                className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-xs sm:text-sm font-bold text-emerald-300 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-colors"
+              >
+                <Sliders size={16} className="text-emerald-400" />
+                <span>Atur Target Durasi ({targetDays} Hari)</span>
+              </button>
+
               <button
                 type="button"
                 onClick={() => setIsWallModeOpen(true)}
                 className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-200 hover:bg-slate-700 hover:text-white transition-colors"
               >
                 <Tv size={16} className="text-emerald-400" />
-                <span>Mode Wall Ambient TV / Monitor</span>
+                <span>Mode Wall Ambient TV</span>
               </button>
             </div>
           </div>
@@ -242,7 +362,7 @@ export default function DashboardPage() {
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-300 mt-1 font-medium">
-              Pilih tab minggu di bawah ini untuk melihat 7 modul harian yang terstruktur rapi.
+              Pilih tab minggu di bawah ini untuk melihat modul harian yang terbagi proporsional dalam {totalWeeks} minggu ({targetDays} hari total).
             </p>
           </div>
 
@@ -275,7 +395,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Week-based Tab/Pills Selector (Week 1 to Week 10) */}
+        {/* Dynamic Week-based Tab/Pills Selector */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
@@ -283,8 +403,8 @@ export default function DashboardPage() {
             </span>
             <span className="text-xs text-slate-300 font-medium">
               {selectedWeek === "all"
-                ? "Menampilkan Seluruh 70 Hari"
-                : `Minggu ${selectedWeek} (Hari ${(Number(selectedWeek) - 1) * 7 + 1} s.d. ${Number(selectedWeek) * 7})`}
+                ? `Menampilkan Seluruh ${targetDays} Hari (${totalWeeks} Minggu)`
+                : `Minggu ${selectedWeek} (Hari ${(Number(selectedWeek) - 1) * 7 + 1} s.d. ${Math.min(targetDays, Number(selectedWeek) * 7)})`}
             </span>
           </div>
 
@@ -300,14 +420,14 @@ export default function DashboardPage() {
               }`}
             >
               <Calendar size={14} />
-              <span>Semua Minggu (70 Hari)</span>
+              <span>Semua Minggu ({targetDays} Hari)</span>
             </button>
 
-            {/* Week 1 to 10 Pills */}
-            {Array.from({ length: 10 }, (_, i) => i + 1).map((week) => {
+            {/* Dynamic Week 1 to totalWeeks Pills */}
+            {Array.from({ length: totalWeeks }, (_, i) => i + 1).map((week) => {
               const stat = weekStats[week];
               const isSelected = selectedWeek === week;
-              const isWeekAllDone = stat && stat.completed === stat.total;
+              const isWeekAllDone = stat && stat.total > 0 && stat.completed === stat.total;
 
               return (
                 <button
@@ -332,7 +452,7 @@ export default function DashboardPage() {
                         : "bg-slate-800 text-slate-300"
                     }`}
                   >
-                    {stat ? `${stat.completed}/${stat.total}` : "0/7"}
+                    {stat ? `${stat.completed}/${stat.total}` : "0"}
                   </span>
                   {isWeekAllDone && !isSelected && (
                     <CheckCircle2 size={12} className="text-emerald-400 shrink-0" />
@@ -439,6 +559,13 @@ export default function DashboardPage() {
           </div>
         )}
       </section>
+
+      {/* Target Duration Configuration Modal */}
+      <TargetConfigModal
+        isOpen={isTargetModalOpen}
+        onClose={() => setIsTargetModalOpen(false)}
+        onSave={handleTargetSaved}
+      />
 
       {/* Wall Display Mode Modal */}
       <WallDisplayModal

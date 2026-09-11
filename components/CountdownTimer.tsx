@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Clock, AlertTriangle, CheckCircle2, TrendingUp, Calendar } from "lucide-react";
-import { getCompletedDays, PROGRESS_EVENT_NAME } from "../lib/storage";
-import { TOTAL_DAYS } from "../data/schedule";
+import { getCompletedDays, getTargetDays, PROGRESS_EVENT_NAME } from "../lib/storage";
 
 interface CountdownTimerProps {
   compact?: boolean;
@@ -28,6 +27,7 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
   });
 
   const [completedCount, setCompletedCount] = useState<number>(0);
+  const [targetDays, setTargetDays] = useState<number>(70);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -35,6 +35,7 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
 
     const updateCompleted = () => {
       setCompletedCount(getCompletedDays().length);
+      setTargetDays(getTargetDays());
     };
 
     updateCompleted();
@@ -75,14 +76,15 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
   }, []);
 
   // Pace calculations
-  const remainingStudyDays = TOTAL_DAYS - completedCount;
+  const safeTargetDays = Math.max(1, targetDays);
+  const remainingStudyDays = Math.max(0, safeTargetDays - completedCount);
   const daysUntilExam = timeLeft.days;
 
   let paceStatus: "ahead" | "on-track" | "behind" | "completed" = "on-track";
   let paceLabel = "On Track";
   let paceColor = "text-emerald-400 bg-emerald-500/10 border-emerald-500/30";
 
-  if (completedCount >= TOTAL_DAYS) {
+  if (completedCount >= safeTargetDays) {
     paceStatus = "completed";
     paceLabel = "Maraton Selesai! 🎉";
     paceColor = "text-emerald-400 bg-emerald-500/10 border-emerald-500/30";
@@ -201,10 +203,10 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
         <div className="flex items-center gap-1.5">
           <span>Target Maraton:</span>
           <strong className="text-slate-200 font-medium">
-            {completedCount} dari {TOTAL_DAYS} Hari Selesai
+            {completedCount} dari {targetDays} Hari Selesai
           </strong>
           <span className="text-slate-500">
-            ({Math.round((completedCount / TOTAL_DAYS) * 100)}%)
+            ({Math.round((completedCount / safeTargetDays) * 100)}%)
           </span>
         </div>
         <div className="text-slate-400">

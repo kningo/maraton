@@ -14,18 +14,20 @@ import {
   Award,
 } from "lucide-react";
 import { CountdownTimer } from "./CountdownTimer";
-import { getBookmarks, getStudyStreak, PROGRESS_EVENT_NAME } from "../lib/storage";
+import { getBookmarks, getStudyStreak, getTargetDays, PROGRESS_EVENT_NAME } from "../lib/storage";
 
 export function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [bookmarkCount, setBookmarkCount] = useState(0);
   const [streakCount, setStreakCount] = useState(0);
+  const [targetDays, setTargetDays] = useState(70);
 
   useEffect(() => {
     const update = () => {
       setBookmarkCount(getBookmarks().length);
       setStreakCount(getStudyStreak().current);
+      setTargetDays(getTargetDays());
     };
 
     update();
@@ -39,7 +41,7 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: "/", label: "Roadmap 70 Hari", icon: Compass },
+    { href: "/", label: `Roadmap ${targetDays} Hari`, icon: Compass },
     { href: "/flashcards", label: "Flashcards", icon: Layers },
     { href: "/review", label: "Bank Starred", icon: Star, badge: bookmarkCount },
   ];
@@ -74,7 +76,7 @@ export function Navbar() {
                 JLPT N3 Marathon
               </span>
               <span className="rounded-md bg-emerald-500/10 border border-emerald-500/30 px-1.5 py-0.2 text-[10px] font-bold text-emerald-400">
-                70 Hari
+                {targetDays} Hari
               </span>
             </div>
             <p className="text-[11px] text-slate-400 font-japanese">

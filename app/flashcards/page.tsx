@@ -16,8 +16,8 @@ import {
   CheckCircle2,
   Tv,
 } from "lucide-react";
-import { getDailyContent, TOTAL_DAYS, findItemById } from "../../data/schedule";
-import { getBookmarks, isBookmarked, toggleBookmark, PROGRESS_EVENT_NAME } from "../../lib/storage";
+import { getDailyContent, findItemById } from "../../data/schedule";
+import { getBookmarks, getTargetDays, isBookmarked, toggleBookmark, PROGRESS_EVENT_NAME } from "../../lib/storage";
 import { FlashcardItem } from "../../components/FlashcardModal";
 import { AudioButton } from "../../components/AudioButton";
 import { WallDisplayModal } from "../../components/WallDisplayModal";
@@ -26,6 +26,7 @@ export default function FlashcardsDeckPage() {
   const [selectedDay, setSelectedDay] = useState<number | "all" | "starred">(1);
   const [selectedType, setSelectedType] = useState<"all" | "kanji" | "vocab" | "grammar">("all");
   const [bookmarks, setBookmarks] = useState<string[]>([]);
+  const [targetDays, setTargetDays] = useState<number>(70);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
   const [isDeckCompleted, setIsDeckCompleted] = useState<boolean>(false);
@@ -36,6 +37,7 @@ export default function FlashcardsDeckPage() {
   useEffect(() => {
     const update = () => {
       setBookmarks(getBookmarks());
+      setTargetDays(getTargetDays());
     };
     update();
     window.addEventListener(PROGRESS_EVENT_NAME, update);
@@ -85,7 +87,7 @@ export default function FlashcardsDeckPage() {
       const daysToFetch = selectedDay === "all" ? Array.from({ length: 15 }, (_, i) => i + 1) : [selectedDay];
 
       daysToFetch.forEach((d) => {
-        const schedule = getDailyContent(d);
+        const schedule = getDailyContent(d, targetDays);
 
         schedule.kanji.forEach((k) => {
           items.push({
@@ -117,7 +119,7 @@ export default function FlashcardsDeckPage() {
     }
 
     return items;
-  }, [selectedDay, bookmarks]);
+  }, [selectedDay, bookmarks, targetDays]);
 
   // Filter by Type
   const filteredDeck = useMemo(() => {
@@ -243,7 +245,7 @@ export default function FlashcardsDeckPage() {
             >
               <option value="starred">⭐ Hanya Starred / Disimpan ({bookmarks.length})</option>
               <option value="all">📚 Sampel Gabungan (Hari 1-15)</option>
-              {Array.from({ length: TOTAL_DAYS }, (_, i) => i + 1).map((d) => (
+              {Array.from({ length: targetDays }, (_, i) => i + 1).map((d) => (
                 <option key={d} value={d}>
                   Hari {d}
                 </option>

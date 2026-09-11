@@ -16,7 +16,7 @@ import {
   Sparkles,
   Volume2,
 } from "lucide-react";
-import { getDailyContent, TOTAL_DAYS } from "../../../data/schedule";
+import { getDailyContent } from "../../../data/schedule";
 import { FuriganaText } from "../../../components/FuriganaText";
 import { AudioButton } from "../../../components/AudioButton";
 import { FlashcardModal, FlashcardItem } from "../../../components/FlashcardModal";
@@ -27,6 +27,8 @@ import {
   toggleBookmark,
   isDayCompleted,
   setDayCompleted,
+  getTargetDays,
+  DEFAULT_TARGET_DAYS,
   PROGRESS_EVENT_NAME,
 } from "../../../lib/storage";
 
@@ -34,12 +36,18 @@ export default function DailyLessonPage() {
   const params = useParams();
   const router = useRouter();
 
+  const [targetDays, setTargetDays] = useState<number>(DEFAULT_TARGET_DAYS);
+
+  useEffect(() => {
+    setTargetDays(getTargetDays());
+  }, []);
+
   const dayIdNum = useMemo(() => {
     const raw = Number(params?.dayId);
-    return isNaN(raw) ? 1 : Math.max(1, Math.min(raw, TOTAL_DAYS));
-  }, [params?.dayId]);
+    return isNaN(raw) ? 1 : Math.max(1, Math.min(raw, targetDays));
+  }, [params?.dayId, targetDays]);
 
-  const schedule = useMemo(() => getDailyContent(dayIdNum), [dayIdNum]);
+  const schedule = useMemo(() => getDailyContent(dayIdNum, targetDays), [dayIdNum, targetDays]);
 
   const [activeTab, setActiveTab] = useState<"all" | "kanji" | "vocab" | "grammar">("all");
   const [isFlashcardOpen, setIsFlashcardOpen] = useState(false);
@@ -49,6 +57,7 @@ export default function DailyLessonPage() {
 
   useEffect(() => {
     const syncState = () => {
+      setTargetDays(getTargetDays());
       setIsCompleted(isDayCompleted(dayIdNum));
 
       // Build bookmarked set for all items in this day
@@ -149,7 +158,7 @@ export default function DailyLessonPage() {
   }, [schedule]);
 
   const prevDay = dayIdNum > 1 ? dayIdNum - 1 : null;
-  const nextDay = dayIdNum < TOTAL_DAYS ? dayIdNum + 1 : null;
+  const nextDay = dayIdNum < targetDays ? dayIdNum + 1 : null;
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8 space-y-8">
@@ -165,7 +174,7 @@ export default function DailyLessonPage() {
           </Link>
           <span className="text-slate-600">/</span>
           <span className="text-xs font-bold text-emerald-400">
-            Hari {dayIdNum} dari {TOTAL_DAYS}
+            Hari {dayIdNum} dari {targetDays}
           </span>
         </div>
 

@@ -5,7 +5,12 @@ const STORAGE_KEYS = {
   BOOKMARKS: "jlpt_n3_bookmarks",
   QUIZ_RESULTS: "jlpt_n3_quiz_results",
   STREAK: "jlpt_n3_streak",
+  TARGET_DAYS: "jlpt_n3_target_days",
 };
+
+export const DEFAULT_TARGET_DAYS = 70;
+export const MIN_TARGET_DAYS = 30;
+export const MAX_TARGET_DAYS = 120;
 
 export const PROGRESS_EVENT_NAME = "jlpt_n3_storage_update";
 
@@ -16,6 +21,31 @@ function isBrowser(): boolean {
 function dispatchStorageUpdate() {
   if (isBrowser()) {
     window.dispatchEvent(new Event(PROGRESS_EVENT_NAME));
+  }
+}
+
+export function getTargetDays(): number {
+  if (!isBrowser()) return DEFAULT_TARGET_DAYS;
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.TARGET_DAYS);
+    if (!raw) return DEFAULT_TARGET_DAYS;
+    const parsed = parseInt(raw, 10);
+    return isNaN(parsed)
+      ? DEFAULT_TARGET_DAYS
+      : Math.max(MIN_TARGET_DAYS, Math.min(MAX_TARGET_DAYS, parsed));
+  } catch (err) {
+    return DEFAULT_TARGET_DAYS;
+  }
+}
+
+export function setTargetDays(days: number): void {
+  if (!isBrowser()) return;
+  try {
+    const clamped = Math.max(MIN_TARGET_DAYS, Math.min(MAX_TARGET_DAYS, days));
+    localStorage.setItem(STORAGE_KEYS.TARGET_DAYS, clamped.toString());
+    dispatchStorageUpdate();
+  } catch (err) {
+    console.error("Error setting target days:", err);
   }
 }
 
