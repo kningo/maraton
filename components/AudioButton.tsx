@@ -27,7 +27,9 @@ export function AudioButton({
 
     try {
       window.speechSynthesis.cancel(); // cancel any ongoing speech
-      const utterance = new SpeechSynthesisUtterance(text);
+      // Strip any bracketed furigana annotations before speech synthesis
+      const cleanText = text.replace(/\[[^\]]+\]/g, "");
+      const utterance = new SpeechSynthesisUtterance(cleanText);
       utterance.lang = "ja-JP";
       utterance.rate = 0.88; // slightly slower for better learning clarity
 

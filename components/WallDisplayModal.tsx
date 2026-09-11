@@ -14,6 +14,7 @@ import {
   Volume2,
 } from "lucide-react";
 import { FlashcardItem } from "./FlashcardModal";
+import { FuriganaSentence } from "./FuriganaSentence";
 import { AudioButton } from "./AudioButton";
 
 interface WallDisplayModalProps {
@@ -219,9 +220,10 @@ export function WallDisplayModal({
             {/* Example sentence */}
             {currentCard.back.example && (
               <div className="mt-4 rounded-3xl border border-slate-800/90 bg-slate-900/60 p-6 sm:p-8 max-w-3xl backdrop-blur-sm">
-                <p className="text-2xl sm:text-3xl font-japanese font-semibold text-slate-100 mb-2 leading-relaxed">
-                  {currentCard.back.example.ja}
-                </p>
+                <FuriganaSentence
+                  text={currentCard.back.example.ja}
+                  className="text-2xl sm:text-3xl font-semibold mb-2"
+                />
                 <p className="text-lg sm:text-xl text-slate-400 font-medium leading-relaxed">
                   {currentCard.back.example.id}
                 </p>

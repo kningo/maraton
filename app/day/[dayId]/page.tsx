@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { getDailyContent } from "../../../data/schedule";
 import { FuriganaText } from "../../../components/FuriganaText";
+import { FuriganaSentence } from "../../../components/FuriganaSentence";
 import { AudioButton } from "../../../components/AudioButton";
 import { FlashcardModal, FlashcardItem } from "../../../components/FlashcardModal";
 import { WallDisplayModal } from "../../../components/WallDisplayModal";
@@ -512,16 +513,21 @@ export default function DailyLessonPage() {
 
                     {/* Example Sentence */}
                     {vItem.example && (
-                      <div className="mt-3.5 rounded-xl border border-slate-800 bg-slate-950/60 p-3">
-                        <div className="flex items-start justify-between gap-2">
-                          <p className="font-japanese text-xs sm:text-sm font-medium text-slate-200 leading-relaxed">
-                            {vItem.example.ja}
-                          </p>
-                          <AudioButton text={vItem.example.ja} size="sm" />
+                      <div className="mt-3.5 rounded-xl border border-slate-800 bg-slate-950/60 p-3.5">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="flex-1">
+                            <FuriganaSentence
+                              text={vItem.exampleJaWithFurigana || vItem.example.ruby || vItem.example.ja}
+                              className="text-xs sm:text-sm font-medium"
+                            />
+                            <p className="text-xs text-slate-400 mt-1 leading-normal">
+                              {vItem.example.id}
+                            </p>
+                          </div>
+                          <div className="pt-1 shrink-0">
+                            <AudioButton text={vItem.example.ja} size="sm" />
+                          </div>
                         </div>
-                        <p className="text-xs text-slate-400 mt-1 leading-normal">
-                          {vItem.example.id}
-                        </p>
                       </div>
                     )}
                   </div>

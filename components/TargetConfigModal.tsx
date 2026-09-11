@@ -19,6 +19,13 @@ import {
   DEFAULT_TARGET_DAYS,
   MIN_TARGET_DAYS,
   MAX_TARGET_DAYS,
+  getExamDate,
+  setExamDate,
+  parseExamDate,
+  formatExamDateLabel,
+  formatExamDateCompact,
+  getUpcomingOfficialDates,
+  formatDateToISO,
 } from "../lib/storage";
 import { getDailyLoadEstimates } from "../lib/scheduler";
 
@@ -28,8 +35,6 @@ interface TargetConfigModalProps {
   onSave?: (newTargetDays: number) => void;
 }
 
-const TARGET_EXAM_DATE = new Date("2026-12-06T09:00:00+09:00");
-
 export function TargetConfigModal({
   isOpen,
   onClose,
@@ -37,22 +42,13 @@ export function TargetConfigModal({
 }: TargetConfigModalProps) {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
   const [selectedDays, setSelectedDays] = useState<number>(DEFAULT_TARGET_DAYS);
-  const [examAutoDays, setExamAutoDays] = useState<number | null>(null);
+  const [examDate, setExamDateState] = useState<string>(getExamDate());
 
-  // Load current target days
+  // Load current target days & exam date on open
   useEffect(() => {
     if (isOpen) {
       setSelectedDays(getTargetDays());
-
-      // Calculate days until exam minus 14 days reserved for mock tests
-      const now = new Date();
-      const diffDays = Math.floor(
-        (TARGET_EXAM_DATE.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
-      );
-      if (diffDays > 0) {
-        const autoDays = Math.max(MIN_TARGET_DAYS, Math.min(MAX_TARGET_DAYS, diffDays - 14));
-        setExamAutoDays(autoDays);
-      }
+      setExamDateState(getExamDate());
     }
   }, [isOpen]);
 
@@ -104,9 +100,19 @@ export function TargetConfigModal({
     { days: 90, label: "90 Hari", sub: "Santai Bertahap", badge: "Rendah" },
   ];
 
+  // Dynamic calculations for selected exam date
+  const now = new Date();
+  const todayISO = formatDateToISO(now);
+  const upcomingOfficial = getUpcomingOfficialDates(now);
+  const targetExam = parseExamDate(examDate);
+  const diffDays = Math.ceil((targetExam.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+  const optimalSprintDays = Math.max(MIN_TARGET_DAYS, diffDays - 14);
+  const clampedOptimal = Math.min(MAX_TARGET_DAYS, optimalSprintDays);
+
   const handleSave = () => {
     const clamped = Math.max(MIN_TARGET_DAYS, Math.min(MAX_TARGET_DAYS, selectedDays));
     setTargetDays(clamped);
+    setExamDate(examDate);
     if (onSave) onSave(clamped);
     onClose();
   };
@@ -129,10 +135,10 @@ export function TargetConfigModal({
             </div>
             <div>
               <h2 id="target-modal-title" className="text-base font-extrabold text-slate-100">
-                Kustomisasi Target Durasi Belajar
+                Kustomisasi Target & Tanggal Ujian
               </h2>
               <p className="text-xs text-slate-400">
-                Porsi harian master dataset akan otomatis disesuaikan
+                Sesuaikan tanggal ujian JLPT dan beban porsi sprint harian
               </p>
             </div>
           </div>
@@ -148,38 +154,114 @@ export function TargetConfigModal({
 
         {/* Body */}
         <div className="p-6 space-y-5 overflow-y-auto max-h-[75vh]">
-          {/* Option A: Auto-calculate from Exam Date */}
-          {examAutoDays && (
-            <div className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4 space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-amber-300 flex items-center gap-1.5 uppercase tracking-wider">
-                  <Clock size={14} />
-                  <span>Kalkulasi Otomatis Menuju Ujian</span>
-                </span>
-                <span className="text-[10px] bg-amber-400/20 text-amber-200 font-bold px-2 py-0.5 rounded-full border border-amber-400/30">
-                  Ujian 6 Des 2026
-                </span>
-              </div>
-              <p className="text-xs text-slate-300">
-                Sisa waktu dikurangi 14 hari (dialokasikan khusus untuk tryout/simulasi ujian akhir):
-              </p>
-              <button
-                type="button"
-                onClick={() => setSelectedDays(examAutoDays)}
-                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border text-xs font-bold transition-all ${
-                  selectedDays === examAutoDays
-                    ? "border-amber-400 bg-amber-400/20 text-amber-200 ring-2 ring-amber-400/40"
-                    : "border-slate-700 bg-slate-900/80 text-slate-200 hover:border-amber-500/50"
-                }`}
-              >
-                <div className="flex items-center gap-2">
-                  <Zap size={14} className="text-amber-400" />
-                  <span>Gunakan Target Optimal: {examAutoDays} Hari Maraton</span>
-                </div>
-                <span className="font-mono text-amber-300">{Math.ceil(examAutoDays / 7)} Minggu</span>
-              </button>
+          {/* Section 1: Dynamic Exam Date Selection */}
+          <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
+                <Calendar size={13} className="text-amber-400" />
+                <span>Pilih Tanggal Ujian JLPT:</span>
+              </span>
+              <span className="text-[11px] font-semibold text-amber-300">
+                {formatExamDateLabel(examDate)}
+              </span>
             </div>
-          )}
+
+            {/* Quick Presets for Official Waves */}
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                Preset Gelombang Resmi:
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {upcomingOfficial.map((preset) => {
+                  const isSelected = examDate === preset.dateStr;
+                  return (
+                    <button
+                      key={preset.id}
+                      type="button"
+                      onClick={() => setExamDateState(preset.dateStr)}
+                      className={`px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all flex items-center gap-1.5 ${
+                        isSelected
+                          ? "border-amber-400 bg-amber-400/20 text-amber-200 ring-2 ring-amber-400/30 font-bold"
+                          : "border-slate-800 bg-slate-900/80 text-slate-300 hover:border-slate-700 hover:bg-slate-850"
+                      }`}
+                    >
+                      <span>{preset.label}</span>
+                      <span className="text-[10px] text-slate-400">
+                        ({formatExamDateCompact(preset.dateStr)})
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Custom Date Input */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 pt-1 border-t border-slate-800/80">
+              <label htmlFor="custom-exam-date" className="text-xs text-slate-400 whitespace-nowrap font-medium">
+                Atur Tanggal Kustom:
+              </label>
+              <input
+                id="custom-exam-date"
+                type="date"
+                min={todayISO}
+                value={examDate}
+                onChange={(e) => {
+                  if (e.target.value) {
+                    setExamDateState(e.target.value);
+                  }
+                }}
+                className="flex-1 rounded-xl border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs sm:text-sm font-mono font-bold text-amber-300 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer dark:[color-scheme:dark]"
+              />
+            </div>
+          </div>
+
+          {/* Section 2: Live Dynamic Auto-Calculation Card */}
+          <div className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-amber-300 flex items-center gap-1.5 uppercase tracking-wider">
+                <Clock size={14} />
+                <span>Kalkulasi Otomatis Menuju Ujian</span>
+              </span>
+              <span className="text-[10px] bg-amber-400/20 text-amber-200 font-bold px-2.5 py-0.5 rounded-full border border-amber-400/30">
+                Ujian {formatExamDateCompact(examDate)}
+              </span>
+            </div>
+
+            {diffDays > 0 ? (
+              <>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Tersisa <strong className="text-amber-300 font-bold font-mono">{diffDays} hari</strong> menuju ujian. Rekomendasi sprint:{" "}
+                  <strong className="text-amber-300 font-bold font-mono">{clampedOptimal} Hari</strong> (14 hari buffer tryout).
+                </p>
+
+                {diffDays < 30 && (
+                  <div className="rounded-xl border border-amber-500/40 bg-amber-950/40 p-2.5 text-xs text-amber-300 flex items-center gap-2 font-medium">
+                    <span>⚠️ Waktu sangat mepet (&lt;30 hari). Sistem membatasi beban sprint minimal 30 hari.</span>
+                  </div>
+                )}
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedDays(clampedOptimal)}
+                  className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border text-xs font-bold transition-all ${
+                    selectedDays === clampedOptimal
+                      ? "border-amber-400 bg-amber-400/20 text-amber-200 ring-2 ring-amber-400/40"
+                      : "border-slate-700 bg-slate-900/80 text-slate-200 hover:border-amber-500/50"
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    <Zap size={14} className="text-amber-400" />
+                    <span>Gunakan Target Optimal: {clampedOptimal} Hari</span>
+                  </div>
+                  <span className="font-mono text-amber-300">{Math.ceil(clampedOptimal / 7)} Minggu</span>
+                </button>
+              </>
+            ) : (
+              <div className="rounded-xl border border-amber-500/40 bg-amber-950/40 p-2.5 text-xs text-amber-300 flex items-center gap-2 font-medium">
+                <span>⚠️ Tanggal ujian telah terlewat atau hari ini. Silakan pilih tanggal ujian di masa mendatang.</span>
+              </div>
+            )}
+          </div>
 
           {/* Option B: Presets */}
           <div className="space-y-2">

@@ -13,6 +13,7 @@ import {
   Volume2,
 } from "lucide-react";
 import { FuriganaText } from "./FuriganaText";
+import { FuriganaSentence } from "./FuriganaSentence";
 import { AudioButton } from "./AudioButton";
 import { isBookmarked, toggleBookmark } from "../lib/storage";
 
@@ -337,9 +338,10 @@ export function FlashcardModal({
 
                     {currentItem.back.example && (
                       <div className="mt-5 rounded-xl border border-slate-800 bg-slate-950/60 p-3.5 text-left text-xs sm:text-sm">
-                        <p className="font-japanese font-semibold text-slate-200">
-                          {currentItem.back.example.ja}
-                        </p>
+                        <FuriganaSentence
+                          text={currentItem.back.example.ja}
+                          className="font-semibold text-slate-200"
+                        />
                         <p className="text-slate-400 mt-1">
                           {currentItem.back.example.id}
                         </p>

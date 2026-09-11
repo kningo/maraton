@@ -6,6 +6,7 @@ const STORAGE_KEYS = {
   QUIZ_RESULTS: "jlpt_n3_quiz_results",
   STREAK: "jlpt_n3_streak",
   TARGET_DAYS: "jlpt_n3_target_days",
+  EXAM_DATE: "jlpt_n3_exam_date",
 };
 
 export const DEFAULT_TARGET_DAYS = 70;
@@ -13,6 +14,97 @@ export const MIN_TARGET_DAYS = 30;
 export const MAX_TARGET_DAYS = 120;
 
 export const PROGRESS_EVENT_NAME = "jlpt_n3_storage_update";
+
+export interface OfficialJLPTDate {
+  id: string;
+  label: string;
+  subLabel: string;
+  dateStr: string;
+  date: Date;
+}
+
+export function getFirstSunday(year: number, month1Indexed: number): Date {
+  const d = new Date(year, month1Indexed - 1, 1);
+  const dayOfWeek = d.getDay();
+  const offset = (7 - dayOfWeek) % 7;
+  d.setDate(1 + offset);
+  d.setHours(9, 0, 0, 0);
+  return d;
+}
+
+export function formatDateToISO(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+export function getUpcomingOfficialDates(fromDate: Date = new Date()): OfficialJLPTDate[] {
+  const currentYear = fromDate.getFullYear();
+  const candidates: OfficialJLPTDate[] = [];
+
+  for (const yr of [currentYear, currentYear + 1, currentYear + 2]) {
+    for (const [m, wave, name] of [
+      [7, 1, "Gelombang Juli"],
+      [12, 2, "Gelombang Desember"],
+    ] as const) {
+      const dt = getFirstSunday(yr, m);
+      // Keep dates that are future or today
+      if (dt.getTime() > fromDate.getTime() - 24 * 60 * 60 * 1000) {
+        candidates.push({
+          id: `${yr}-${String(m).padStart(2, "0")}`,
+          label: `${name} ${yr}`,
+          subLabel: `Sesi Gelombang ${wave}`,
+          dateStr: formatDateToISO(dt),
+          date: dt,
+        });
+      }
+    }
+  }
+
+  return candidates.slice(0, 4);
+}
+
+export function getDefaultExamDate(): string {
+  const upcoming = getUpcomingOfficialDates();
+  return upcoming[0]?.dateStr || "2026-12-06";
+}
+
+export function parseExamDate(dateStr: string): Date {
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    const [y, m, d] = dateStr.split("-").map(Number);
+    return new Date(y, m - 1, d, 9, 0, 0);
+  }
+  const parsed = new Date(dateStr);
+  return isNaN(parsed.getTime()) ? parseExamDate(getDefaultExamDate()) : parsed;
+}
+
+export function formatExamDateLabel(input: Date | string): string {
+  const d = typeof input === "string" ? parseExamDate(input) : input;
+  try {
+    return d.toLocaleDateString("id-ID", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+  } catch {
+    return d.toDateString();
+  }
+}
+
+export function formatExamDateCompact(input: Date | string): string {
+  const d = typeof input === "string" ? parseExamDate(input) : input;
+  try {
+    return d.toLocaleDateString("id-ID", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+  } catch {
+    return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
+  }
+}
 
 function isBrowser(): boolean {
   return typeof window !== "undefined";
@@ -46,6 +138,30 @@ export function setTargetDays(days: number): void {
     dispatchStorageUpdate();
   } catch (err) {
     console.error("Error setting target days:", err);
+  }
+}
+
+export function getExamDate(): string {
+  if (!isBrowser()) return getDefaultExamDate();
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.EXAM_DATE);
+    if (!raw) return getDefaultExamDate();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+      return raw;
+    }
+    return getDefaultExamDate();
+  } catch (err) {
+    return getDefaultExamDate();
+  }
+}
+
+export function setExamDate(dateStr: string): void {
+  if (!isBrowser()) return;
+  try {
+    localStorage.setItem(STORAGE_KEYS.EXAM_DATE, dateStr);
+    dispatchStorageUpdate();
+  } catch (err) {
+    console.error("Error setting exam date:", err);
   }
 }
 

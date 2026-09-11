@@ -34,13 +34,16 @@ body {
 }
 
 /* Furigana ruby styling */
-ruby {
+ruby,
+.ruby-position-over {
   ruby-align: center;
   ruby-position: over;
+  -webkit-ruby-position: before;
 }
 
 rt {
   user-select: none;
+  -webkit-user-select: none;
   font-size: 0.6em;
   font-weight: 500;
   line-height: 1;

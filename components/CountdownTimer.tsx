@@ -2,16 +2,24 @@
 
 import React, { useEffect, useState } from "react";
 import { Clock, AlertTriangle, CheckCircle2, TrendingUp, Calendar } from "lucide-react";
-import { getCompletedDays, getTargetDays, PROGRESS_EVENT_NAME } from "../lib/storage";
+import {
+  getCompletedDays,
+  getTargetDays,
+  PROGRESS_EVENT_NAME,
+  getExamDate,
+  parseExamDate,
+  formatExamDateLabel,
+  formatExamDateCompact,
+  getUpcomingOfficialDates,
+} from "../lib/storage";
 
 interface CountdownTimerProps {
   compact?: boolean;
   className?: string;
 }
 
-const TARGET_EXAM_DATE = new Date("2026-12-06T09:00:00+09:00");
-
 export function CountdownTimer({ compact = false, className = "" }: CountdownTimerProps) {
+  const [examDate, setExamDate] = useState<string>(getExamDate());
   const [timeLeft, setTimeLeft] = useState<{
     days: number;
     hours: number;
@@ -33,18 +41,19 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
   useEffect(() => {
     setMounted(true);
 
-    const updateCompleted = () => {
+    const updateState = () => {
       setCompletedCount(getCompletedDays().length);
       setTargetDays(getTargetDays());
+      const currentExam = getExamDate();
+      setExamDate(currentExam);
+      runCalculation(currentExam);
     };
 
-    updateCompleted();
-    window.addEventListener(PROGRESS_EVENT_NAME, updateCompleted);
-    window.addEventListener("storage", updateCompleted);
-
-    const calculateTime = () => {
+    const runCalculation = (dateStrToUse?: string) => {
+      const activeExamStr = dateStrToUse || getExamDate();
+      const targetDate = parseExamDate(activeExamStr);
       const now = new Date();
-      const diff = TARGET_EXAM_DATE.getTime() - now.getTime();
+      const diff = targetDate.getTime() - now.getTime();
 
       if (diff <= 0) {
         setTimeLeft({
@@ -65,13 +74,18 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
       setTimeLeft({ days, hours, minutes, seconds, isPast: false });
     };
 
-    calculateTime();
-    const interval = setInterval(calculateTime, 1000);
+    updateState();
+    window.addEventListener(PROGRESS_EVENT_NAME, updateState);
+    window.addEventListener("storage", updateState);
+
+    const interval = setInterval(() => {
+      runCalculation();
+    }, 1000);
 
     return () => {
       clearInterval(interval);
-      window.removeEventListener(PROGRESS_EVENT_NAME, updateCompleted);
-      window.removeEventListener("storage", updateCompleted);
+      window.removeEventListener(PROGRESS_EVENT_NAME, updateState);
+      window.removeEventListener("storage", updateState);
     };
   }, []);
 
@@ -80,11 +94,19 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
   const remainingStudyDays = Math.max(0, safeTargetDays - completedCount);
   const daysUntilExam = timeLeft.days;
 
+  const upcomingOfficial = getUpcomingOfficialDates();
+  const matchedOfficial = upcomingOfficial.find((o) => o.dateStr === examDate);
+  const waveBadgeText = matchedOfficial ? `(${matchedOfficial.subLabel})` : "(Target Ujian Kustom)";
+
   let paceStatus: "ahead" | "on-track" | "behind" | "completed" = "on-track";
   let paceLabel = "On Track";
   let paceColor = "text-emerald-400 bg-emerald-500/10 border-emerald-500/30";
 
-  if (completedCount >= safeTargetDays) {
+  if (timeLeft.isPast) {
+    paceStatus = "behind";
+    paceLabel = "Hari Ujian Telah Tiba";
+    paceColor = "text-amber-400 bg-amber-500/10 border-amber-500/30";
+  } else if (completedCount >= safeTargetDays) {
     paceStatus = "completed";
     paceLabel = "Maraton Selesai! 🎉";
     paceColor = "text-emerald-400 bg-emerald-500/10 border-emerald-500/30";
@@ -115,9 +137,13 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
       <div className={`flex items-center gap-3 text-xs sm:text-sm ${className}`}>
         <div className="flex items-center gap-1.5 text-amber-300 font-medium">
           <Calendar size={14} className="text-amber-400" />
-          <span>JLPT 6 Des 2026:</span>
+          <span>JLPT {formatExamDateCompact(examDate)}:</span>
           <span className="font-bold text-amber-400 font-mono">
-            {timeLeft.days}h {timeLeft.hours}j {timeLeft.minutes}m
+            {timeLeft.isPast ? (
+              "Hari Ujian Telah Tiba!"
+            ) : (
+              `${timeLeft.days}h ${timeLeft.hours}j ${timeLeft.minutes}m`
+            )}
           </span>
         </div>
         <span
@@ -148,9 +174,9 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
               Countdown Ujian Resmi JLPT N3
             </h3>
             <p className="text-base sm:text-lg font-bold text-slate-100 flex items-center gap-2">
-              <span>Minggu, 6 Desember 2026</span>
+              <span>{formatExamDateLabel(examDate)}</span>
               <span className="text-xs font-normal text-slate-400 hidden sm:inline">
-                (Sesi Gelombang 2)
+                {waveBadgeText}
               </span>
             </p>
           </div>

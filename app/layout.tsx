@@ -23,7 +23,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
               <p className="font-semibold text-slate-400">
-                JLPT N3 Marathon (70 Days) • Edisi Ujian 6 Desember 2026
+                JLPT N3 Marathon • Adaptive Study Prep Engine
               </p>
               <p className="text-[11px] text-slate-600 mt-0.5">
                 Materi terstruktur dari 3 referensi prep JLPT N3: Kanji, Goi, dan Bunpou dengan terjemahan bahasa Indonesia lengkap.

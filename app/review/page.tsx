@@ -16,6 +16,7 @@ import {
 import { getBookmarks, removeBookmark, PROGRESS_EVENT_NAME } from "../../lib/storage";
 import { findItemById } from "../../data/schedule";
 import { FuriganaText } from "../../components/FuriganaText";
+import { FuriganaSentence } from "../../components/FuriganaSentence";
 import { AudioButton } from "../../components/AudioButton";
 import { FlashcardModal, FlashcardItem } from "../../components/FlashcardModal";
 
@@ -307,9 +308,15 @@ export default function ReviewPage() {
 
                     <p className="text-sm font-bold text-amber-300 mt-2">{v.meaning}</p>
                     {v.example && (
-                      <p className="text-xs text-slate-400 font-japanese mt-2 bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
-                        {v.example.ja}
-                      </p>
+                      <div className="mt-2 bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
+                        <FuriganaSentence
+                          text={v.exampleJaWithFurigana || v.example.ruby || v.example.ja}
+                          className="text-xs font-medium"
+                        />
+                        <p className="text-[11px] text-slate-400 mt-1 leading-normal">
+                          {v.example.id}
+                        </p>
+                      </div>
                     )}
                   </div>
                 </div>

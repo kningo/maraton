@@ -16,6 +16,8 @@ export interface KanjiItem {
 
 export interface VocabExample {
   ja: string;
+  cleanJa?: string;
+  ruby?: string;
   reading?: string;
   id: string;
 }
@@ -28,6 +30,7 @@ export interface VocabItem {
   theme: string;
   pos?: string;
   example?: VocabExample;
+  exampleJaWithFurigana?: string;
 }
 
 export interface GrammarExample {

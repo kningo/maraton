@@ -19,6 +19,7 @@ import {
 import { getDailyContent, findItemById } from "../../data/schedule";
 import { getBookmarks, getTargetDays, isBookmarked, toggleBookmark, PROGRESS_EVENT_NAME } from "../../lib/storage";
 import { FlashcardItem } from "../../components/FlashcardModal";
+import { FuriganaSentence } from "../../components/FuriganaSentence";
 import { AudioButton } from "../../components/AudioButton";
 import { WallDisplayModal } from "../../components/WallDisplayModal";
 
@@ -457,9 +458,10 @@ export default function FlashcardsDeckPage() {
 
                   {currentCard.back.example && (
                     <div className="mt-5 rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-left">
-                      <p className="font-japanese font-semibold text-sm sm:text-base text-slate-200">
-                        {currentCard.back.example.ja}
-                      </p>
+                      <FuriganaSentence
+                        text={currentCard.back.example.ja}
+                        className="font-semibold text-sm sm:text-base text-slate-200"
+                      />
                       <p className="text-xs sm:text-sm text-slate-400 mt-1">
                         {currentCard.back.example.id}
                       </p>
