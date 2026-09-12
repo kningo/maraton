@@ -7,7 +7,10 @@ const STORAGE_KEYS = {
   STREAK: "jlpt_n3_streak",
   TARGET_DAYS: "jlpt_n3_target_days",
   EXAM_DATE: "jlpt_n3_exam_date",
+  THEME: "jlpt_n3_theme",
 };
+
+export type AppTheme = "dark" | "matcha";
 
 export const DEFAULT_TARGET_DAYS = 70;
 export const MIN_TARGET_DAYS = 30;
@@ -106,6 +109,20 @@ export function formatExamDateCompact(input: Date | string): string {
   }
 }
 
+export function formatExamDateMedium(input: Date | string): string {
+  const d = typeof input === "string" ? parseExamDate(input) : input;
+  try {
+    return d.toLocaleDateString("id-ID", {
+      weekday: "long",
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+  } catch {
+    return d.toDateString();
+  }
+}
+
 function isBrowser(): boolean {
   return typeof window !== "undefined";
 }
@@ -162,6 +179,33 @@ export function setExamDate(dateStr: string): void {
     dispatchStorageUpdate();
   } catch (err) {
     console.error("Error setting exam date:", err);
+  }
+}
+
+export function getTheme(): AppTheme {
+  if (!isBrowser()) return "dark";
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.THEME);
+    return raw === "matcha" ? "matcha" : "dark";
+  } catch {
+    return "dark";
+  }
+}
+
+export function setTheme(theme: AppTheme): void {
+  if (!isBrowser()) return;
+  try {
+    localStorage.setItem(STORAGE_KEYS.THEME, theme);
+    if (theme === "matcha") {
+      document.documentElement.setAttribute("data-theme", "matcha");
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      document.documentElement.classList.add("dark");
+    }
+    dispatchStorageUpdate();
+  } catch (err) {
+    console.error("Error setting theme:", err);
   }
 }
 
@@ -359,3 +403,4 @@ export function resetAllProgress(): void {
     console.error("Error resetting progress:", err);
   }
 }
+

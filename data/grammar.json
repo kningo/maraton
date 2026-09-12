@@ -209,9 +209,9 @@
         "indonesian": "Sejak tinggal di Jepang, saya mulai bisa berbicara bahasa Jepang sedikit."
       },
       {
-        "japanese": "眼鏡をかけないと、新聞の文字が見えないようになった。",
-        "reading": "めがねをかけないと、しんぶんのもじがみえないようになった。",
-        "indonesian": "Kalau tidak pakai kacamata, saya jadi tidak bisa melihat tulisan di koran."
+        "japanese": "眼鏡をかけると、新聞の文字がよく見えるようになった。",
+        "reading": "めがねをかけると、しんぶんのもじがよくみえるようになった。",
+        "indonesian": "Sejak memakai kacamata, saya jadi bisa melihat tulisan di koran dengan jelas."
       }
     ]
   },
@@ -327,7 +327,7 @@
     "id": "g-19",
     "pattern": "〜に対して / に対する",
     "meaning": "Terhadap / kepada / sedangkan (perbandingan kontras)",
-    "connection": "N + に対して / に対する + N",
+    "connection": "N / 普通形 (Na-adj+な / N+な・である) + のに対して / に対する + N",
     "examples": [
       {
         "japanese": "お客様に対して、常に丁寧な言葉遣いを心がけてください。",
@@ -421,7 +421,7 @@
     "examples": [
       {
         "japanese": "感謝の気持ちをこめて、母に花束を贈った。",
-        "reading": "かんしゃのきもちをこめて、はなにはなたばをおくった。",
+        "reading": "かんしゃのきもちをこめて、ははにはなたばをおくった。",
         "indonesian": "Dengan sepenuh rasa terima kasih, saya memberikan buket bunga kepada ibu."
       },
       {
@@ -624,7 +624,7 @@
       },
       {
         "japanese": "この車はデザインはもちろん、燃費の良さも魅力だ。",
-        "reading": "このくるまはデザインはもちろん、ねんぴのよさもりょくだ。",
+        "reading": "このくるまはデザインはもちろん、ねんぴのよさもみりょくだ。",
         "indonesian": "Mobil ini desainnya tentu saja bagus, efisiensi bahan bakarnya juga memikat."
       }
     ]
@@ -1495,19 +1495,19 @@
   },
   {
     "id": "g-84",
-    "pattern": "〜おそれがある",
-    "meaning": "Ada kemungkinan buruk / dikhawatirkan terjadi",
-    "connection": "V-kamus / N+の + おそれがある",
+    "pattern": "〜にしろ / にせよ",
+    "meaning": "Baik... maupun... / Sekalipun... (menunjukkan opsi atau konsesi)",
+    "connection": "Bentuk biasa (A-na / N tanpa だ atau である) + にしろ / にせよ",
     "examples": [
       {
-        "japanese": "火山の噴火による被害が広がるおそれがある。",
-        "reading": "かざんのふんかによるひがいがひろがるおそれがある。",
-        "indonesian": "Dikhawatirkan dampak kerusakan akibat letusan gunung berapi akan meluas."
+        "japanese": "行くにしろ行かないにしろ、前もって連絡してください。",
+        "reading": "いくにしろいかないにしろ、まえもってれんらくしてください。",
+        "indonesian": "Baik jadi pergi maupun tidak, tolong hubungi saya sebelumnya."
       },
       {
-        "japanese": "このまま放置すると、事態が悪化するおそれがある。",
-        "reading": "このままほうちすると、じたいがあっかするおそれがある。",
-        "indonesian": "Bila dibiarkan begini terus, dikhawatirkan situasinya akan semakin memburuk."
+        "japanese": "どんな理由にせよ、嘘をつくのは良くない。",
+        "reading": "どんなりゆうにせよ、うそをつくのはよくない。",
+        "indonesian": "Apa pun alasannya, berbohong itu tidak baik."
       }
     ]
   },
@@ -1693,37 +1693,37 @@
   },
   {
     "id": "g-95",
-    "pattern": "〜を通して / を通じて",
-    "meaning": "Melalui (sarana koneksi / media perantara)",
-    "connection": "N + を通して / を通じて",
+    "pattern": "〜げ",
+    "meaning": "Tampak seperti... / Berkesan ada nuansa... (kesan ekspresi/perilaku orang lain)",
+    "connection": "A-i (tanpa い) / A-na (tanpa な) / V-tai (tanpa い) + げ",
     "examples": [
       {
-        "japanese": "SNSを通して、世界中の人々と気軽に繋がることができる。",
-        "reading": "SNSをとおして、せかいじゅうのひとびとときがるにつながることができる。",
-        "indonesian": "Melalui media sosial, kita bisa terhubung dengan leluasa dengan orang-orang di seluruh dunia."
+        "japanese": "彼は自信ありげにプレゼンテーションを始めた。",
+        "reading": "かれはじしんありげにプレゼンテーションをはじめた。",
+        "indonesian": "Dia memulai presentasinya dengan tampak penuh percaya diri."
       },
       {
-        "japanese": "ボランティア活動を通じて、社会貢献の大切さを学んだ。",
-        "reading": "ボランティアかつどうをつうじて、しゃかいこうけんのたいせつさをまなんだ。",
-        "indonesian": "Melalui kegiatan sukarelawan, saya mempelajari pentingnya kontribusi sosial."
+        "japanese": "彼女は寂しげな表情で遠くを見つめていた。",
+        "reading": "かのじょはさびしげなひょうじょうでとおくをみつめていた。",
+        "indonesian": "Dia menatap kejauhan dengan raut wajah yang tampak kesepian."
       }
     ]
   },
   {
     "id": "g-96",
-    "pattern": "〜かねない",
-    "meaning": "Bisa berisiko menyebabkan (kekhawatiran hal buruk)",
-    "connection": "V-masu (batang) + かねない",
+    "pattern": "〜まい / まいか",
+    "meaning": "Pasti tidak akan / Bertekad tidak akan... (penyangkalan kuat / tekad negatif)",
+    "connection": "V-kamus (Kel 1) / V-nai stem (Kel 2) + まい (する -> すまい/するまい)",
     "examples": [
       {
-        "japanese": "不確かな情報を拡散すると、混乱を招きかねない。",
-        "reading": "ふたしかなじょうほうをかくさんすると、こんらんをまねきかねない。",
-        "indonesian": "Menyebarkan informasi yang belum pasti bisa berisiko memicu kepanikan massal."
+        "japanese": "あんなひどい店には二度と行くまいと心に決めた。",
+        "reading": "あんなひどいみせにはにどといくまいとこころにきめた。",
+        "indonesian": "Saya bertekad dalam hati tidak akan pernah pergi lagi ke toko seburuk itu."
       },
       {
-        "japanese": "睡眠を削りすぎると、健康を害しかねない。",
-        "reading": "すいみんをけずりすぎると、けんこうをがいしかねない。",
-        "indonesian": "Terlalu banyak memangkas waktu tidur bisa berisiko merusak kesehatan."
+        "japanese": "どんなに辛くても、弱音を吐くまいと耐えた。",
+        "reading": "どんなにつらくても、よわねをはくまいとたえた。",
+        "indonesian": "Sebesar apa pun penderitaannya, saya bertahan untuk tidak mengeluh."
       }
     ]
   },
@@ -1783,19 +1783,19 @@
   },
   {
     "id": "g-100",
-    "pattern": "〜に応じて / に応じた",
-    "meaning": "Disesuaikan dengan kebutuhan / kondisi yang dinamis",
-    "connection": "N + に応じて / に応じた + N",
+    "pattern": "〜にかかわらず / にかかわりなく",
+    "meaning": "Tanpa mempedulikan / Terlepas dari... (tidak terpengaruh syarat tertentu)",
+    "connection": "N / V-kamus + V-nai + にかかわらず",
     "examples": [
       {
-        "japanese": "状況の変化に応じて、柔軟にスケジュールを変更する。",
-        "reading": "じょうきょうのへんかにおうじて、じゅうなんにスケジュールをへんこうする。",
-        "indonesian": "Menyesuaikan dengan perubahan situasi, jadwal akan diganti secara fleksibel."
+        "japanese": "国籍や年齢にかかわらず、どなたでも応募できます。",
+        "reading": "こくせきやねんれいにかかわらず、どなたでもおうぼできます。",
+        "indonesian": "Tanpa mempedulikan kewarganegaraan maupun usia, siapa pun dapat mendaftar."
       },
       {
-        "japanese": "個人の学習進度に応じた指導を行う。",
-        "reading": "こじんのがくしゅうしんどにおうじたしどうをおこなう。",
-        "indonesian": "Memberikan bimbingan yang disesuaikan dengan ritme kemajuan belajar tiap individu."
+        "japanese": "天候の良し悪しにかかわらず、試合は予定通り行われます。",
+        "reading": "てんこうのよしあしにかかわらず、しあいはよていどおりおこなわれます。",
+        "indonesian": "Terlepas dari baik buruknya cuaca, pertandingan akan diadakan sesuai jadwal."
       }
     ]
   }

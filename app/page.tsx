@@ -21,6 +21,7 @@ import { TripleProgressTracker } from "../components/TripleProgressTracker";
 import { DayCard } from "../components/DayCard";
 import { WallDisplayModal } from "../components/WallDisplayModal";
 import { TargetConfigModal } from "../components/TargetConfigModal";
+import { GlobalSearchModal } from "../components/GlobalSearchModal";
 import {
   getAllDaysSummary,
   getDailyContent,
@@ -46,8 +47,21 @@ export default function DashboardPage() {
   const [allowFreeAccess, setAllowFreeAccess] = useState(true);
   const [isWallModeOpen, setIsWallModeOpen] = useState(false);
   const [isTargetModalOpen, setIsTargetModalOpen] = useState(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [featuredCards, setFeaturedCards] = useState<FlashcardItem[]>([]);
+
+  // Keyboard shortcut Ctrl+K or Cmd+K to trigger global search
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setIsSearchModalOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   // Dynamically partition master curriculum into targetDays
   const allSummaries = useMemo(() => getAllDaysSummary(targetDays), [targetDays]);
@@ -223,20 +237,11 @@ export default function DashboardPage() {
       <section className="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 p-6 sm:p-10 shadow-2xl">
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="max-w-2xl space-y-4">
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex items-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold text-emerald-300">
                 <Sparkles size={14} className="text-emerald-400" />
-                <span>Program Intensif JLPT N3 ({targetDays} Hari • {totalWeeks} Minggu)</span>
+                <span>Program Maraton JLPT N3 • Target {targetDays} Hari</span>
               </div>
-
-              <button
-                type="button"
-                onClick={() => setIsTargetModalOpen(true)}
-                className="inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-800/90 px-3 py-1 text-xs font-bold text-slate-300 hover:border-emerald-500/50 hover:text-emerald-300 hover:bg-slate-800 transition-all shadow-sm"
-              >
-                <Sliders size={13} className="text-emerald-400" />
-                <span>Ubah Sprint Target</span>
-              </button>
             </div>
 
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-100 leading-tight">
@@ -247,7 +252,7 @@ export default function DashboardPage() {
             </h1>
 
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
-              336 Kanji, 1155 Kosakata, dan 100 Tata Bahasa terdistribusi adaptif dalam sprint {targetDays} hari. Beban harian terkalibrasi proporsional agar penguasaan materi optimal tanpa rasa lelah.
+              Distribusi materi harian yang dikalibrasi otomatis untuk penguasaan konsisten tanpa rasa jenuh.
             </p>
 
             {/* Daily Load Estimator Cards */}
@@ -283,7 +288,7 @@ export default function DashboardPage() {
 
             {/* Prominent Sticky Quick Resume Banner */}
             <div className="pt-2">
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 rounded-2xl border border-emerald-500/40 bg-slate-950/80 p-3.5 sm:p-4 shadow-lg shadow-emerald-950/40 ring-1 ring-emerald-500/20">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 rounded-2xl border border-emerald-500/40 bg-slate-950/80 p-3.5 sm:p-4 shadow-md shadow-emerald-600/10 ring-1 ring-emerald-500/20">
                 <div className="flex items-center gap-3 flex-1">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-400/40 animate-pulse">
                     <PlayCircle size={24} />
@@ -308,7 +313,7 @@ export default function DashboardPage() {
 
                 <Link
                   href={`/day/${nextIncompleteDay}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 px-6 py-3 text-sm font-extrabold text-slate-950 shadow-md shadow-emerald-950 transition-all hover:scale-[1.02] active:scale-98 shrink-0"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 px-6 py-3 text-sm font-extrabold text-slate-950 shadow-md shadow-emerald-600/20 transition-all hover:scale-[1.02] active:scale-98 shrink-0"
                 >
                   <span>Mulai Belajar</span>
                   <ArrowRight size={16} />
@@ -316,23 +321,35 @@ export default function DashboardPage() {
               </div>
             </div>
 
-            {/* Auxiliary actions */}
+            {/* Secondary Compact Outline Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <button
                 type="button"
-                onClick={() => setIsTargetModalOpen(true)}
-                className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-xs sm:text-sm font-bold text-emerald-300 hover:bg-emerald-500/20 hover:border-emerald-500/50 transition-colors"
+                onClick={() => setIsSearchModalOpen(true)}
+                className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3.5 py-2 text-xs sm:text-sm font-semibold text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 transition-all shadow-sm"
               >
-                <Sliders size={16} className="text-emerald-400" />
-                <span>Atur Target Durasi ({targetDays} Hari)</span>
+                <Search size={15} />
+                <span>Cari Materi N3</span>
+                <kbd className="hidden sm:inline-flex text-[10px] font-mono font-bold bg-slate-900/60 px-1.5 py-0.5 rounded border border-emerald-500/30">
+                  Ctrl K
+                </kbd>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setIsTargetModalOpen(true)}
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-3.5 py-2 text-xs sm:text-sm font-semibold text-slate-300 hover:border-emerald-500/50 hover:text-emerald-300 hover:bg-slate-800 transition-colors"
+              >
+                <Sliders size={15} className="text-emerald-400" />
+                <span>Atur Target Durasi</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => setIsWallModeOpen(true)}
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800/80 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-200 hover:bg-slate-700 hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-3.5 py-2 text-xs sm:text-sm font-semibold text-slate-300 hover:border-slate-600 hover:text-slate-100 hover:bg-slate-800 transition-colors"
               >
-                <Tv size={16} className="text-emerald-400" />
+                <Tv size={15} className="text-slate-400" />
                 <span>Mode Wall Ambient TV</span>
               </button>
             </div>
@@ -368,14 +385,28 @@ export default function DashboardPage() {
 
           {/* Search & Free Access Toggle */}
           <div className="flex flex-wrap items-center gap-3">
+            {/* Universal Search Modal Trigger */}
+            <button
+              type="button"
+              onClick={() => setIsSearchModalOpen(true)}
+              className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-900/90 hover:border-emerald-500/50 hover:bg-slate-850 text-slate-300 text-xs font-semibold transition-all group shadow-sm"
+              title="Cari Kosakata, Tata Bahasa, atau Kanji (Romaji / Arti / Kanji)"
+            >
+              <Search size={14} className="text-emerald-400 group-hover:scale-110 transition-transform" />
+              <span>Cari Kosakata & Tata Bahasa</span>
+              <kbd className="hidden sm:inline-flex items-center text-[10px] font-mono font-bold bg-slate-800 border border-slate-700 text-slate-400 px-1.5 py-0.5 rounded">
+                Ctrl K
+              </kbd>
+            </button>
+
+            {/* Quick Card Day Filter */}
             <div className="relative">
-              <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Cari hari / tema materi..."
-                className="w-48 sm:w-60 rounded-xl border border-slate-700 bg-slate-900 pl-9 pr-3 py-2 text-xs text-slate-200 placeholder-slate-400 focus:border-emerald-500 focus:outline-none"
+                placeholder="Filter grid hari..."
+                className="w-36 sm:w-44 rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-200 placeholder-slate-400 focus:border-emerald-500 focus:outline-none"
               />
             </div>
 
@@ -395,32 +426,32 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Dynamic Week-based Tab/Pills Selector */}
+        {/* Dynamic Week-based Tab/Pills Selector & Filters */}
         <div className="space-y-3">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
               Pilih Minggu Studi:
             </span>
-            <span className="text-xs text-slate-300 font-medium">
+            <span className="text-xs text-slate-400 font-medium">
               {selectedWeek === "all"
                 ? `Menampilkan Seluruh ${targetDays} Hari (${totalWeeks} Minggu)`
-                : `Minggu ${selectedWeek} (Hari ${(Number(selectedWeek) - 1) * 7 + 1} s.d. ${Math.min(targetDays, Number(selectedWeek) * 7)})`}
+                : `Minggu ${selectedWeek} • Hari ${(Number(selectedWeek) - 1) * 7 + 1} s.d. ${Math.min(targetDays, Number(selectedWeek) * 7)}`}
             </span>
           </div>
 
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
             {/* All Weeks Pill */}
             <button
               type="button"
               onClick={() => handleSelectWeek("all")}
-              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 ${
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 border ${
                 selectedWeek === "all"
-                  ? "bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-950 font-black ring-2 ring-emerald-400/50"
-                  : "bg-slate-900 text-slate-200 hover:text-white hover:bg-slate-850 border border-slate-800"
+                  ? "bg-emerald-500 text-slate-950 border-emerald-400 shadow-sm font-extrabold"
+                  : "bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-850 border-slate-800"
               }`}
             >
-              <Calendar size={14} />
-              <span>Semua Minggu ({targetDays} Hari)</span>
+              <Calendar size={13} />
+              <span>Semua Minggu</span>
             </button>
 
             {/* Dynamic Week 1 to totalWeeks Pills */}
@@ -434,22 +465,22 @@ export default function DashboardPage() {
                   key={week}
                   type="button"
                   onClick={() => handleSelectWeek(week)}
-                  className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 border ${
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 border ${
                     isSelected
-                      ? "bg-emerald-500 text-slate-950 border-emerald-400 shadow-lg shadow-emerald-950 font-black ring-2 ring-emerald-400/40"
+                      ? "bg-emerald-500 text-slate-950 border-emerald-400 shadow-sm font-extrabold"
                       : isWeekAllDone
                       ? "bg-emerald-950/30 border-emerald-500/30 text-emerald-300 hover:bg-emerald-900/40"
-                      : "bg-slate-900 text-slate-200 hover:text-white hover:bg-slate-850 border-slate-800"
+                      : "bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-850 border-slate-800"
                   }`}
                 >
                   <span>Minggu {week}</span>
                   <span
                     className={`text-[10px] font-mono px-1.5 py-0.2 rounded-md ${
                       isSelected
-                        ? "bg-slate-950/30 text-slate-950 font-extrabold"
+                        ? "bg-slate-950/30 text-slate-950 font-black"
                         : isWeekAllDone
                         ? "bg-emerald-500/20 text-emerald-300"
-                        : "bg-slate-800 text-slate-300"
+                        : "bg-slate-800 text-slate-400"
                     }`}
                   >
                     {stat ? `${stat.completed}/${stat.total}` : "0"}
@@ -461,64 +492,66 @@ export default function DashboardPage() {
               );
             })}
           </div>
-        </div>
 
-        {/* Status Filter Toolbar */}
-        <div className="flex items-center justify-between gap-4 pt-1">
-          <div className="flex items-center gap-1.5 bg-slate-900 p-1 rounded-xl border border-slate-800 text-xs">
-            <button
-              type="button"
-              onClick={() => setStatusFilter("all")}
-              className={`px-3 py-1 rounded-lg font-bold transition-colors ${
-                statusFilter === "all" ? "bg-slate-800 text-slate-100" : "text-slate-400 hover:text-slate-200"
-              }`}
-            >
-              Semua Modul
-            </button>
-            <button
-              type="button"
-              onClick={() => setStatusFilter("pending")}
-              className={`px-3 py-1 rounded-lg font-bold transition-colors ${
-                statusFilter === "pending" ? "bg-slate-800 text-slate-100" : "text-slate-400 hover:text-slate-200"
-              }`}
-            >
-              Belum Selesai
-            </button>
-            <button
-              type="button"
-              onClick={() => setStatusFilter("completed")}
-              className={`px-3 py-1 rounded-lg font-bold transition-colors ${
-                statusFilter === "completed" ? "bg-emerald-500/20 text-emerald-300" : "text-slate-400 hover:text-slate-200"
-              }`}
-            >
-              Sudah Selesai
-            </button>
+          {/* Status Filter Toolbar - Compact & Neatly Aligned */}
+          <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
+            <div className="inline-flex items-center gap-1 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs">
+              <button
+                type="button"
+                onClick={() => setStatusFilter("all")}
+                className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
+                  statusFilter === "all" ? "bg-slate-800 text-slate-100 font-bold" : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                Semua Modul
+              </button>
+              <button
+                type="button"
+                onClick={() => setStatusFilter("pending")}
+                className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
+                  statusFilter === "pending" ? "bg-slate-800 text-slate-100 font-bold" : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                Belum Selesai
+              </button>
+              <button
+                type="button"
+                onClick={() => setStatusFilter("completed")}
+                className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
+                  statusFilter === "completed" ? "bg-emerald-500/20 text-emerald-300 font-bold" : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                Sudah Selesai
+              </button>
+            </div>
+
+            <span className="text-xs text-slate-400 font-medium">
+              Menampilkan <strong className="text-slate-200 font-bold">{filteredSummaries.length}</strong> modul
+            </span>
           </div>
-
-          <span className="text-xs text-slate-400 font-medium">
-            Menampilkan <strong className="text-slate-200">{filteredSummaries.length}</strong> modul
-          </span>
         </div>
 
         {/* Responsive Grid Layout
-            Mobile (<640px): 1 or 2 columns (grid-cols-1 sm:grid-cols-2)
-            Tablet (640px - 1024px): 3 or 4 columns (md:grid-cols-3 lg:grid-cols-4)
-            Desktop (>1024px): 7 columns (xl:grid-cols-7), mirroring a natural 7-day weekly calendar
+            Mobile (<640px): 1 or 2 columns
+            Tablet (640px - 1024px): 3 or 4 columns
+            Desktop (>1024px): 7 columns (xl:grid-cols-7), mirroring a natural 7-day calendar
         */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3.5 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3 sm:gap-3.5">
           {filteredSummaries.map((day) => {
             const isCompleted = completedDays.includes(day.dayId);
-            const isActive = day.dayId === nextIncompleteDay;
+            const isCurrent = day.dayId === nextIncompleteDay;
             const isLocked = !allowFreeAccess && day.dayId > nextIncompleteDay;
             const quiz = quizResults[day.dayId];
 
-            let cardStatus: "completed" | "active" | "locked" = "active";
+            let cardStatus: "completed" | "active" | "locked" | "pending" = "pending";
             if (isCompleted) {
               cardStatus = "completed";
+            } else if (isCurrent) {
+              cardStatus = "active";
             } else if (isLocked) {
               cardStatus = "locked";
-            } else if (isActive) {
-              cardStatus = "active";
+            } else {
+              cardStatus = "pending";
             }
 
             return (
@@ -573,6 +606,13 @@ export default function DashboardPage() {
         onClose={() => setIsWallModeOpen(false)}
         cards={featuredCards}
         dayTitle="JLPT N3 Marathon • Wall Ambient Display"
+      />
+
+      {/* Global Universal Search Modal */}
+      <GlobalSearchModal
+        isOpen={isSearchModalOpen}
+        onClose={() => setIsSearchModalOpen(false)}
+        targetDays={targetDays}
       />
     </div>
   );

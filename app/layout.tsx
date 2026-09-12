@@ -14,7 +14,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className="dark scroll-smooth">
+    <html lang="id" className="dark scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('jlpt_n3_theme');
+                  if (theme === 'matcha') {
+                    document.documentElement.setAttribute('data-theme', 'matcha');
+                    document.documentElement.classList.remove('dark');
+                  } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500/30 selection:text-emerald-300">
         <Navbar />
         <main className="flex-1 w-full">{children}</main>

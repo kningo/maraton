@@ -71,10 +71,20 @@ export function getDailySlice(
   };
 }
 
-function shuffle<T>(array: T[]): T[] {
+function seededRandom(seed: number): () => number {
+  let s = Math.abs(seed) % 2147483647;
+  if (s <= 0) s += 2147483646;
+  return () => {
+    s = (s * 16807) % 2147483647;
+    return (s - 1) / 2147483646;
+  };
+}
+
+function seededShuffle<T>(array: T[], seed: number): T[] {
   const arr = [...array];
+  const rand = seededRandom(seed);
   for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(rand() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
@@ -96,8 +106,8 @@ function generateDayQuiz(
       .filter((k) => k.id !== targetKanji.id)
       .slice(0, 10)
       .map((k) => k.meaning);
-    const randomDistractors = shuffle(otherMeanings).slice(0, 3);
-    const options = shuffle([targetKanji.meaning, ...randomDistractors]);
+    const randomDistractors = seededShuffle(otherMeanings, dayId * 31 + 1).slice(0, 3);
+    const options = seededShuffle([targetKanji.meaning, ...randomDistractors], dayId * 31 + 2);
 
     questions.push({
       id: `q-day${dayId}-k1`,
@@ -125,8 +135,8 @@ function generateDayQuiz(
       .slice(0, 6)
       .map((v) => v.reading);
 
-    const distractors = shuffle([...fakeReadings, ...otherReadings]).slice(0, 3);
-    const options = shuffle([targetWord.reading, ...distractors]);
+    const distractors = seededShuffle([...fakeReadings, ...otherReadings], dayId * 31 + 3).slice(0, 3);
+    const options = seededShuffle([targetWord.reading, ...distractors], dayId * 31 + 4);
 
     questions.push({
       id: `q-day${dayId}-k2`,
@@ -146,8 +156,8 @@ function generateDayQuiz(
       .filter((v) => v.id !== targetVocab.id)
       .slice(0, 15)
       .map((v) => v.meaning);
-    const distractors = shuffle(otherMeanings).slice(0, 3);
-    const options = shuffle([targetVocab.meaning, ...distractors]);
+    const distractors = seededShuffle(otherMeanings, dayId * 31 + 5).slice(0, 3);
+    const options = seededShuffle([targetVocab.meaning, ...distractors], dayId * 31 + 6);
 
     questions.push({
       id: `q-day${dayId}-v1`,
@@ -167,8 +177,8 @@ function generateDayQuiz(
       .filter((v) => v.id !== targetVocab2.id)
       .slice(0, 10)
       .map((v) => v.reading);
-    const distractors = shuffle(otherReadings).slice(0, 3);
-    const options = shuffle([targetVocab2.reading, ...distractors]);
+    const distractors = seededShuffle(otherReadings, dayId * 31 + 7).slice(0, 3);
+    const options = seededShuffle([targetVocab2.reading, ...distractors], dayId * 31 + 8);
 
     questions.push({
       id: `q-day${dayId}-v2`,
@@ -188,8 +198,8 @@ function generateDayQuiz(
       .filter((g) => g.id !== targetGrammar.id)
       .slice(0, 10)
       .map((g) => g.meaning);
-    const distractors = shuffle(otherGrammarMeanings).slice(0, 3);
-    const options = shuffle([targetGrammar.meaning, ...distractors]);
+    const distractors = seededShuffle(otherGrammarMeanings, dayId * 31 + 9).slice(0, 3);
+    const options = seededShuffle([targetGrammar.meaning, ...distractors], dayId * 31 + 10);
 
     questions.push({
       id: `q-day${dayId}-g1`,

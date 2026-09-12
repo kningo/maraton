@@ -2,9 +2,134 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+[data-theme="dark"] {
   --background: #0b0f19;
   --foreground: #f8fafc;
+
+  /* Slate Scale (Dark Midnight) */
+  --slate-50: 248 250 252;
+  --slate-100: 241 245 249;
+  --slate-200: 226 232 240;
+  --slate-300: 203 213 225;
+  --slate-400: 148 163 184;
+  --slate-500: 100 116 139;
+  --slate-600: 71 85 105;
+  --slate-700: 51 65 85;
+  --slate-850: 21 30 48;
+  --slate-800: 30 41 59;
+  --slate-900: 15 23 42;
+  --slate-950: 11 15 25;
+
+  /* Accents (Dark Mode) */
+  --emerald-300: 110 231 183;
+  --emerald-400: 52 211 153;
+  --emerald-500: 16 185 129;
+  --emerald-600: 5 150 105;
+  --emerald-800: 6 95 70;
+  --emerald-950: 6 78 59;
+  --amber-200: 253 230 138;
+  --amber-300: 252 211 77;
+  --amber-400: 251 191 36;
+  --amber-500: 245 158 11;
+  --amber-800: 146 64 14;
+  --amber-950: 69 26 3;
+  --teal-300: 94 234 212;
+  --teal-400: 45 212 191;
+  --cyan-300: 103 232 249;
+  --cyan-400: 34 211 238;
+  --cyan-800: 21 94 117;
+  --cyan-950: 8 51 68;
+  --sky-300: 125 211 252;
+  --sky-400: 56 189 248;
+  --indigo-300: 165 180 252;
+  --indigo-400: 129 140 248;
+
+  /* Scrollbar */
+  --scrollbar-track: #0b0f19;
+  --scrollbar-thumb: #1e293b;
+  --scrollbar-thumb-hover: #334155;
+
+  /* Selection */
+  --selection-bg: rgba(16, 185, 129, 0.3);
+  --selection-text: #a7f3d0;
+}
+
+[data-theme="matcha"] {
+  --background: #f3f6f4;
+  --foreground: #1a2821;
+
+  /* Zen Matcha & Sage Palette */
+  --slate-50: 13 23 17;
+  --slate-100: 26 40 33;      /* Primary text: Deep Forest Pine #1A2821 */
+  --slate-200: 38 56 46;      /* High contrast text */
+  --slate-300: 55 76 64;      /* Neutral text/icons */
+  --slate-400: 75 97 85;      /* Secondary text #4B6155 */
+  --slate-500: 108 128 117;   /* Muted labels */
+  --slate-600: 138 158 147;   /* Dim markers */
+  --slate-700: 194 209 201;   /* Medium/active border #C2D1C9 */
+  --slate-800: 220 228 223;   /* Card & panel border #DCE4DF */
+  --slate-850: 235 241 238;   /* Sub-panels, hover highlights #EBF1EE */
+  --slate-900: 255 255 255;   /* Card surfaces: Pure Crisp White #FFFFFF */
+  --slate-950: 243 246 244;   /* Canvas background: Soft Sage Mist #F3F6F4 */
+
+  /* Accents calibrated for high legibility (WCAG AAA) on light sage & white */
+  --emerald-300: 21 128 61;   /* Rich Jade #15803D (contrast 5.0:1) */
+  --emerald-400: 22 101 52;   /* Deep Forest Green #166534 (contrast 7.1:1) */
+  --emerald-500: 21 128 61;   /* Jade Accent #15803D */
+  --emerald-600: 20 83 45;    /* Deep Pine #14532D */
+  --emerald-800: 167 243 208; /* Soft green border #A7F3D0 */
+  --emerald-950: 236 248 240; /* Soft green pill background #ECF8F0 */
+  --amber-200: 146 64 14;     /* Dark Terracotta #92400E (contrast 7.1:1) */
+  --amber-300: 180 83 9;      /* Warm Terracotta #B45309 (contrast 5.0:1 for vocab meanings) */
+  --amber-400: 161 98 7;      /* Golden Bronze #A16207 */
+  --amber-500: 217 119 6;     /* Amber Gold #D97706 */
+  --amber-800: 253 230 138;   /* Soft amber border #FDE68A */
+  --amber-950: 254 243 199;   /* Soft warm cream badge background #FEF3C7 */
+  --teal-300: 17 94 89;       /* Deep Pine Teal #115E59 (contrast 7.6:1 for hero gradient) */
+  --teal-400: 15 118 110;     /* Forest Teal #0F766E */
+  --cyan-300: 14 116 144;     /* Deep Cerulean #0E7490 (contrast 5.4:1 for KUN reading) */
+  --cyan-400: 15 118 110;     /* Deep Cyan #0F766E */
+  --cyan-800: 165 243 252;    /* Soft cyan border #A5F3FC */
+  --cyan-950: 236 254 255;    /* Soft cyan badge background #ECFEFF */
+  --sky-300: 3 105 161;       /* Deep Sky #0369A1 (contrast 5.9:1 for Vocab %) */
+  --sky-400: 2 132 199;       /* Clear Ocean #0284C7 */
+  --indigo-300: 67 56 202;    /* Deep Indigo #4338CA (contrast 7.9:1 for grammar badge) */
+  --indigo-400: 55 48 163;    /* Royal Indigo #3730A3 */
+
+  /* Scrollbar */
+  --scrollbar-track: #f3f6f4;
+  --scrollbar-thumb: #c2d1c9;
+  --scrollbar-thumb-hover: #9fb3a7;
+
+  /* Selection */
+  --selection-bg: rgba(22, 101, 52, 0.2);
+  --selection-text: #166534;
+}
+
+/* Soften and eliminate harsh dark shadows in matcha mode */
+[data-theme="matcha"] .shadow-emerald-950,
+[data-theme="matcha"] .shadow-emerald-900\/40,
+[data-theme="matcha"] .shadow-emerald-900\/30,
+[data-theme="matcha"] .shadow-amber-900\/30 {
+  --tw-shadow-color: rgba(22, 101, 52, 0.15) !important;
+  box-shadow: 0 4px 14px -2px rgba(22, 101, 52, 0.18) !important;
+}
+
+[data-theme="matcha"] .shadow-2xl {
+  box-shadow: 0 10px 25px -5px rgba(26, 40, 33, 0.05), 0 8px 10px -6px rgba(26, 40, 33, 0.03) !important;
+}
+
+[data-theme="matcha"] .shadow-xl {
+  box-shadow: 0 8px 20px -4px rgba(26, 40, 33, 0.05), 0 4px 6px -4px rgba(26, 40, 33, 0.02) !important;
+}
+
+[data-theme="matcha"] .shadow-lg {
+  box-shadow: 0 4px 12px -2px rgba(26, 40, 33, 0.06), 0 2px 4px -2px rgba(26, 40, 33, 0.03) !important;
+}
+
+[data-theme="matcha"] .hover\:text-white:hover {
+  color: rgb(var(--slate-100));
 }
 
 body {
@@ -12,6 +137,7 @@ body {
   background: var(--background);
   font-feature-settings: "palt" 1;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Custom modern scrollbars */
@@ -21,16 +147,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0f19;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: var(--scrollbar-thumb);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Furigana ruby styling */
@@ -50,6 +176,7 @@ rt {
 }
 
 ::selection {
-  background: rgba(16, 185, 129, 0.3);
-  color: #a7f3d0;
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
+

@@ -190,18 +190,18 @@ export function QuizWidget({
 
           {/* Question Prompt */}
           <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-5 sm:p-6 mb-6">
-            <h4 className="text-base sm:text-lg font-bold text-slate-100">
+            <h4 className="text-base sm:text-lg font-bold text-slate-100" suppressHydrationWarning>
               {currentQ.question}
             </h4>
             {currentQ.promptSub && (
-              <p className="text-xs sm:text-sm text-amber-300 font-mono mt-2 bg-amber-500/10 border border-amber-500/20 rounded-lg p-2 inline-block">
+              <p className="text-xs sm:text-sm text-amber-300 font-mono mt-2 bg-amber-500/10 border border-amber-500/20 rounded-lg p-2 inline-block" suppressHydrationWarning>
                 {currentQ.promptSub}
               </p>
             )}
           </div>
 
           {/* Options */}
-          <div className="space-y-3">
+          <div className="space-y-3" suppressHydrationWarning>
             {currentQ.options.map((option, idx) => {
               const isSelected = selectedOption === idx;
               const isCorrect = currentQ.correctIndex === idx;
@@ -230,7 +230,7 @@ export function QuizWidget({
                     <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-slate-800 font-mono text-xs text-slate-300 font-bold border border-slate-700">
                       {String.fromCharCode(65 + idx)}
                     </span>
-                    <span>{option}</span>
+                    <span suppressHydrationWarning>{option}</span>
                   </div>
 
                   {isAnswerSubmitted && isCorrect && (

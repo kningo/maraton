@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   Sparkles,
   Volume2,
+  List,
 } from "lucide-react";
 import { getDailyContent } from "../../../data/schedule";
 import { FuriganaText } from "../../../components/FuriganaText";
@@ -51,10 +52,27 @@ export default function DailyLessonPage() {
   const schedule = useMemo(() => getDailyContent(dayIdNum, targetDays), [dayIdNum, targetDays]);
 
   const [activeTab, setActiveTab] = useState<"all" | "kanji" | "vocab" | "grammar">("all");
+  const [vocabViewMode, setVocabViewMode] = useState<"full" | "compact">("full");
   const [isFlashcardOpen, setIsFlashcardOpen] = useState(false);
   const [isWallModeOpen, setIsWallModeOpen] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [bookmarkedSet, setBookmarkedSet] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("jlpt_n3_vocab_view_mode");
+      if (saved === "compact" || saved === "full") {
+        setVocabViewMode(saved);
+      }
+    } catch {}
+  }, []);
+
+  const handleVocabViewModeChange = (mode: "full" | "compact") => {
+    setVocabViewMode(mode);
+    try {
+      localStorage.setItem("jlpt_n3_vocab_view_mode", mode);
+    } catch {}
+  };
 
   useEffect(() => {
     const syncState = () => {
@@ -252,7 +270,7 @@ export default function DailyLessonPage() {
             <button
               type="button"
               onClick={() => setIsFlashcardOpen(true)}
-              className="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-950 active:scale-95"
+              className="flex-1 sm:flex-none flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-500 transition-colors shadow-md shadow-emerald-600/20 active:scale-95"
             >
               <Layers size={18} />
               <span>Latihan Flashcards ({flashcards.length})</span>
@@ -444,7 +462,7 @@ export default function DailyLessonPage() {
       {/* SECTION 2: VOCABULARY */}
       {(activeTab === "all" || activeTab === "vocab") && (
         <section className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400">
                 <Layers size={18} />
@@ -453,43 +471,79 @@ export default function DailyLessonPage() {
                 Bagian Kosakata / Goi ({schedule.vocab.length} Kata)
               </h2>
             </div>
-            <span className="text-xs text-slate-400 hidden sm:inline">
-              Dilengkapi konteks kalimat dan arti bahasa Indonesia
-            </span>
+
+            {/* View Mode Switcher: Lengkap (Opsi 1) vs Ringkas */}
+            <div className="flex items-center gap-1 bg-slate-900/90 border border-slate-800 p-1 rounded-xl self-start sm:self-auto text-xs font-semibold shadow-sm">
+              <button
+                type="button"
+                onClick={() => handleVocabViewModeChange("full")}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${
+                  vocabViewMode === "full"
+                    ? "bg-emerald-500 text-slate-950 font-bold shadow-sm"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+                title="Tampilan lengkap dengan contoh kalimat praktis"
+              >
+                <BookOpen size={13} />
+                <span>Mode Lengkap</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleVocabViewModeChange("compact")}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${
+                  vocabViewMode === "compact"
+                    ? "bg-emerald-500 text-slate-950 font-bold shadow-sm"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+                title="Tampilan ringkas tanpa kalimat contoh (Kamus Cepat)"
+              >
+                <List size={13} />
+                <span>Mode Ringkas</span>
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div
+            className={`grid gap-3 sm:gap-4 transition-all ${
+              vocabViewMode === "compact"
+                ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                : "grid-cols-1 md:grid-cols-2"
+            }`}
+          >
             {schedule.vocab.map((vItem) => {
               const isStarred = bookmarkedSet.has(vItem.id);
 
               return (
                 <div
                   key={vItem.id}
-                  className="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 shadow-sm hover:border-slate-700 transition-colors flex flex-col justify-between"
+                  className="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 sm:p-4.5 shadow-sm hover:border-slate-700 transition-colors flex flex-col justify-between"
                 >
                   <div>
                     {/* Header: Term, Reading, Tag, Actions */}
                     <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <h3 className="text-2xl font-bold font-japanese text-slate-100">
+                      <div className="space-y-1 min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="text-xl sm:text-2xl font-bold font-japanese text-slate-100 tracking-wide">
                             {vItem.word}
                           </h3>
-                          <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md">
+                          <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md font-semibold">
                             {vItem.reading}
                           </span>
+                          {vItem.pos && (
+                            <span className="text-[10px] uppercase font-bold text-slate-400 bg-slate-800/80 border border-slate-700/60 px-1.5 py-0.5 rounded">
+                              {vItem.pos}
+                            </span>
+                          )}
                         </div>
 
-                        <div className="flex items-center gap-2 mt-1.5">
-                          <span className="text-[10px] uppercase font-bold text-slate-400 bg-slate-800 px-2 py-0.5 rounded">
-                            {vItem.pos || "kata benda"}
-                          </span>
-                          <span className="text-[10px] text-slate-500">•</span>
-                          <span className="text-xs text-slate-400">{vItem.theme}</span>
-                        </div>
+                        {/* Indonesian Meaning */}
+                        <p className="text-sm sm:text-base font-bold text-amber-300 leading-snug">
+                          {vItem.meaning}
+                        </p>
                       </div>
 
-                      <div className="flex items-center gap-1.5">
+                      {/* Action Buttons: Audio & Star */}
+                      <div className="flex items-center gap-1.5 shrink-0 pt-0.5">
                         <AudioButton text={vItem.word} size="sm" />
                         <button
                           type="button"
@@ -506,25 +560,20 @@ export default function DailyLessonPage() {
                       </div>
                     </div>
 
-                    {/* Indonesian Meaning */}
-                    <p className="text-base font-bold text-amber-300 mt-3">
-                      {vItem.meaning}
-                    </p>
-
-                    {/* Example Sentence */}
-                    {vItem.example && (
-                      <div className="mt-3.5 rounded-xl border border-slate-800 bg-slate-950/60 p-3.5">
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="flex-1">
+                    {/* Example Sentence (Shown in "full" mode) */}
+                    {vocabViewMode === "full" && vItem.example && (
+                      <div className="mt-3 pt-2.5 border-t border-slate-800/70">
+                        <div className="flex items-start justify-between gap-2.5">
+                          <div className="flex-1 min-w-0">
                             <FuriganaSentence
                               text={vItem.exampleJaWithFurigana || vItem.example.ruby || vItem.example.ja}
-                              className="text-xs sm:text-sm font-medium"
+                              className="text-xs sm:text-[13px] font-medium leading-relaxed"
                             />
-                            <p className="text-xs text-slate-400 mt-1 leading-normal">
+                            <p className="text-xs text-slate-400 mt-1 leading-normal line-clamp-2">
                               {vItem.example.id}
                             </p>
                           </div>
-                          <div className="pt-1 shrink-0">
+                          <div className="shrink-0 pt-0.5">
                             <AudioButton text={vItem.example.ja} size="sm" />
                           </div>
                         </div>

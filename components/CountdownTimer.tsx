@@ -10,6 +10,7 @@ import {
   parseExamDate,
   formatExamDateLabel,
   formatExamDateCompact,
+  formatExamDateMedium,
   getUpcomingOfficialDates,
 } from "../lib/storage";
 
@@ -89,45 +90,84 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
     };
   }, []);
 
-  // Pace calculations
+  // Pace and progress calculations
   const safeTargetDays = Math.max(1, targetDays);
   const remainingStudyDays = Math.max(0, safeTargetDays - completedCount);
   const daysUntilExam = timeLeft.days;
+  const progressPercent = Math.min(100, Math.round((completedCount / safeTargetDays) * 100));
 
   const upcomingOfficial = getUpcomingOfficialDates();
   const matchedOfficial = upcomingOfficial.find((o) => o.dateStr === examDate);
-  const waveBadgeText = matchedOfficial ? `(${matchedOfficial.subLabel})` : "(Target Ujian Kustom)";
+  const waveBadgeText = matchedOfficial
+    ? `(${matchedOfficial.subLabel.replace("Sesi ", "")})`
+    : "(Target Kustom)";
 
-  let paceStatus: "ahead" | "on-track" | "behind" | "completed" = "on-track";
   let paceLabel = "On Track";
-  let paceColor = "text-emerald-400 bg-emerald-500/10 border-emerald-500/30";
+  let paceBadgeClass = "bg-emerald-950/60 border-emerald-800/60 text-emerald-400";
+  let pulseDotClass = "bg-emerald-400";
+  let paceNoteIcon = "✓";
+  let paceNoteText = "Ritme belajar ideal untuk target ujian ini.";
+  let paceNoteColor = "text-emerald-400/90";
+
+  const daysPerModule = Math.max(1, Math.floor(daysUntilExam / Math.max(1, remainingStudyDays)));
 
   if (timeLeft.isPast) {
-    paceStatus = "behind";
-    paceLabel = "Hari Ujian Telah Tiba";
-    paceColor = "text-amber-400 bg-amber-500/10 border-amber-500/30";
+    paceLabel = "Hari Ujian Tiba";
+    paceBadgeClass = "bg-amber-950/60 border-amber-800/60 text-amber-400";
+    pulseDotClass = "bg-amber-400";
+    paceNoteIcon = "⚠️";
+    paceNoteText = "Tanggal ujian telah tiba atau telah terlewati.";
+    paceNoteColor = "text-amber-400/90";
   } else if (completedCount >= safeTargetDays) {
-    paceStatus = "completed";
     paceLabel = "Maraton Selesai! 🎉";
-    paceColor = "text-emerald-400 bg-emerald-500/10 border-emerald-500/30";
+    paceBadgeClass = "bg-emerald-950/60 border-emerald-800/60 text-emerald-400";
+    pulseDotClass = "bg-emerald-400";
+    paceNoteIcon = "🎉";
+    paceNoteText = "Seluruh kurikulum maraton telah selesai dikuasai.";
+    paceNoteColor = "text-emerald-400/90";
   } else if (daysUntilExam < remainingStudyDays) {
-    paceStatus = "behind";
     paceLabel = "Behind Schedule";
-    paceColor = "text-amber-400 bg-amber-500/10 border-amber-500/30";
+    paceBadgeClass = "bg-amber-950/60 border-amber-800/60 text-amber-400";
+    pulseDotClass = "bg-amber-400";
+    paceNoteIcon = "⚠️";
+    paceNoteText = `Perlu menyelesaikan ~1 modul tiap ${daysPerModule} hari kalender.`;
+    paceNoteColor = "text-amber-400/90";
   } else if (daysUntilExam > remainingStudyDays * 1.5) {
-    paceStatus = "ahead";
     paceLabel = "Ahead of Schedule";
-    paceColor = "text-cyan-400 bg-cyan-500/10 border-cyan-500/30";
+    paceBadgeClass = "bg-cyan-950/60 border-cyan-800/60 text-cyan-400";
+    pulseDotClass = "bg-cyan-400";
+    paceNoteIcon = "🚀";
+    paceNoteText = "Ritme belajar sangat cepat dan melampaui target.";
+    paceNoteColor = "text-cyan-400/90";
   } else {
-    paceStatus = "on-track";
     paceLabel = "On Track";
-    paceColor = "text-emerald-400 bg-emerald-500/10 border-emerald-500/30";
+    paceBadgeClass = "bg-emerald-950/60 border-emerald-800/60 text-emerald-400";
+    pulseDotClass = "bg-emerald-400";
+    paceNoteIcon = "✓";
+    paceNoteText = "Ritme belajar ideal untuk target ujian ini.";
+    paceNoteColor = "text-emerald-400/90";
   }
 
   if (!mounted) {
+    if (compact) {
+      return (
+        <div className={`flex items-center gap-3 text-xs sm:text-sm animate-pulse ${className}`}>
+          <div className="h-4 w-36 rounded bg-slate-800/60" />
+          <div className="h-4 w-16 rounded-full bg-slate-800/60" />
+        </div>
+      );
+    }
+
     return (
-      <div className={`animate-pulse rounded-xl bg-slate-800/40 p-4 ${className}`}>
-        <div className="h-6 w-48 rounded bg-slate-700/50"></div>
+      <div className={`animate-pulse rounded-2xl bg-slate-900/90 border border-slate-800/80 p-5 h-full ${className}`}>
+        <div className="h-5 w-32 rounded bg-slate-800/60 mb-3" />
+        <div className="h-7 w-48 rounded bg-slate-800/60 mb-5" />
+        <div className="grid grid-cols-4 gap-2.5 my-4">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="h-16 rounded-xl bg-slate-800/50" />
+          ))}
+        </div>
+        <div className="h-4 w-full rounded bg-slate-800/50 mt-4" />
       </div>
     );
   }
@@ -147,13 +187,9 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
           </span>
         </div>
         <span
-          className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-[11px] font-semibold ${paceColor}`}
+          className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border ${paceBadgeClass}`}
         >
-          {paceStatus === "behind" ? (
-            <AlertTriangle size={11} />
-          ) : (
-            <CheckCircle2 size={11} />
-          )}
+          <span className={`w-1.5 h-1.5 rounded-full ${pulseDotClass} animate-pulse`} />
           {paceLabel}
         </span>
       </div>
@@ -162,91 +198,97 @@ export function CountdownTimer({ compact = false, className = "" }: CountdownTim
 
   return (
     <div
-      className={`rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/90 via-slate-900/60 to-slate-950 p-5 sm:p-6 shadow-xl backdrop-blur-sm ${className}`}
+      className={`bg-slate-900/90 border border-slate-800/80 rounded-2xl p-5 flex flex-col justify-between shadow-lg h-full ${className}`}
     >
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
-        <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
-            <Clock size={22} />
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
-              Countdown Ujian Resmi JLPT N3
-            </h3>
-            <p className="text-base sm:text-lg font-bold text-slate-100 flex items-center gap-2">
-              <span>{formatExamDateLabel(examDate)}</span>
-              <span className="text-xs font-normal text-slate-400 hidden sm:inline">
-                {waveBadgeText}
-              </span>
-            </p>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2">
+      {/* Header Section */}
+      <div>
+        <div className="flex items-center justify-between gap-2 mb-2">
+          <span className="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
+            Jadwal Ujian Resmi
+          </span>
           <span
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-semibold ${paceColor}`}
+            className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border ${paceBadgeClass}`}
           >
-            {paceStatus === "behind" ? (
-              <AlertTriangle size={13} />
-            ) : paceStatus === "ahead" ? (
-              <TrendingUp size={13} />
-            ) : (
-              <CheckCircle2 size={13} />
-            )}
+            <span className={`w-1.5 h-1.5 rounded-full ${pulseDotClass} animate-pulse`} />
             {paceLabel}
           </span>
         </div>
-      </div>
 
-      <div className="grid grid-cols-4 gap-2 sm:gap-4 mt-5">
-        <div className="flex flex-col items-center justify-center rounded-xl bg-slate-950/60 border border-slate-800/60 p-2 sm:p-3.5">
-          <span className="text-2xl sm:text-4xl font-extrabold font-mono text-amber-400">
-            {timeLeft.days}
+        <div className="flex items-baseline gap-2 whitespace-nowrap overflow-hidden">
+          <h3 className="text-base font-bold text-slate-100 truncate">
+            {formatExamDateMedium(examDate)}
+          </h3>
+          <span className="text-xs text-slate-400 font-normal shrink-0">
+            {waveBadgeText}
           </span>
-          <span className="text-[10px] sm:text-xs text-slate-400 font-medium mt-0.5">HARI</span>
-        </div>
-        <div className="flex flex-col items-center justify-center rounded-xl bg-slate-950/60 border border-slate-800/60 p-2 sm:p-3.5">
-          <span className="text-2xl sm:text-4xl font-extrabold font-mono text-slate-200">
-            {String(timeLeft.hours).padStart(2, "0")}
-          </span>
-          <span className="text-[10px] sm:text-xs text-slate-400 font-medium mt-0.5">JAM</span>
-        </div>
-        <div className="flex flex-col items-center justify-center rounded-xl bg-slate-950/60 border border-slate-800/60 p-2 sm:p-3.5">
-          <span className="text-2xl sm:text-4xl font-extrabold font-mono text-slate-200">
-            {String(timeLeft.minutes).padStart(2, "0")}
-          </span>
-          <span className="text-[10px] sm:text-xs text-slate-400 font-medium mt-0.5">MENIT</span>
-        </div>
-        <div className="flex flex-col items-center justify-center rounded-xl bg-slate-950/60 border border-slate-800/60 p-2 sm:p-3.5">
-          <span className="text-2xl sm:text-4xl font-extrabold font-mono text-emerald-400">
-            {String(timeLeft.seconds).padStart(2, "0")}
-          </span>
-          <span className="text-[10px] sm:text-xs text-slate-400 font-medium mt-0.5">DETIK</span>
         </div>
       </div>
 
-      <div className="mt-4 pt-3 border-t border-slate-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-slate-400 gap-2">
-        <div className="flex items-center gap-1.5">
-          <span>Target Maraton:</span>
-          <strong className="text-slate-200 font-medium">
-            {completedCount} dari {targetDays} Hari Selesai
-          </strong>
-          <span className="text-slate-500">
-            ({Math.round((completedCount / safeTargetDays) * 100)}%)
+      {/* Countdown Grid */}
+      <div className="grid grid-cols-4 gap-2.5 my-4">
+        {[
+          {
+            label: "HARI",
+            val: String(timeLeft.isPast ? 0 : timeLeft.days),
+            color: "text-amber-400",
+          },
+          {
+            label: "JAM",
+            val: String(timeLeft.isPast ? 0 : timeLeft.hours).padStart(2, "0"),
+            color: "text-slate-100",
+          },
+          {
+            label: "MENIT",
+            val: String(timeLeft.isPast ? 0 : timeLeft.minutes).padStart(2, "0"),
+            color: "text-slate-100",
+          },
+          {
+            label: "DETIK",
+            val: String(timeLeft.isPast ? 0 : timeLeft.seconds).padStart(2, "0"),
+            color: "text-emerald-400",
+          },
+        ].map((item, idx) => (
+          <div
+            key={idx}
+            className="bg-slate-950/70 border border-slate-800/70 rounded-xl py-2.5 flex flex-col items-center justify-center"
+          >
+            <span className={`text-2xl font-black font-mono leading-none ${item.color}`}>
+              {item.val}
+            </span>
+            <span className="text-[9px] tracking-widest text-slate-400 font-semibold mt-1.5">
+              {item.label}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* Footer / Progress Tracker */}
+      <div className="pt-3 border-t border-slate-800/60 space-y-2">
+        {/* Row 1: Label and Value */}
+        <div className="flex items-center justify-between text-xs">
+          <span className="text-slate-400 font-medium">Progres Maraton</span>
+          <span className="font-semibold text-slate-200">
+            {completedCount} dari {safeTargetDays} Hari{" "}
+            <span className="text-slate-500 font-normal">({progressPercent}%)</span>
           </span>
         </div>
-        <div className="text-slate-400">
-          {paceStatus === "behind" ? (
-            <span className="text-amber-400">
-              ⚠️ Perlu menyelesaikan ~1 hari belajar tiap {Math.max(1, Math.floor(daysUntilExam / Math.max(1, remainingStudyDays)))} hari kalender.
-            </span>
-          ) : (
-            <span className="text-emerald-400/90">
-              ✓ Ritme belajar Anda ideal untuk menguasai N3 sebelum hari H!
-            </span>
-          )}
+
+        {/* Row 2: Sleek 1.5-unit Progress Bar */}
+        <div className="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden border border-slate-800/50">
+          <div
+            className="h-full bg-emerald-500 rounded-full transition-all duration-500"
+            style={{ width: `${progressPercent}%` }}
+          />
         </div>
+
+        {/* Row 3: Single-line Status Badge */}
+        <p className={`text-[11px] flex items-center gap-1.5 pt-0.5 whitespace-nowrap overflow-hidden text-ellipsis ${paceNoteColor}`}>
+          <span className="shrink-0">{paceNoteIcon}</span>
+          <span className="truncate">{paceNoteText}</span>
+        </p>
       </div>
     </div>
   );
 }
+
+export default CountdownTimer;

@@ -136,7 +136,7 @@ export default function ReviewPage() {
           <button
             type="button"
             onClick={() => setIsFlashcardModalOpen(true)}
-            className="flex items-center gap-2 rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-500 shadow-lg shadow-emerald-950 transition-all active:scale-95"
+            className="flex items-center gap-2 rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-500 shadow-md shadow-emerald-600/20 transition-all active:scale-95"
           >
             <Layers size={18} />
             <span>Latih Starred ({flashcardsDeck.length} Kartu)</span>
