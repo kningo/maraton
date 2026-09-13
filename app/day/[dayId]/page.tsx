@@ -16,6 +16,8 @@ import {
   Sparkles,
   Volume2,
   List,
+  Rows2,
+  LayoutGrid,
 } from "lucide-react";
 import { getDailyContent } from "../../../data/schedule";
 import { FuriganaText } from "../../../components/FuriganaText";
@@ -52,6 +54,7 @@ export default function DailyLessonPage() {
   const schedule = useMemo(() => getDailyContent(dayIdNum, targetDays), [dayIdNum, targetDays]);
 
   const [activeTab, setActiveTab] = useState<"all" | "kanji" | "vocab" | "grammar">("all");
+  const [kanjiCols, setKanjiCols] = useState<1 | 2>(1);
   const [vocabViewMode, setVocabViewMode] = useState<"full" | "compact">("full");
   const [isFlashcardOpen, setIsFlashcardOpen] = useState(false);
   const [isWallModeOpen, setIsWallModeOpen] = useState(false);
@@ -60,12 +63,25 @@ export default function DailyLessonPage() {
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("jlpt_n3_vocab_view_mode");
-      if (saved === "compact" || saved === "full") {
-        setVocabViewMode(saved);
+      const savedVocab = localStorage.getItem("jlpt_n3_vocab_view_mode");
+      if (savedVocab === "compact" || savedVocab === "full") {
+        setVocabViewMode(savedVocab);
+      }
+      const savedKanji = localStorage.getItem("jlpt_n3_kanji_cols");
+      if (savedKanji === "2") {
+        setKanjiCols(2);
+      } else if (savedKanji === "1") {
+        setKanjiCols(1);
       }
     } catch {}
   }, []);
+
+  const handleKanjiColsChange = (cols: 1 | 2) => {
+    setKanjiCols(cols);
+    try {
+      localStorage.setItem("jlpt_n3_kanji_cols", cols.toString());
+    } catch {}
+  };
 
   const handleVocabViewModeChange = (mode: "full" | "compact") => {
     setVocabViewMode(mode);
@@ -345,7 +361,7 @@ export default function DailyLessonPage() {
       {/* SECTION 1: KANJI */}
       {(activeTab === "all" || activeTab === "kanji") && (
         <section className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400">
                 <BookOpen size={18} />
@@ -354,12 +370,39 @@ export default function DailyLessonPage() {
                 Bagian Kanji ({schedule.kanji.length} Karakter)
               </h2>
             </div>
-            <span className="text-xs text-slate-400 hidden sm:inline">
-              Furigana ruby terintegrasi pada kata majemuk (jukugo)
-            </span>
+
+            {/* Kanji Layout Switcher: 1 Baris (Fokus) vs 2 Baris (Grid) */}
+            <div className="flex items-center gap-1 bg-slate-900/90 border border-slate-800 p-1 rounded-xl self-start sm:self-auto text-xs font-semibold shadow-sm">
+              <button
+                type="button"
+                onClick={() => handleKanjiColsChange(1)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${
+                  kanjiCols === 1
+                    ? "bg-emerald-500 text-slate-950 font-bold shadow-sm"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+                title="Tampilan 1 Baris per Kanji (Mode Fokus)"
+              >
+                <Rows2 size={13} />
+                <span>1 Baris (Fokus)</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => handleKanjiColsChange(2)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${
+                  kanjiCols === 2
+                    ? "bg-emerald-500 text-slate-950 font-bold shadow-sm"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+                title="Tampilan 2 Kolom (Grid)"
+              >
+                <LayoutGrid size={13} />
+                <span>2 Baris (Grid)</span>
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className={`grid gap-4 ${kanjiCols === 1 ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2"}`}>
             {schedule.kanji.map((kanjiItem) => {
               const isStarred = bookmarkedSet.has(kanjiItem.id);
 
@@ -432,17 +475,17 @@ export default function DailyLessonPage() {
                       <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">
                         Kosakata Gabungan (Jukugo):
                       </span>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {kanjiItem.words.map((w, wIdx) => (
                           <div
                             key={wIdx}
-                            className="rounded-xl border border-slate-800/80 bg-slate-950/60 p-2.5 flex items-center justify-between"
+                            className="rounded-xl border border-slate-800/80 bg-slate-950/60 p-3 flex items-center justify-between gap-3 shadow-sm hover:border-slate-700/80 transition-colors"
                           >
-                            <div>
+                            <div className="min-w-0">
                               <FuriganaText
                                 kanji={w.word}
                                 reading={w.reading}
-                                className="text-base font-bold text-slate-100"
+                                className="text-[1.5rem] font-bold text-slate-100 leading-snug"
                               />
                               <p className="text-xs text-slate-400 mt-0.5">{w.meaning}</p>
                             </div>

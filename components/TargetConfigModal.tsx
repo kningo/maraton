@@ -24,7 +24,6 @@ import {
   parseExamDate,
   formatExamDateLabel,
   formatExamDateCompact,
-  getUpcomingOfficialDates,
   formatDateToISO,
 } from "../lib/storage";
 import { getDailyLoadEstimates } from "../lib/scheduler";
@@ -103,7 +102,6 @@ export function TargetConfigModal({
   // Dynamic calculations for selected exam date
   const now = new Date();
   const todayISO = formatDateToISO(now);
-  const upcomingOfficial = getUpcomingOfficialDates(now);
   const targetExam = parseExamDate(examDate);
   const diffDays = Math.ceil((targetExam.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
   const optimalSprintDays = Math.max(MIN_TARGET_DAYS, diffDays - 14);
@@ -154,49 +152,20 @@ export function TargetConfigModal({
 
         {/* Body */}
         <div className="p-6 space-y-5 overflow-y-auto max-h-[75vh]">
-          {/* Section 1: Dynamic Exam Date Selection */}
+          {/* Section 1: Dynamic Exam Date Selection (Simplified Custom Date) */}
           <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
+              <label htmlFor="custom-exam-date" className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5 cursor-pointer">
                 <Calendar size={13} className="text-amber-400" />
                 <span>Pilih Tanggal Ujian JLPT:</span>
-              </span>
+              </label>
               <span className="text-[11px] font-semibold text-amber-300">
                 {formatExamDateLabel(examDate)}
               </span>
             </div>
 
-            {/* Quick Presets for Official Waves */}
-            <div className="space-y-1.5">
-              <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
-                Preset Gelombang Resmi:
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {upcomingOfficial.map((preset) => {
-                  const isSelected = examDate === preset.dateStr;
-                  return (
-                    <button
-                      key={preset.id}
-                      type="button"
-                      onClick={() => setExamDateState(preset.dateStr)}
-                      className={`px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all flex items-center gap-1.5 ${
-                        isSelected
-                          ? "border-amber-400 bg-amber-400/20 text-amber-200 ring-2 ring-amber-400/30 font-bold"
-                          : "border-slate-800 bg-slate-900/80 text-slate-300 hover:border-slate-700 hover:bg-slate-850"
-                      }`}
-                    >
-                      <span>{preset.label}</span>
-                      <span className="text-[10px] text-slate-400">
-                        ({formatExamDateCompact(preset.dateStr)})
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
             {/* Custom Date Input */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 pt-1 border-t border-slate-800/80">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2.5">
               <label htmlFor="custom-exam-date" className="text-xs text-slate-400 whitespace-nowrap font-medium">
                 Atur Tanggal Kustom:
               </label>
@@ -210,7 +179,7 @@ export function TargetConfigModal({
                     setExamDateState(e.target.value);
                   }
                 }}
-                className="flex-1 rounded-xl border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs sm:text-sm font-mono font-bold text-amber-300 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer dark:[color-scheme:dark]"
+                className="flex-1 rounded-xl border border-slate-700 bg-slate-900 px-3.5 py-2 text-xs sm:text-sm font-mono font-bold text-amber-300 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer dark:[color-scheme:dark]"
               />
             </div>
           </div>
