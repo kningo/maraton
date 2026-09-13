@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import {
   Search,
@@ -43,9 +44,25 @@ export function GlobalSearchModal({
   onClose,
   targetDays,
 }: GlobalSearchModalProps) {
+  const [mounted, setMounted] = useState(false);
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<SearchCategory>("all");
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Lock body scroll when search modal is open
+  useEffect(() => {
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isOpen]);
 
   // Focus on open
   useEffect(() => {
@@ -191,10 +208,10 @@ export function GlobalSearchModal({
     totalKanji,
   ]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 sm:p-6 md:p-12 overflow-y-auto">
+  return createPortal(
+    <div className="fixed inset-0 !m-0 z-[100] flex items-start justify-center p-4 sm:p-6 md:p-12 overflow-y-auto">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity animate-in fade-in duration-200"
@@ -441,6 +458,7 @@ export function GlobalSearchModal({
           </span>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

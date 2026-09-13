@@ -81,176 +81,132 @@ export function TripleProgressTracker({ className = "" }: { className?: string }
 
   return (
     <div
-      className={`rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900/95 via-slate-900/80 to-slate-950 p-6 sm:p-7 shadow-xl ${className}`}
+      className={`rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/95 via-slate-900/80 to-slate-950 py-3 px-4 sm:px-5 shadow-lg ${className}`}
     >
-      {/* Header with Gamified Title & Quick Stats */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-5">
-        <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 shadow-inner">
-            <Trophy size={24} />
+      {/* Header: Gamified Level & Compact Quick Badges */}
+      <div className="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-slate-800/70">
+        <div className="flex items-center gap-2">
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+            <Trophy size={15} />
           </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <h3 className="text-lg sm:text-xl font-black text-slate-100">
-                Multi-Metric Gamified Tracker
-              </h3>
-              <span
-                className={`hidden sm:inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-[11px] font-bold ${levelColor}`}
-              >
-                <Sparkles size={11} />
-                <span>{levelTitle}</span>
-              </span>
-            </div>
-            <p className="text-xs text-slate-300 mt-0.5">
-              Pantau penguasaan kumulatif materi N3 yang terhitung otomatis dari modul selesai.
-            </p>
-          </div>
+          <span className="text-xs sm:text-sm font-black text-slate-100">
+            Progress Maraton N3
+          </span>
+          <span
+            className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.2 text-[10px] font-bold ${levelColor}`}
+          >
+            <Sparkles size={10} />
+            <span>{levelTitle}</span>
+          </span>
         </div>
 
         {/* Streak & Starred Quick Badges */}
-        <div className="flex items-center gap-2.5 self-start sm:self-auto">
-          <div className="flex items-center gap-2 rounded-2xl border border-amber-500/30 bg-amber-500/10 px-3.5 py-2 text-amber-300">
-            <Flame size={18} className="text-amber-400 fill-amber-400/40 animate-pulse" />
-            <div className="text-left">
-              <span className="block text-[10px] text-amber-400/90 uppercase font-bold tracking-wider">
-                Streak
-              </span>
-              <span className="text-sm font-extrabold font-mono text-amber-200">
-                {streak} Hari
-              </span>
-            </div>
+        <div className="flex items-center gap-2">
+          <div className="inline-flex items-center gap-1.5 rounded-xl border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-xs text-amber-300 font-mono font-bold">
+            <Flame size={13} className="text-amber-400 fill-amber-400/40 animate-pulse" />
+            <span>{streak} Hari Streak</span>
           </div>
 
           <a
             href="/review"
-            className="flex items-center gap-2 rounded-2xl border border-slate-700 bg-slate-800/90 px-3.5 py-2 text-slate-200 hover:border-amber-500/40 hover:text-amber-300 transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/80 px-2.5 py-1 text-xs text-slate-200 hover:border-amber-500/40 hover:text-amber-300 transition-colors font-mono font-bold"
+            title="Buka Bank Review & Flashcard Berbintang"
           >
-            <Star size={16} className="text-amber-400 fill-amber-400/40" />
-            <div className="text-left">
-              <span className="block text-[10px] text-slate-400 uppercase font-bold tracking-wider">
-                Starred
-              </span>
-              <span className="text-sm font-extrabold font-mono text-slate-100">
-                {starredCount}
-              </span>
-            </div>
+            <Star size={13} className="text-amber-400 fill-amber-400/40" />
+            <span>{starredCount} Starred</span>
           </a>
         </div>
       </div>
 
-      {/* Main Overall Days Progress Bar */}
-      <div className="mt-5 rounded-2xl border border-slate-800/80 bg-slate-950/70 p-4 sm:p-5">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-xs sm:text-sm font-bold text-slate-200 flex items-center gap-2">
-            <CalendarCheck2 size={16} className="text-emerald-400" />
-            <span>Progress Hari Maraton:</span>
-            <strong className="text-slate-100 font-mono">
-              {progress.completedDaysCount} / {progress.totalDays} Hari
-            </strong>
-          </span>
-          <span className="text-sm font-extrabold font-mono text-emerald-400">
-            {overallPct}%
-          </span>
-        </div>
-
-        <div className="h-3 w-full bg-slate-900 rounded-full overflow-hidden border border-slate-800">
-          <div
-            className="h-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-400 transition-all duration-500 rounded-full shadow-lg shadow-emerald-500/20"
-            style={{ width: `${overallPct}%` }}
-          />
-        </div>
-      </div>
-
-      {/* Triple Curriculum Mastery Bars: Kanji, Vocab, Grammar */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-        {/* Metric 1: Kanji Mastery (Emerald) */}
-        <div className="rounded-2xl border border-emerald-500/30 bg-slate-950/80 p-4 sm:p-5 flex flex-col justify-between shadow-sm">
-          <div>
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-emerald-400 flex items-center gap-1.5 uppercase tracking-wider">
-                <BookOpen size={14} />
-                <span>Kanji Mastery</span>
-              </span>
-              <span className="text-xs font-mono font-extrabold text-emerald-300">
-                {kanjiPct}%
-              </span>
-            </div>
-
-            <div className="my-2.5 flex items-baseline gap-1.5">
-              <span className="text-2xl sm:text-3xl font-black font-mono text-slate-100">
-                {progress.kanjiMastered}
-              </span>
-              <span className="text-xs text-slate-400 font-medium">
-                / {progress.totalKanji} Kanji
-              </span>
-            </div>
+      {/* Merged Streamlined 4-Metric Progress Row */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-2.5 pt-2.5">
+        {/* Metric 1: Overall Days */}
+        <div className="rounded-xl border border-emerald-500/20 bg-slate-950/60 p-2 sm:p-2.5 flex flex-col justify-between">
+          <div className="flex items-center justify-between text-[11px] font-bold">
+            <span className="text-emerald-400 flex items-center gap-1">
+              <CalendarCheck2 size={12} />
+              <span>Hari Selesai</span>
+            </span>
+            <span className="font-mono text-emerald-300">{overallPct}%</span>
           </div>
-
-          <div className="h-2 w-full bg-slate-900 rounded-full overflow-hidden border border-slate-800 mt-2">
+          <div className="my-1 flex items-baseline gap-1 font-mono">
+            <span className="text-base sm:text-lg font-black text-slate-100">
+              {progress.completedDaysCount}
+            </span>
+            <span className="text-[10px] text-slate-400">/ {progress.totalDays} Hari</span>
+          </div>
+          <div className="h-1.5 w-full bg-slate-900 rounded-full overflow-hidden border border-slate-800/60">
             <div
-              className="h-full bg-emerald-500 transition-all duration-500 rounded-full shadow-sm shadow-emerald-500/30"
+              className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full transition-all duration-500"
+              style={{ width: `${overallPct}%` }}
+            />
+          </div>
+        </div>
+
+        {/* Metric 2: Kanji */}
+        <div className="rounded-xl border border-emerald-500/20 bg-slate-950/60 p-2 sm:p-2.5 flex flex-col justify-between">
+          <div className="flex items-center justify-between text-[11px] font-bold">
+            <span className="text-emerald-400 flex items-center gap-1">
+              <BookOpen size={12} />
+              <span>Kanji N3</span>
+            </span>
+            <span className="font-mono text-emerald-300">{kanjiPct}%</span>
+          </div>
+          <div className="my-1 flex items-baseline gap-1 font-mono">
+            <span className="text-base sm:text-lg font-black text-slate-100">
+              {progress.kanjiMastered}
+            </span>
+            <span className="text-[10px] text-slate-400">/ {progress.totalKanji} Kanji</span>
+          </div>
+          <div className="h-1.5 w-full bg-slate-900 rounded-full overflow-hidden border border-slate-800/60">
+            <div
+              className="h-full bg-emerald-500 rounded-full transition-all duration-500"
               style={{ width: `${kanjiPct}%` }}
             />
           </div>
         </div>
 
-        {/* Metric 2: Vocabulary Mastery (Sky/Blue) */}
-        <div className="rounded-2xl border border-sky-500/30 bg-slate-950/80 p-4 sm:p-5 flex flex-col justify-between shadow-sm">
-          <div>
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-sky-400 flex items-center gap-1.5 uppercase tracking-wider">
-                <Layers size={14} />
-                <span>Vocabulary / Goi</span>
-              </span>
-              <span className="text-xs font-mono font-extrabold text-sky-300">
-                {vocabPct}%
-              </span>
-            </div>
-
-            <div className="my-2.5 flex items-baseline gap-1.5">
-              <span className="text-2xl sm:text-3xl font-black font-mono text-slate-100">
-                {progress.vocabMastered}
-              </span>
-              <span className="text-xs text-slate-400 font-medium">
-                / {progress.totalVocab} Kata
-              </span>
-            </div>
+        {/* Metric 3: Vocabulary */}
+        <div className="rounded-xl border border-sky-500/20 bg-slate-950/60 p-2 sm:p-2.5 flex flex-col justify-between">
+          <div className="flex items-center justify-between text-[11px] font-bold">
+            <span className="text-sky-400 flex items-center gap-1">
+              <Layers size={12} />
+              <span>Kosakata</span>
+            </span>
+            <span className="font-mono text-sky-300">{vocabPct}%</span>
           </div>
-
-          <div className="h-2 w-full bg-slate-900 rounded-full overflow-hidden border border-slate-800 mt-2">
+          <div className="my-1 flex items-baseline gap-1 font-mono">
+            <span className="text-base sm:text-lg font-black text-slate-100">
+              {progress.vocabMastered}
+            </span>
+            <span className="text-[10px] text-slate-400">/ {progress.totalVocab} Kata</span>
+          </div>
+          <div className="h-1.5 w-full bg-slate-900 rounded-full overflow-hidden border border-slate-800/60">
             <div
-              className="h-full bg-sky-500 transition-all duration-500 rounded-full shadow-sm shadow-sky-500/30"
+              className="h-full bg-sky-500 rounded-full transition-all duration-500"
               style={{ width: `${vocabPct}%` }}
             />
           </div>
         </div>
 
-        {/* Metric 3: Grammar Mastery (Amber/Orange) */}
-        <div className="rounded-2xl border border-amber-500/30 bg-slate-950/80 p-4 sm:p-5 flex flex-col justify-between shadow-sm">
-          <div>
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-amber-400 flex items-center gap-1.5 uppercase tracking-wider">
-                <GraduationCap size={14} />
-                <span>Grammar / Bunpou</span>
-              </span>
-              <span className="text-xs font-mono font-extrabold text-amber-300">
-                {grammarPct}%
-              </span>
-            </div>
-
-            <div className="my-2.5 flex items-baseline gap-1.5">
-              <span className="text-2xl sm:text-3xl font-black font-mono text-slate-100">
-                {progress.grammarMastered}
-              </span>
-              <span className="text-xs text-slate-400 font-medium">
-                / {progress.totalGrammar} Pola
-              </span>
-            </div>
+        {/* Metric 4: Grammar */}
+        <div className="rounded-xl border border-amber-500/20 bg-slate-950/60 p-2 sm:p-2.5 flex flex-col justify-between">
+          <div className="flex items-center justify-between text-[11px] font-bold">
+            <span className="text-amber-400 flex items-center gap-1">
+              <GraduationCap size={12} />
+              <span>Tata Bahasa</span>
+            </span>
+            <span className="font-mono text-amber-300">{grammarPct}%</span>
           </div>
-
-          <div className="h-2 w-full bg-slate-900 rounded-full overflow-hidden border border-slate-800 mt-2">
+          <div className="my-1 flex items-baseline gap-1 font-mono">
+            <span className="text-base sm:text-lg font-black text-slate-100">
+              {progress.grammarMastered}
+            </span>
+            <span className="text-[10px] text-slate-400">/ {progress.totalGrammar} Pola</span>
+          </div>
+          <div className="h-1.5 w-full bg-slate-900 rounded-full overflow-hidden border border-slate-800/60">
             <div
-              className="h-full bg-amber-500 transition-all duration-500 rounded-full shadow-sm shadow-amber-500/30"
+              className="h-full bg-amber-500 rounded-full transition-all duration-500"
               style={{ width: `${grammarPct}%` }}
             />
           </div>

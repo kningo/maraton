@@ -325,18 +325,6 @@ export default function DashboardPage() {
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <button
                 type="button"
-                onClick={() => setIsSearchModalOpen(true)}
-                className="inline-flex items-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3.5 py-2 text-xs sm:text-sm font-semibold text-emerald-300 hover:bg-emerald-500 hover:text-slate-950 transition-all shadow-sm"
-              >
-                <Search size={15} />
-                <span>Cari Materi N3</span>
-                <kbd className="hidden sm:inline-flex text-[10px] font-mono font-bold bg-slate-900/60 px-1.5 py-0.5 rounded border border-emerald-500/30">
-                  Ctrl K
-                </kbd>
-              </button>
-
-              <button
-                type="button"
                 onClick={() => setIsTargetModalOpen(true)}
                 className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-3.5 py-2 text-xs sm:text-sm font-semibold text-slate-300 hover:border-emerald-500/50 hover:text-emerald-300 hover:bg-slate-800 transition-colors"
               >
@@ -370,91 +358,54 @@ export default function DashboardPage() {
       {/* Roadmap & Week-Grouped Navigation Section */}
       <section className="space-y-6">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-5">
-          <div>
-            <div className="flex items-center gap-2.5">
-              <Compass size={24} className="text-emerald-400" />
-              <h2 className="text-2xl font-black tracking-tight text-slate-100">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
+          <div className="flex items-center gap-2.5">
+            <Compass size={22} className="text-emerald-400" />
+            <div>
+              <h2 className="text-xl sm:text-2xl font-black tracking-tight text-slate-100">
                 Roadmap Modul Mingguan
               </h2>
+              <p className="text-xs text-slate-400 font-medium">
+                {targetDays} Hari Total • {totalWeeks} Minggu
+              </p>
             </div>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1 font-medium">
-              Pilih tab minggu di bawah ini untuk melihat modul harian yang terbagi proporsional dalam {totalWeeks} minggu ({targetDays} hari total).
-            </p>
           </div>
 
-          {/* Search & Free Access Toggle */}
-          <div className="flex flex-wrap items-center gap-3">
-            {/* Universal Search Modal Trigger */}
-            <button
-              type="button"
-              onClick={() => setIsSearchModalOpen(true)}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-900/90 hover:border-emerald-500/50 hover:bg-slate-850 text-slate-300 text-xs font-semibold transition-all group shadow-sm"
-              title="Cari Kosakata, Tata Bahasa, atau Kanji (Romaji / Arti / Kanji)"
-            >
-              <Search size={14} className="text-emerald-400 group-hover:scale-110 transition-transform" />
-              <span>Cari Kosakata & Tata Bahasa</span>
-              <kbd className="hidden sm:inline-flex items-center text-[10px] font-mono font-bold bg-slate-800 border border-slate-700 text-slate-400 px-1.5 py-0.5 rounded">
-                Ctrl K
-              </kbd>
-            </button>
-
-            {/* Quick Card Day Filter */}
-            <div className="relative">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Filter grid hari..."
-                className="w-36 sm:w-44 rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-200 placeholder-slate-400 focus:border-emerald-500 focus:outline-none"
-              />
-            </div>
-
+          <div className="flex items-center gap-2 self-start sm:self-auto">
+            {/* Sequential / Free Access Switch */}
             <button
               type="button"
               onClick={() => setAllowFreeAccess((prev) => !prev)}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl border text-xs font-bold transition-colors ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-semibold transition-colors ${
                 allowFreeAccess
                   ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
                   : "border-slate-700 bg-slate-900 text-slate-300"
               }`}
               title="Ganti antara mode bebas pilih hari atau mode terkunci berantai"
             >
-              {allowFreeAccess ? <Unlock size={14} /> : <Lock size={14} />}
+              {allowFreeAccess ? <Unlock size={13} /> : <Lock size={13} />}
               <span>{allowFreeAccess ? "Akses Terbuka" : "Sekuensial"}</span>
             </button>
           </div>
         </div>
 
-        {/* Dynamic Week-based Tab/Pills Selector & Filters */}
-        <div className="space-y-3">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              Pilih Minggu Studi:
-            </span>
-            <span className="text-xs text-slate-400 font-medium">
-              {selectedWeek === "all"
-                ? `Menampilkan Seluruh ${targetDays} Hari (${totalWeeks} Minggu)`
-                : `Minggu ${selectedWeek} • Hari ${(Number(selectedWeek) - 1) * 7 + 1} s.d. ${Math.min(targetDays, Number(selectedWeek) * 7)}`}
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
-            {/* All Weeks Pill */}
+        {/* Single Consolidated Roadmap Toolbar */}
+        <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-3 bg-slate-900/60 p-2 sm:p-2.5 rounded-2xl border border-slate-800">
+          {/* Left side: Horizontal scrollable week pills */}
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 xl:pb-0 scrollbar-none min-w-0 flex-1">
             <button
               type="button"
               onClick={() => handleSelectWeek("all")}
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 border ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 border ${
                 selectedWeek === "all"
                   ? "bg-emerald-500 text-slate-950 border-emerald-400 shadow-sm font-extrabold"
                   : "bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-850 border-slate-800"
               }`}
             >
               <Calendar size={13} />
-              <span>Semua Minggu</span>
+              <span>Semua</span>
             </button>
 
-            {/* Dynamic Week 1 to totalWeeks Pills */}
             {Array.from({ length: totalWeeks }, (_, i) => i + 1).map((week) => {
               const stat = weekStats[week];
               const isSelected = selectedWeek === week;
@@ -465,7 +416,7 @@ export default function DashboardPage() {
                   key={week}
                   type="button"
                   onClick={() => handleSelectWeek(week)}
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 border ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 border ${
                     isSelected
                       ? "bg-emerald-500 text-slate-950 border-emerald-400 shadow-sm font-extrabold"
                       : isWeekAllDone
@@ -473,9 +424,9 @@ export default function DashboardPage() {
                       : "bg-slate-900/90 text-slate-300 hover:text-white hover:bg-slate-850 border-slate-800"
                   }`}
                 >
-                  <span>Minggu {week}</span>
+                  <span>M{week}</span>
                   <span
-                    className={`text-[10px] font-mono px-1.5 py-0.2 rounded-md ${
+                    className={`text-[10px] font-mono px-1 py-0.2 rounded ${
                       isSelected
                         ? "bg-slate-950/30 text-slate-950 font-black"
                         : isWeekAllDone
@@ -486,30 +437,35 @@ export default function DashboardPage() {
                     {stat ? `${stat.completed}/${stat.total}` : "0"}
                   </span>
                   {isWeekAllDone && !isSelected && (
-                    <CheckCircle2 size={12} className="text-emerald-400 shrink-0" />
+                    <CheckCircle2 size={11} className="text-emerald-400 shrink-0" />
                   )}
                 </button>
               );
             })}
           </div>
 
-          {/* Status Filter Toolbar - Compact & Neatly Aligned */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-            <div className="inline-flex items-center gap-1 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs">
+          {/* Right side: Status Filter toggle + ONE Unified Search Bar */}
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            {/* Status Segmented Control */}
+            <div className="inline-flex items-center gap-0.5 bg-slate-950/80 p-0.5 rounded-xl border border-slate-800 text-xs">
               <button
                 type="button"
                 onClick={() => setStatusFilter("all")}
-                className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
-                  statusFilter === "all" ? "bg-slate-800 text-slate-100 font-bold" : "text-slate-400 hover:text-slate-200"
+                className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-colors ${
+                  statusFilter === "all"
+                    ? "bg-slate-800 text-slate-100 font-bold shadow-sm"
+                    : "text-slate-400 hover:text-slate-200"
                 }`}
               >
-                Semua Modul
+                Semua
               </button>
               <button
                 type="button"
                 onClick={() => setStatusFilter("pending")}
-                className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
-                  statusFilter === "pending" ? "bg-slate-800 text-slate-100 font-bold" : "text-slate-400 hover:text-slate-200"
+                className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-colors ${
+                  statusFilter === "pending"
+                    ? "bg-slate-800 text-slate-100 font-bold shadow-sm"
+                    : "text-slate-400 hover:text-slate-200"
                 }`}
               >
                 Belum Selesai
@@ -517,17 +473,35 @@ export default function DashboardPage() {
               <button
                 type="button"
                 onClick={() => setStatusFilter("completed")}
-                className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
-                  statusFilter === "completed" ? "bg-emerald-500/20 text-emerald-300 font-bold" : "text-slate-400 hover:text-slate-200"
+                className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-colors ${
+                  statusFilter === "completed"
+                    ? "bg-emerald-500/20 text-emerald-300 font-bold shadow-sm"
+                    : "text-slate-400 hover:text-slate-200"
                 }`}
               >
-                Sudah Selesai
+                Selesai
               </button>
             </div>
 
-            <span className="text-xs text-slate-400 font-medium">
-              Menampilkan <strong className="text-slate-200 font-bold">{filteredSummaries.length}</strong> modul
-            </span>
+            {/* ONE Unified Search Input Bar */}
+            <div className="relative flex items-center">
+              <Search size={13} className="absolute left-2.5 text-slate-400 pointer-events-none" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Cari materi / filter hari..."
+                className="w-44 sm:w-56 rounded-xl border border-slate-700 bg-slate-950/80 pl-8 pr-12 py-1.5 text-xs text-slate-200 placeholder-slate-400 focus:border-emerald-500 focus:outline-none transition-all"
+              />
+              <button
+                type="button"
+                onClick={() => setIsSearchModalOpen(true)}
+                className="absolute right-1 px-1.5 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[10px] font-mono font-bold text-slate-400 border border-slate-700/60"
+                title="Buka Pencarian Universal N3 (Ctrl+K)"
+              >
+                ⌘K
+              </button>
+            </div>
           </div>
         </div>
 

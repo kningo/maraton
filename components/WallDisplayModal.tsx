@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef, useCallback } from "react";
+import { createPortal } from "react-dom";
 import {
   X,
   Play,
@@ -30,11 +31,27 @@ export function WallDisplayModal({
   cards,
   dayTitle = "Mode Display TV / Monitor",
 }: WallDisplayModalProps) {
+  const [mounted, setMounted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [intervalSec, setIntervalSec] = useState(10);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [progressPercent, setProgressPercent] = useState(0);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Lock body scroll when wall display mode is open
+  useEffect(() => {
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isOpen]);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const progressRef = useRef<NodeJS.Timeout | null>(null);
@@ -112,10 +129,10 @@ export function WallDisplayModal({
     return () => window.removeEventListener("keydown", onKey);
   }, [isOpen, handleNext, handlePrev, onClose]);
 
-  if (!isOpen || cards.length === 0) return null;
+  if (!isOpen || cards.length === 0 || !mounted) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-slate-950 text-slate-100 select-none overflow-hidden animate-in fade-in duration-300">
+  return createPortal(
+    <div className="fixed inset-0 !m-0 z-[100] flex flex-col bg-slate-950 text-slate-100 select-none overflow-hidden animate-in fade-in duration-300">
       {/* Top Header Bar */}
       <div className="flex items-center justify-between px-8 py-5 border-b border-slate-850 bg-slate-950/80 backdrop-blur-md">
         <div className="flex items-center gap-3">
@@ -281,6 +298,7 @@ export function WallDisplayModal({
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

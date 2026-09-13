@@ -84,15 +84,15 @@ export function DayCard({
           </div>
         </div>
 
-        {/* Subtitle / Theme (wraps cleanly into 2 lines with min-height) */}
-        <div className="mt-2 min-h-[2.5rem] flex items-center">
+        {/* Subtitle / Theme (wraps cleanly into 2 lines with consistent min-height) */}
+        <div className="mt-1.5 min-h-[2rem] flex items-center">
           <p
             className={`text-xs leading-snug line-clamp-2 ${
               isActive
                 ? "font-bold text-slate-100"
                 : isCompleted
-                ? "font-medium text-slate-300"
-                : "font-medium text-slate-400"
+                ? "font-semibold text-slate-200"
+                : "font-medium text-slate-300"
             }`}
             title={theme}
           >
@@ -147,14 +147,14 @@ export function DayCard({
         </div>
       ) : isLocked ? (
         <div className="pt-2 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
-          <span className="text-[11px] text-slate-400 font-medium">Terkunci</span>
-          <Lock size={12} className="text-slate-400" />
+          <span className="text-[11px] text-slate-400 font-medium">Belum Terbuka</span>
+          <Lock size={12} className="text-slate-500" />
         </div>
       ) : (
         <div className="pt-2 border-t border-slate-800/50 flex items-center justify-between text-xs text-slate-400">
-          <span className="text-[11px] text-slate-400 font-medium">Belum dibuka</span>
-          <span className="text-xs font-semibold text-slate-400 group-hover:text-slate-200 flex items-center gap-1 transition-colors">
-            <span>Buka</span>
+          <span className="text-[11px] text-slate-400 font-medium">Belum Terbuka</span>
+          <span className="text-xs font-semibold text-slate-400 group-hover:text-emerald-400 flex items-center gap-1 transition-colors">
+            <span>Mulai</span>
             <ArrowRight size={12} />
           </span>
         </div>
