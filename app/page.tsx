@@ -31,6 +31,8 @@ import {
   getCompletedDays,
   getQuizResults,
   getTargetDays,
+  getAllowFreeAccess,
+  setAllowFreeAccess as setStorageAllowFreeAccess,
   DEFAULT_TARGET_DAYS,
   PROGRESS_EVENT_NAME,
 } from "../lib/storage";
@@ -84,6 +86,7 @@ export default function DashboardPage() {
       setCompletedDays(completed);
       setTargetDays(currentTarget);
       setQuizResults(getQuizResults());
+      setAllowFreeAccess(getAllowFreeAccess());
 
       const computedWeeks = Math.ceil(currentTarget / 7);
 
@@ -167,6 +170,12 @@ export default function DashboardPage() {
     setTimeout(() => {
       setToastMessage((cur) => (cur?.includes(`${newDays}`) ? null : cur));
     }, 5500);
+  };
+
+  const handleToggleFreeAccess = () => {
+    const nextVal = !allowFreeAccess;
+    setAllowFreeAccess(nextVal);
+    setStorageAllowFreeAccess(nextVal);
   };
 
   // Week statistics helper for pills
@@ -375,13 +384,17 @@ export default function DashboardPage() {
             {/* Sequential / Free Access Switch */}
             <button
               type="button"
-              onClick={() => setAllowFreeAccess((prev) => !prev)}
+              onClick={handleToggleFreeAccess}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-semibold transition-colors ${
                 allowFreeAccess
                   ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
                   : "border-slate-700 bg-slate-900 text-slate-300"
               }`}
-              title="Ganti antara mode bebas pilih hari atau mode terkunci berantai"
+              title={
+                allowFreeAccess
+                  ? "Mode Akses Terbuka: Semua hari bebas dipilih langsung (Klik untuk ubah ke Sekuensial)"
+                  : "Mode Sekuensial: Hari berikutnya terkunci sampai hari saat ini selesai (Klik untuk buka semua akses)"
+              }
             >
               {allowFreeAccess ? <Unlock size={13} /> : <Lock size={13} />}
               <span>{allowFreeAccess ? "Akses Terbuka" : "Sekuensial"}</span>

@@ -18,6 +18,7 @@ import {
   List,
   Rows2,
   LayoutGrid,
+  Lock,
 } from "lucide-react";
 import { getDailyContent } from "../../../data/schedule";
 import { FuriganaText } from "../../../components/FuriganaText";
@@ -32,6 +33,8 @@ import {
   isDayCompleted,
   setDayCompleted,
   getTargetDays,
+  getCompletedDays,
+  getAllowFreeAccess,
   DEFAULT_TARGET_DAYS,
   PROGRESS_EVENT_NAME,
 } from "../../../lib/storage";
@@ -60,6 +63,7 @@ export default function DailyLessonPage() {
   const [isWallModeOpen, setIsWallModeOpen] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [bookmarkedSet, setBookmarkedSet] = useState<Set<string>>(new Set());
+  const [allowFreeAccess, setAllowFreeAccess] = useState<boolean>(true);
 
   useEffect(() => {
     try {
@@ -94,6 +98,7 @@ export default function DailyLessonPage() {
     const syncState = () => {
       setTargetDays(getTargetDays());
       setIsCompleted(isDayCompleted(dayIdNum));
+      setAllowFreeAccess(getAllowFreeAccess());
 
       // Build bookmarked set for all items in this day
       const currentSet = new Set<string>();
@@ -195,6 +200,17 @@ export default function DailyLessonPage() {
   const prevDay = dayIdNum > 1 ? dayIdNum - 1 : null;
   const nextDay = dayIdNum < targetDays ? dayIdNum + 1 : null;
 
+  const nextIncompleteDay = useMemo(() => {
+    const completed = getCompletedDays();
+    for (let d = 1; d <= targetDays; d++) {
+      if (!completed.includes(d)) return d;
+    }
+    return 1;
+  }, [targetDays, isCompleted]);
+
+  const isCurrentDayLocked = !allowFreeAccess && dayIdNum > nextIncompleteDay;
+  const isNextDayLocked = !allowFreeAccess && nextDay !== null && nextDay > nextIncompleteDay;
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-8 py-8 space-y-8">
       {/* Top Breadcrumb & Day Navigation Bar */}
@@ -228,18 +244,48 @@ export default function DailyLessonPage() {
           )}
 
           {nextDay ? (
-            <Link
-              href={`/day/${nextDay}`}
-              className="flex items-center gap-1 rounded-xl border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:bg-slate-800 transition-colors"
-            >
-              <span>Hari {nextDay}</span>
-              <ChevronRight size={16} />
-            </Link>
+            isNextDayLocked ? (
+              <span
+                title={`Hari ${nextDay} terkunci dalam Mode Sekuensial. Selesaikan Hari ${nextIncompleteDay} terlebih dahulu atau aktifkan Akses Terbuka di Roadmap.`}
+                className="flex items-center gap-1.5 rounded-xl border border-slate-800/80 bg-slate-950/40 px-3 py-1.5 text-xs font-semibold text-slate-500 cursor-not-allowed"
+              >
+                <Lock size={13} />
+                <span>Hari {nextDay}</span>
+              </span>
+            ) : (
+              <Link
+                href={`/day/${nextDay}`}
+                className="flex items-center gap-1 rounded-xl border border-slate-800 bg-slate-900 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:bg-slate-800 transition-colors"
+              >
+                <span>Hari {nextDay}</span>
+                <ChevronRight size={16} />
+              </Link>
+            )
           ) : (
             <span className="text-xs text-emerald-500 font-bold px-3 py-1.5">Hari Terakhir!</span>
           )}
         </div>
       </div>
+
+      {/* Notice for direct access when in Sequential Lock Mode */}
+      {isCurrentDayLocked && (
+        <div className="rounded-2xl border border-amber-500/40 bg-amber-500/10 p-3.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2.5">
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300">
+              <Lock size={14} />
+            </div>
+            <p className="text-amber-200">
+              <strong>Mode Sekuensial:</strong> Modul ini berstatus terkunci sampai Hari {nextIncompleteDay} selesai. Anda dapat membuka semua hari kapan saja melalui tombol <strong>Akses Terbuka</strong> di Roadmap.
+            </p>
+          </div>
+          <Link
+            href="/"
+            className="shrink-0 self-start sm:self-auto px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold border border-amber-500/30 transition-colors"
+          >
+            Ke Roadmap
+          </Link>
+        </div>
+      )}
 
       {/* Day Hero Header Banner */}
       <div className="rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-6 sm:p-8 shadow-xl">

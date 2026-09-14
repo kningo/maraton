@@ -8,6 +8,7 @@ const STORAGE_KEYS = {
   TARGET_DAYS: "jlpt_n3_target_days",
   EXAM_DATE: "jlpt_n3_exam_date",
   THEME: "jlpt_n3_theme",
+  ALLOW_FREE_ACCESS: "jlpt_n3_allow_free_access",
 };
 
 export type AppTheme = "dark" | "matcha";
@@ -206,6 +207,27 @@ export function setTheme(theme: AppTheme): void {
     dispatchStorageUpdate();
   } catch (err) {
     console.error("Error setting theme:", err);
+  }
+}
+
+export function getAllowFreeAccess(): boolean {
+  if (!isBrowser()) return true;
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.ALLOW_FREE_ACCESS);
+    if (raw === null) return true; // Default: Akses Terbuka (true)
+    return raw === "true";
+  } catch {
+    return true;
+  }
+}
+
+export function setAllowFreeAccess(allow: boolean): void {
+  if (!isBrowser()) return;
+  try {
+    localStorage.setItem(STORAGE_KEYS.ALLOW_FREE_ACCESS, String(allow));
+    dispatchStorageUpdate();
+  } catch (err) {
+    console.error("Error setting allow free access:", err);
   }
 }
 
