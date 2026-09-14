@@ -1,5 +1,6 @@
 import React from "react";
 import { Bug } from "lucide-react";
+import packageJson from "../package.json";
 
 export function Footer() {
   return (
@@ -50,7 +51,7 @@ export function Footer() {
           </a>
 
           <span className="text-[10px] px-2 py-0.5 rounded bg-slate-800/80 text-slate-400 font-mono border border-slate-700/60 select-none">
-            v1.0.0
+            v{packageJson.version}
           </span>
         </div>
       </div>
