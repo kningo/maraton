@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Implemented persistent column preference stored in `localStorage` under `jlpt_n3_kanji_cols` (defaulting to 1-column Focus mode).
 - **Simplified JLPT Exam Date Picker**:
   - Replaced multi-button exam wave lists in `TargetConfigModal` with a clean, direct HTML5 date picker (`type="date"`) and formatted weekday badge.
+- **Developer Credit & Utility Footer**:
+  - Created modular `components/Footer.tsx` displaying copyright `© 2026 xkningo • JLPT Marathon`, subtitle `Dirancang untuk belajar dengan target kebut semalam.`, bug reporting action (`https://xkningo.my.id`), developer contact link, and monospaced `v1.0.0` version pill.
 
 ### Changed
 - **Minimalist Dashboard & Roadmap Declutter**:
@@ -43,6 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Removed redundant `"Cari Materi N3 [Ctrl+K]"` button beneath the hero CTA block.
 - Removed crowded official exam wave preset buttons from `TargetConfigModal`.
+- Removed redundant roadmap/flashcards/starred links from the footer in favor of utility and developer actions.
 
 ---
 
