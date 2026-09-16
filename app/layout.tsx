@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "JLPT N3 Marathon (70 Days) | Persiapan Lengkap Kanji, Kosakata & Tata Bahasa",
   description:
     "Aplikasi intensif 70 hari persiapan ujian JLPT N3 2026 mencakup 336 Kanji, 1100+ Kosakata, dan 100 Pola Tata Bahasa dilengkapi furigana, audio, kuis harian, dan flashcards interaktif.",
+  icons: {
+    icon: "https://xkningo.my.id/favicon.png",
+    shortcut: "https://xkningo.my.id/favicon.png",
+    apple: "https://xkningo.my.id/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -17,6 +22,8 @@ export default function RootLayout({
   return (
     <html lang="id" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="https://xkningo.my.id/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://xkningo.my.id/favicon.png" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
