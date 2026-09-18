@@ -254,9 +254,9 @@ export default function DashboardPage() {
             </div>
 
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-100 leading-tight">
-              Taklukkan Ujian N3 dengan{" "}
+              Sprint JLPT:{" "}
               <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
-                Roadmap Bebas Fatigue
+                Cukup Kuasai Target Hari Ini
               </span>
             </h1>
 
