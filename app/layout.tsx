@@ -4,9 +4,9 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "JLPT N3 Marathon (70 Days) | Persiapan Lengkap Kanji, Kosakata & Tata Bahasa",
+  title: "Mogu | Bite-sized Daily Learning (JLPT N3)",
   description:
-    "Aplikasi intensif 70 hari persiapan ujian JLPT N3 2026 mencakup 336 Kanji, 1100+ Kosakata, dan 100 Pola Tata Bahasa dilengkapi furigana, audio, kuis harian, dan flashcards interaktif.",
+    "Mogu: Bite-sized Daily Learning - Persiapan intensif ujian JLPT N3 mencakup 336 Kanji, 1100+ Kosakata, dan 100 Pola Tata Bahasa dilengkapi furigana, audio, kuis harian, dan flashcards interaktif.",
   icons: {
     icon: "https://xkningo.my.id/favicon.png",
     shortcut: "https://xkningo.my.id/favicon.png",
