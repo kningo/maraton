@@ -61,20 +61,21 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-slate-950 font-black shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-            N3
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl overflow-hidden bg-white/95 border border-slate-700/60 p-0.5 shadow-md shadow-emerald-500/10 group-hover:scale-105 transition-transform">
+            <img
+              src="/logo.png"
+              alt="Mogu Logo"
+              className="h-full w-full object-contain"
+            />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
               <span className="text-base font-extrabold tracking-tight text-slate-100 group-hover:text-emerald-400 transition-colors">
-                JLPT N3 Marathon
-              </span>
-              <span className="rounded-md bg-emerald-500/10 border border-emerald-500/30 px-1.5 py-0.2 text-[10px] font-bold text-emerald-400">
-                {targetDays} Hari
+                Mogu
               </span>
             </div>
-            <p className="text-[11px] text-slate-400 font-japanese">
-              Kanji 336 • Goi 1100+ • Bunpou 100
+            <p className="text-[11px] text-slate-400 font-medium">
+              Bite-sized Daily Learning
             </p>
           </div>
         </Link>
