@@ -1,11 +1,11 @@
-# JLPT N3 Marathon (Adaptive Zero-Fatigue Study Engine)
+# Mogu (Adaptive Zero-Fatigue JLPT N3 Study Engine)
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.24-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.17-38bdf8?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-Private-green?style=flat)](#)
 
-A high-performance, distraction-free JLPT N3 preparation web application engineered for consistent, long-term retention without cognitive burnout (*zero-fatigue approach*). The application dynamically calibrates daily study loads across **336 Kanji**, **1,155 Vocabulary items**, and **100 Grammar patterns**, offering adaptive pacing ranging from **30 to 120 days** (default: 70-day sprint).
+**Mogu** is a high-performance, distraction-free JLPT N3 preparation web application engineered for consistent, long-term retention without cognitive burnout (*zero-fatigue approach*). The application dynamically calibrates daily study loads across **336 Kanji**, **1,155 Vocabulary items**, and **100 Grammar patterns**, offering adaptive pacing ranging from **30 to 120 days** (default: 70-day sprint).
 
 ---
 
@@ -89,7 +89,7 @@ $$\text{count}(d) = \text{end}(d) - \text{start}(d)$$
 ## 📂 Project Directory Tree
 
 ```text
-maraton3/
+mogu/
 ├── .cursorrules               # Core AI agent rules: Priority 0 immutability, design standards
 ├── .gitignore                 # Git ignore rules for node_modules, .next, etc.
 ├── CHANGELOG.md               # Version history and detailed changelog
@@ -204,7 +204,7 @@ Because Next.js pre-renders pages on the server where `window` and `localStorage
 ### Installation & Development
 ```bash
 # Clone or navigate into the repository
-cd maraton3
+cd mogu
 
 # Install dependencies
 npm install
